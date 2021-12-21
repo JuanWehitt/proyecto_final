@@ -1,0 +1,182 @@
+@media  screen and (min-width:1020px){   
+    .principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        background-color: black;
+        margin: 0;
+    }
+    .encabezado {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: rgb(46,46,46);
+        width: 100%;
+        max-width: 1040px;
+        padding: 5px;
+    }
+    .imagen_logo{
+        padding-right: 10px;   
+        padding-left: 5px; 
+    }
+    .input_usuario {
+
+        width: 20%;
+        height: 30px;
+        min-width: 120px;
+
+        background-color: rgb(46, 46, 46);
+        outline: none;
+        border-radius: 5px;
+        border:3px solid black;
+    
+        font-style: italic;
+        color: #6b6b6b;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+
+        margin-right: 10px;
+
+    }
+    .input_contrasenia{
+
+        width: 20%;
+        height: 30px;
+        min-width: 120px;
+
+        background-color: rgb(46, 46, 46);
+        outline: none;
+        border-radius: 5px;
+        border:3px solid black;
+    
+        font-style: italic;
+        color: #6b6b6b;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+
+        margin-right: 10px;
+    }
+    .boton_ingresar {
+        display: flex;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+
+        width: 11%;
+        height: 38px;
+        min-width: min-content;
+        background-color: #5543ff;
+        outline: none;
+        border-radius: 5px;
+        border:0px;
+
+        color: black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+    .titular_de_contenedor{
+        color: white;
+        width: 100%;
+        max-width: 1040px;
+    }
+    .titular_de_contenedor > p {
+        padding: 5px;
+        margin:0;
+    }
+    .contenedor_resultados{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 15px;
+        width: 100%;
+        max-width: 1040px;
+        align-items: center;
+    }
+    .pelicula{
+        display: flex;
+        width: 48%;
+        height: 25%;
+        min-width: 380px;
+        margin: 10px;
+        color: white;
+        background: linear-gradient(0.25turn,#000000, #818181);
+        
+    }
+    .info_pelicula{
+
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 20px;
+        margin-right: 10px;
+        width: 100%;
+    }
+    .imagen_pelicula{
+        padding-right: 10px;
+        width: 35%;
+        height: 35%;
+    }
+    .labels_pelicula{
+        margin: 0;
+        color: #5543ff;
+        font-weight: bold;
+        font-size: 1em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding-bottom: 5px;
+
+    }
+    .nombre_pelicula{
+        margin: 0;
+
+        color:white;  
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight:bold;
+        font-size: 1.4em;
+        
+        width: 100%;
+    }
+    .nombre_director{
+        margin: 0;
+        border: 0px;
+        color:white;
+        background:none;
+        
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight:bold;
+        font-size: 1em;
+        
+        padding-bottom: 5px;
+        width: 100%;
+    }
+    .nombre_genero{
+        margin: 0;
+        border: 0px;
+        color:white;
+        background:none;
+        
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight:bold;
+        font-size: 1em;
+        
+        width: 100%;
+    }
+    .anio_pelicula {
+        margin: 0;
+        transform: rotate(-90deg);
+        margin-top: -33px;
+        margin-right: -251px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        font-size: 1.5em;    
+        width: 100%;
+    }
+} /* cierre de media screen mayor a 1020px de ancho */
+
