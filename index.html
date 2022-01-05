@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles_screen3.css">
     <link rel="stylesheet" href="styles/styles_screen2.css">
+    <link rel="stylesheet" href="styles/styles_screen1.css">
+
     <title>Document</title>
 </head>
 <body class="principal">
     <header class="encabezado">
         <img class="imagen_logo" src="images/logo.png" alt="imagen del logo">
-        <input class="input_usuario" type="text" id="nombre_usuario" required placeholder="Usuario">
-        <input class="input_contrasenia" type="password" id="password_usuario" required placeholder="Contraseña">
+        <div class="loguin">
+            <input class="input_usuario" type="text" id="nombre_usuario" required placeholder="Usuario">
+            <input class="input_contrasenia" type="password" id="password_usuario" required placeholder="Contraseña">
+        </div>
         <button class="boton_ingresar">Ingresar</button>
     </header>
     <div class="titular_de_contenedor">
@@ -20,7 +24,7 @@
     </div>
     <div class="contenedor_resultados">
 
-        <article class="pelicula">            
+        <article id="pelicula" class="pelicula">            
             <img class="imagen_pelicula" src="images/lilo&stich2.jfif" alt="imagen de la pelicula">
             <div class="info_pelicula">
                 <h3 class="labels_pelicula" >Título</h3>                
@@ -88,6 +92,7 @@
 
         
     </div>
+    <script src="scripts/scripts.js"></script>
 </body>
 
 </html>

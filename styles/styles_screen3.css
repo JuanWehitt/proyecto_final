@@ -22,6 +22,11 @@
         padding-right: 10px;   
         padding-left: 5px; 
     }
+    .loguin{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
     .input_usuario {
 
         width: 20%;
@@ -79,6 +84,11 @@
         font-weight: bold;
         font-size: 22px;
     }
+    .boton_ingresar:hover {
+        background-color: gold;
+        box-shadow: 10px 5px 5px white;
+        border:10px;
+    }
 
     .titular_de_contenedor{
         color: white;
@@ -108,8 +118,10 @@
         background: linear-gradient(0.25turn,#000000, #818181);
         
     }
+    .pelicula:hover{
+        box-shadow: 10px 5px 5px white;
+    }
     .info_pelicula{
-
         display: flex;
         flex-direction: column;
         align-content: flex-start;
@@ -170,13 +182,16 @@
     }
     .anio_pelicula {
         margin: 0;
+        /* display: flex; */
         transform: rotate(-90deg);
-        margin-top: -33px;
-        margin-right: -251px;
+        margin-top: 197px;
+        margin-right: -14px;
+        /* padding: 1px; */
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: bold;
-        font-size: 1.5em;    
-        width: 100%;
+        font-size: 1.5em;
+        /* width: 100%; */
+        height: 100%;
     }
 } /* cierre de media screen mayor a 1020px de ancho */
 
