@@ -216,7 +216,7 @@
     .imagen_pelicula_com{
         padding-right: 10px;
               
-        width: 56%;
+        width: 35%;
         height: 35%;
     }
     .labels_pelicula_com{
@@ -271,6 +271,8 @@
     }
     .comentarios{
         background-color: rgb(66, 67, 136);
+        width: 100%;
+        margin: 10px;
     }
     .comentario{
         background-color: rgb(97, 97, 97);
