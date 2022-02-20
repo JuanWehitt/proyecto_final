@@ -107,8 +107,20 @@ function footer(){
 
 function imprimir_home(){
 	//cargar las ultimas 10 peliculas (sin loguearse)
+	//console.log(user);
 	//tomo el nodo contenedor_resultados
 	miContenedor = document.getElementById("contenedor_resultados");
+	if (user==""){
+		//console.log("Entro en user nada");
+		//principal = document.getElementById("principal");
+		titulo_div = document.createElement("div");
+		titulo_p = document.createElement("p");
+		titulo_div.className ="titular_de_contenedor";
+		titulo_p.textContent = "Últimas 10 películas";
+		titulo_div.appendChild(titulo_p);
+		miContenedor.appendChild(titulo_div);
+	}
+
 	//console.log(miContenedor);
 	//agrego los nodos hijos a este.
 	if (user=="" && peliculas.length>=10){
@@ -172,6 +184,20 @@ function imprimir_home(){
 	}
 	principal = document.getElementById("principal");
 	principal.appendChild(footer());
+
+	document.querySelectorAll(".pelicula").forEach(el => {
+		el.addEventListener("click", e => {
+		  const id = e.target.getAttribute("idPelicula");
+		  console.log("Se ha clickeado el id "+id);
+		  remove_tag_class("titular_de_contenedor");
+		  remove_tag_class("contenedor_resultados");
+		  remove_tag_class("footer_div");
+		  //remove_tag_id_childrens("contenedor_resultados");
+		  cargarPeliculaYComentarios(id);
+		});
+	  });
+
+
 }
 
 /*
@@ -208,11 +234,6 @@ function remove_tag_id_childrens(id){
   	}
 }
 
-
-
-
-
-
   ///crear la pagina de comentarios de una pelicula seleccionada
 
   function cargarPeliculaYComentarios(id){
@@ -234,6 +255,14 @@ function remove_tag_id_childrens(id){
     principal.appendChild(boton_atras_div);
     boton_atras_div.appendChild(boton_atras_img);
     boton_atras_div.appendChild(boton_atras_p);
+
+	boton_atras_div.onclick = function(){
+		//console.log("hixo click");
+		remove_tag_class("boton_atras");
+		remove_tag_id_childrens("contenedor_resultados")
+		remove_tag_class("footer_div");
+		imprimir_home();
+	}
 
     miContenedor = document.createElement("div");
     miContenedor.className = "contenedor_resultados";
@@ -337,15 +366,5 @@ function remove_tag_id_childrens(id){
 
 imprimir_home();
 
-document.querySelectorAll(".pelicula").forEach(el => {
-    el.addEventListener("click", e => {
-      const id = e.target.getAttribute("idPelicula");
-      //console.log("Se ha clickeado el id "+id);
-      remove_tag_class("titular_de_contenedor");
-      remove_tag_class("contenedor_resultados");
-	  remove_tag_class("footer_div");
-      //remove_tag_id_childrens("contenedor_resultados");
-      cargarPeliculaYComentarios(id);
-    });
-  });
+
 
