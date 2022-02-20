@@ -22,7 +22,7 @@
         padding-right: 10px;   
         padding-left: 5px; 
     }
-    .loguin{
+    .login{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -233,8 +233,7 @@
         padding-right: 10px;
         min-width: 175px;
         min-height: 256px;
-        width: 35%;
-        height: 35%;
+        width: 50%;
     }
     .labels_pelicula_com{
         margin: 0;
@@ -286,6 +285,14 @@
         /* width: 100%; */
         height: 100%;
     }
+    .pelicula_sinopsis{
+        color: white;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .pelicula_comentarios_h3{
+        color: white;
+    }
     .comentarios{
         background-color: rgb(66, 67, 136);
         width: 100%;
@@ -303,6 +310,14 @@
         text-align: right;
         padding-right: 10px;
         padding-bottom: 10px;
+    }
+    .footer_div{
+        color:white;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(46,46,46);
+        width: 100%;
+        max-width: 1040px;
     }
 } /* cierre de media screen mayor a 1020px de ancho */
 
