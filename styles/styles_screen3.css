@@ -99,6 +99,21 @@
         padding: 5px;
         margin:0;
     }
+    .boton_atras{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        color: rgb(255, 255, 255);
+        width: 100%;
+        max-width: 1040px;
+        cursor: pointer;
+    }
+    .boton_atras > p {
+        margin: 0px;
+        margin-left: 5px;
+    }
     .contenedor_resultados{
         display: flex;
         flex-wrap: wrap;

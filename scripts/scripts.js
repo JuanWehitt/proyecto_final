@@ -186,7 +186,8 @@ function remove_tag_id_childrens(id){
       const id = e.target.getAttribute("idPelicula");
       //console.log("Se ha clickeado el id "+id);
       remove_tag_class("titular_de_contenedor");
-      remove_tag_id_childrens("contenedor_resultados");
+      remove_tag_class("contenedor_resultados");
+      //remove_tag_id_childrens("contenedor_resultados");
       cargarPeliculaYComentarios(id);
     });
   });
@@ -202,7 +203,25 @@ function remove_tag_id_childrens(id){
       return element.id == id;
     });
     //console.log(pelicula_seleccionada);
-    miContenedor = document.getElementById("contenedor_resultados");    
+    principal = document.getElementById("principal");
+    boton_atras_div = document.createElement("div");
+    boton_atras_div.className = "boton_atras";
+    boton_atras_div.id = "boton_atras";
+    boton_atras_img = document.createElement("img");
+    boton_atras_img.src = "images/atras.png";
+    boton_atras_img.alt="img atras";
+    boton_atras_p = document.createElement("p");
+    boton_atras_p.textContent = "Atrás";
+
+    principal.appendChild(boton_atras_div);
+    boton_atras_div.appendChild(boton_atras_img);
+    boton_atras_div.appendChild(boton_atras_p);
+
+    miContenedor = document.createElement("div");
+    miContenedor.className = "contenedor_resultados";
+    miContenedor.id = "contenedor_resultados";
+
+    //miContenedor = document.getElementById("contenedor_resultados");    
     pelicula_com = document.createElement("div");
     pelicula_com.className = "pelicula_com";
     imagen_com = document.createElement("img");
