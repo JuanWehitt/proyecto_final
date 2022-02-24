@@ -1,0 +1,57 @@
+[
+  {
+      "id":100,
+      "titulo": "Piratas del caribe",
+      "genero": ["Accion","Aventuras"],
+      "director": "director",
+      "anio": 2001,
+      "imagen": "https://m.media-amazon.com/images/I/91fPdJwTMBL._SL1500_.jpg",
+      "sinopsis": "El capitán Barbossa le roba el barco al pirata Jack Sparrow y secuestra a Elizabeth, amiga de Will Turner. Barbossa y su tripulación son víctimas de un conjuro que los condena a vivir eternamente y a transformarse cada noche en esqueletos vivientes.",
+      "idUsuario":100,
+      "comentarios": [100,101]
+  },
+  {
+      "id":101,
+      "titulo": "The social Network",
+      "genero": ["Drama", "Biografica"],
+      "director": "David Fincher",
+      "anio": 2010,
+      "imagen": "https://m.media-amazon.com/images/I/51-kSEvgImL.jpg",
+      "sinopsis":"La historia de los jóvenes fundadores de la popular red social Facebook, especialmente de su creador más conocido, Mark Zuckerberg. Su leyenda reza: 'No se hacen 500 millones de amigos sin hacer unos cuantos enemigos'",
+      "idUsuario":100,
+      "comentarios": [102]
+  },
+  {
+      "id":102,
+      "titulo": "Spider-Man: Sin camino a casa",
+      "genero": ["Accion", "Aventura", "Fantasia"],
+      "director": "Jon Watts",
+      "anio": 2021,
+      "imagen": "https://m.media-amazon.com/images/I/81QwUjiLJVL._SL1400_.jpg",
+      "sinopsis":"Tras descubrirse la identidad secreta de Peter Parker como Spider-Man, la vida del joven se vuelve una locura. Peter decide pedirle ayuda al Doctor Extraño para recuperar su vida. Pero algo sale mal y provoca una fractura en el multiverso.",
+      "idUsuario":101,
+      "comentarios": [103,104]
+  },
+  {
+      "id":103,
+      "titulo": "Rio 2",
+      "genero": ["Animacion", "Aventura", "Comedia"],
+      "director": "Carlos Saldanha",
+      "anio": 2014,
+      "imagen": "https://m.media-amazon.com/images/I/91JOXD13PSL._SL1500_.jpg",
+      "sinopsis": "Blu, Perla y sus tres hijos son unas perfectas 'aves de ciudad' que viven tranquilamente en su casa de las afueras de Río de Janeiro. Sin embargo, Perla cree que los niños deberían aprender cómo viven las auténticas aves en el Amazonas. Por eso, toda la familia se aventura a viajar a la selva. Mientras Blu intenta encajar con los nuevos vecinos del Amazonas, le preocupa la posibilidad de que Perla y los chicos no quieran regresar a Río.",
+      "idUsuario":101,
+      "comentarios": []
+  },
+  {
+      "id":104,
+      "titulo": "Rio 2",
+      "genero": ["Animacion", "Aventura", "Comedia"],
+      "director": "Carlos Saldanha",
+      "anio": 2014,
+      "imagen": "",
+      "sinopsis": "Blu, Perla y sus tres hijos son unas perfectas 'aves de ciudad' que viven tranquilamente en su casa de las afueras de Río de Janeiro. Sin embargo, Perla cree que los niños deberían aprender cómo viven las auténticas aves en el Amazonas. Por eso, toda la familia se aventura a viajar a la selva. Mientras Blu intenta encajar con los nuevos vecinos del Amazonas, le preocupa la posibilidad de que Perla y los chicos no quieran regresar a Río.",
+      "idUsuario":101,
+      "comentarios": []
+  }
+]
