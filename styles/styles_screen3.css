@@ -292,6 +292,7 @@
     }
     .pelicula_comentarios_h3{
         color: white;
+        padding-left: 10px;
     }
     .comentarios{
         background-color: rgb(66, 67, 136);
@@ -318,6 +319,7 @@
         background-color: rgb(46,46,46);
         width: 100%;
         max-width: 1040px;
+        padding: 5px;
     }
 } /* cierre de media screen mayor a 1020px de ancho */
 
