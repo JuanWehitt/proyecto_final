@@ -64,7 +64,7 @@
 
         margin-right: 10px;
     }
-    .boton_ingresar {
+    .boton_login_logout {
         display: flex;
         flex-wrap: nowrap;
         align-content: center;
@@ -84,6 +84,12 @@
         font-weight: bold;
         font-size: 2.3vw;
     }
+    .bienvenida_usuario {
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+
     .boton_ingresar:hover {
         background-color: black;
         border:10px;

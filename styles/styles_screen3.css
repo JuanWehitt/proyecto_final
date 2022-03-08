@@ -64,7 +64,14 @@
 
         margin-right: 10px;
     }
-    .boton_ingresar {
+    .status_login {
+        color:white;
+        margin:0px;
+        padding: 0px;
+        margin-left: 10px;
+        align-self: center;
+    }
+    .boton_login_logout {
         display: flex;
         flex-wrap: nowrap;
         align-content: center;
@@ -83,6 +90,11 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: bold;
         font-size: 22px;
+    }
+    .bienvenida_usuario {
+        width: 100%;
+        text-align: center;
+        color: white;
     }
     .boton_ingresar:hover {
         background-color: black;

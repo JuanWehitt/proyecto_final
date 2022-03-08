@@ -105,26 +105,56 @@ function footer(){
 	return footer_div;
 }
 
-function imprimir_encabezado(){ 	
-		
-  document.querySelector(".boton_ingresar").addEventListener("click", () => {
-		  ///console.log("Se ha clickeado el boton");
-      input_usuario_elem = document.getElementById("input_usuario")
-      usuario_input = input_usuario_elem.value;
-      input_contrasenia_elem = document.getElementById("input_contrasenia");
-      contrasenia_input = input_contrasenia_elem.value;
-      console.log(contrasenia_input + " " + usuario_input);
+function limpiar_encabezado(){
+	remove_tag_id_childrens("encabezado")
+}
 
-      let requestOptions = {
-        method: 'POST',
-        headers:  { 'Content-Type': 'application/json' }
-      };
-      fetch('http://localhost:5000', requestOptions)
-          .then( resp => resp.json())
-          .then( datos => {
-              console.log(datos);
-          });
-    });
+function imprimir_encabezado(nombre){ 	
+	imagen_logo = document.createElement("img")
+	imagen_logo.className = "imagen_logo"
+	imagen_logo.src = "images/logo.png"	
+	imagen_logo.alt = "imagen del logo de la pagina"
+	encabezado = document.getElementById("encabezado")
+	encabezado.appendChild(imagen_logo)
+	boton_login = document.createElement("button")
+	boton_login.className = "boton_login_logout"
+	boton_login.id = "boton_login_logout"
+
+	if(user=="") {
+		div_login = document.createElement("div")
+		div_login.className = "login"
+		div_login.id = "login"
+		input_login = document.createElement("input")
+		input_login.className = "input_usuario"
+		input_login.id = "input_usuario"
+		input_login.type="text"
+		input_login.placeholder = "usuario"
+
+		input_contrasenia = document.createElement("input")
+		input_contrasenia.className = "input_contrasenia"
+		input_contrasenia.id = "input_contrasenia"
+		input_contrasenia.type = "password"
+		input_contrasenia.placeholder = "Contraseña"
+
+		div_login.appendChild(input_login)
+		div_login.appendChild(input_contrasenia)
+
+		boton_login.textContent = "Ingresar"
+
+		encabezado.appendChild(div_login)
+		encabezado.appendChild(boton_login)
+
+
+	}else {
+		boton_login.textContent = "Salir"
+		bienvenida_p = document.createElement("p")
+		bienvenida_p.className = "bienvenida_usuario"
+		bienvenida_p.textContent = "Hola " + nombre + "!"
+		encabezado.appendChild(bienvenida_p)
+		encabezado.appendChild(boton_login)
+	}
+
+	
 }
 
 function imprimir_home(){
@@ -248,10 +278,19 @@ function remove_tag_class(clase){
 
 function remove_tag_id_childrens(id){
   	// Eliminando todos los hijos de un elemento
+	  console.log(id);
   	let elemento = document.getElementById(id);
   	while (elemento.firstChild) {
     	elemento.removeChild(elemento.firstChild);
   	}
+}
+
+function imprimir_mensaje_de_login(texto){
+	div_login = document.getElementById("login");
+	texto_p = document.createElement("p");
+	texto_p.className = "status_login";
+	texto_p.textContent = texto;
+	div_login.appendChild(texto_p);
 }
 
   ///crear la pagina de comentarios de una pelicula seleccionada
@@ -385,6 +424,39 @@ function remove_tag_id_childrens(id){
 }
 imprimir_encabezado();
 imprimir_home();
+
+document.querySelector(".boton_login_logout").addEventListener("click", () => {
+	///console.log("Se ha clickeado el boton");
+	input_usuario_elem = document.getElementById("input_usuario")
+	usuario_input = input_usuario_elem.value;
+	input_contrasenia_elem = document.getElementById("input_contrasenia");
+	contrasenia_input = input_contrasenia_elem.value;
+	//console.log(contrasenia_input + " " + usuario_input);
+
+	let requestOptions = {
+		method: 'POST',
+		headers:  { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ usuario: usuario_input, contrasenia: contrasenia_input })
+	};
+	fetch('http://localhost:5000/usuarios', requestOptions)
+		.then( resp => {
+			console.log(resp.status);
+			if (resp.status==200) {
+				//login exitoso
+				user=usuario_input;
+				datos = resp.json();
+				limpiar_encabezado();				
+			}else if (resp.status==404){
+				//no se pudo loguear, no se encuentra el usuario registrado.
+				imprimir_mensaje_de_login("El usuario o la contraseña no son correctos");
+			}
+			return datos;
+		})
+		.then( resp => {
+			console.log(resp);
+			imprimir_encabezado(resp['nombre'])
+		});
+});
 
 
 
