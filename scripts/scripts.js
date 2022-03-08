@@ -105,6 +105,28 @@ function footer(){
 	return footer_div;
 }
 
+function imprimir_encabezado(){ 	
+		
+  document.querySelector(".boton_ingresar").addEventListener("click", () => {
+		  ///console.log("Se ha clickeado el boton");
+      input_usuario_elem = document.getElementById("input_usuario")
+      usuario_input = input_usuario_elem.value;
+      input_contrasenia_elem = document.getElementById("input_contrasenia");
+      contrasenia_input = input_contrasenia_elem.value;
+      console.log(contrasenia_input + " " + usuario_input);
+
+      let requestOptions = {
+        method: 'POST',
+        headers:  { 'Content-Type': 'application/json' }
+      };
+      fetch('http://localhost:5000', requestOptions)
+          .then( resp => resp.json())
+          .then( datos => {
+              console.log(datos);
+          });
+    });
+}
+
 function imprimir_home(){
 	//cargar las ultimas 10 peliculas (sin loguearse)
 	//console.log(user);
@@ -195,9 +217,7 @@ function imprimir_home(){
 		  //remove_tag_id_childrens("contenedor_resultados");
 		  cargarPeliculaYComentarios(id);
 		});
-	  });
-
-
+	});
 }
 
 /*
@@ -363,7 +383,7 @@ function remove_tag_id_childrens(id){
     });
 	principal.appendChild(footer());
 }
-
+imprimir_encabezado();
 imprimir_home();
 
 

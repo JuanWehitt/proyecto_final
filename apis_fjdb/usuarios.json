@@ -1,0 +1,16 @@
+[
+  {
+      "id":101,
+      "nombre": "Administrador",
+      "apellido": "Admin",
+      "usuario": "admin",
+      "contrasenia": "admin"
+  },
+  {
+      "id":100,
+      "nombre": "Gonzalo",
+      "apellido": "Alo",
+      "usuario": "gonza01",
+      "contrasenia": "yutuvw"
+  }
+]
