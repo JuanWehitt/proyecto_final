@@ -91,10 +91,66 @@
         flex-wrap: wrap;
     }
 
-    .boton_ingresar:hover {
+    .boton_login_logout:hover {
         background-color: black;
         border:10px;
         color: #5543ff
+    }
+
+    .barra_de_busqueda{
+        display: flex;
+        width: 100%;
+        max-width: 1040px;
+        background: linear-gradient(0turn,#00000000, #2e2e2e, #1d1d1f);
+        padding: 5px;
+    }
+    .input_busqueda{
+        min-width: 160px;
+        
+        background-color: rgb(46, 46, 46);
+        outline: none;
+        border-radius: 5px;
+        border:3px solid black;
+    
+        font-style: italic;
+        color: #6b6b6b;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 18px;        
+        margin-right: 10px;
+        
+    }
+
+    .combo_box_busqueda {
+        width: 24%;
+        background-color: rgb(46, 46, 46);
+        outline: none;
+        border-radius: 5px;
+        border:3px solid black;
+    
+        font-style: italic;
+        color: #6b6b6b;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 18px;
+        margin-right: 6px;
+        
+    }
+    .boton_buscar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0px;
+        border: 0px;        
+        background-color: #4e4e4e00;
+    }
+    .imagen_buscar {
+        width: 76%;
+        cursor: pointer;
+    }
+    .mensaje_busqueda {
+        margin: 0;
+        padding-left: 10px;
+        align-self: center;
+        color: white;
     }
 
     .titular_de_contenedor{

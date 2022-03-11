@@ -1,13 +1,13 @@
 [
   {
-      "id":101,
-      "nombre": "Administrador",
+      "id":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+      "nombre": "Juan Cruz",
       "apellido": "Admin",
       "usuario": "admin",
       "contrasenia": "admin"
   },
   {
-      "id":100,
+      "id":"4968f7a4-26c4-4eee-8de2-4f90b46f944a",
       "nombre": "Gonzalo",
       "apellido": "Alo",
       "usuario": "gonza01",
