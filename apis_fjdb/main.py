@@ -20,11 +20,11 @@ peliculas = json.load(data_peliculas)
 comentarios = json.load(data_comentarios)
 usuarios = json.load(data_usuarios)
 
-@app.route("/directores",methods=['GET'])
+@app.route("/directores/",methods=['GET'])
 def retornar_directores():
     return jsonify(directores), HTTPStatus.OK
 
-@app.route("/generos",methods=['GET'])
+@app.route("/generos/",methods=['GET'])
 def retornar_generos():
     return jsonify(generos), HTTPStatus.OK
 
@@ -93,14 +93,14 @@ def json_ok_pelicula(datos_pelicula):
     else:
         return False
 
-@app.route("/peliculas", methods=['POST'])
+@app.route("/peliculas/", methods=['POST'])
 def agregar_pelicula():
     nuevo_id = generar_nuevo_id_pelicula()
     datos_pelicula = request.get_json()
 
     if json_ok_pelicula(datos_pelicula):
-        peliculas.append({
-            "id": nuevo_id,
+        peliculas.insert(0,{
+            "id": str(nuevo_id),
             "titulo": datos_pelicula['titulo'],
             "genero": datos_pelicula['genero'],
             "director": datos_pelicula['director'],
@@ -180,24 +180,34 @@ def retornar_comentarios_de_pelicula(id):
     if pelicula :
         comentarios_de_pelicula = pelicula[0]['comentarios']
         lista_comentarios = list(filter(lambda x: x['id'] in comentarios_de_pelicula, comentarios))
-        print(lista_comentarios)
         return jsonify(lista_comentarios), HTTPStatus.OK
     else:
         return jsonify({"mensaje": "No se encontro la pelicula"}), HTTPStatus.NOT_FOUND
 
 
+def json_ok_comentario(datos_comentario):
+    #print(datos_comentario)
+    return ("comentario" and "idPelicula" and "idUsuario") in datos_comentario
 
-@app.route("/comentarios", methods=['POST'])
+
+@app.route("/comentarios/", methods=['POST'])
+@cross_origin(origin="*", headers=['Conent-Type','Autorization'])
 def agregar_comentario():
     nuevo_id = generar_nuevo_id_comentario()
     datos_comentario = request.get_json()
-
-    if json_ok_pelicula(datos_comentario) :
-        peliculas.append({
-            "id": nuevo_id,
+    if json_ok_comentario(datos_comentario) :
+        comentarios.insert(0,{
+            "id": str(nuevo_id),
             "comentario": datos_comentario['comentario'],
+            "idUsuario": datos_comentario['idUsuario']
         })
-        return jsonify({"mensaje": "El comentario ha sido agregado con exito"}), HTTPStatus.OK
+        pelicula_l = [x for x in peliculas if x['id']==datos_comentario['idPelicula']]
+        if pelicula_l:
+            pelicula = pelicula_l[0]
+            pelicula['comentarios'].insert(0,str(nuevo_id))
+        else:
+            return jsonify({"mensaje": "El id de la pelicula no se encuentra"}), HTTPStatus.NOT_FOUND
+        return jsonify({"mensaje": "El comentario ha sido agregado con exito","id":str(nuevo_id)}), HTTPStatus.OK
     else :
         return jsonify({"mensaje": "Uno o mas campos no coinciden con la estructura"}), HTTPStatus.BAD_REQUEST
 

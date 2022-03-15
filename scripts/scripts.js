@@ -1,6 +1,9 @@
 user = "";
+userId = "";
 peliculas = []
 comentarios = []
+texto_busqueda = ""
+filtro_busqueda = "Director"
 
 function imprimir_footer(){
 	footer_div = document.createElement("footer");
@@ -15,7 +18,7 @@ function imprimir_footer(){
 }
 
 function limpiar_encabezado(){
-	document.querySelector(".boton_login_logout").removeEventListener("click",clickEnIngresarSalir,false)
+	//document.querySelector(".boton_login_logout").removeEventListener("click",clickEnIngresarSalir,false)
 	remove_tag_id_childrens("encabezado")
 }
 
@@ -25,11 +28,16 @@ function clickEnIngresarSalir(){
 		//console.log("va a salir")
 		user = ""
 		limpiar_encabezado()
-		imprimir_encabezado()
+		imprimir_encabezado("")
 		imprimir_peliculas("ultimas 10")
 		remove_tag_class("barra_de_busqueda")
 		return 0
+	}else{
+		imprimir_peliculas("ultimas 10")
 	}
+	div_atras = document.getElementById("boton_atras_div")
+	div_atras!=null? div_atras.remove() : null
+
 	input_usuario_elem = document.getElementById("input_usuario")
 	usuario_input = input_usuario_elem.value;
 	input_contrasenia_elem = document.getElementById("input_contrasenia");
@@ -45,23 +53,23 @@ function clickEnIngresarSalir(){
 		.then( resp => {
 			//console.log(resp.status);
 			datos = resp.json();
-			if (resp.status==200) {
-				//login exitoso
-				user=usuario_input;																	
-			}else if (resp.status==404){
+			if (resp.status==404){
 				//no se pudo loguear, no se encuentra el usuario registrado.
 				imprimir_mensaje_de_login("El usuario o la contraseña no son correctos");						
 			}
 			return datos;
 		})
 		.then( resp => {
-			console.log(resp)
+			//console.log(resp)
 			if ("nombre" in resp) {
 				//console.log("login exitoso");
+				userId = resp['id']
+				user = resp['nombre']
 				limpiar_encabezado()
-				imprimir_encabezado(resp['nombre'])
+				imprimir_encabezado(user)
 				imprimir_barra_de_busqueda()
 				imprimir_peliculas("todas")
+				
 			}else{
 				
 			}
@@ -119,20 +127,53 @@ function imprimir_encabezado(nombre){
 	document.querySelector(".boton_login_logout").addEventListener("click", clickEnIngresarSalir, false);
 }
 
+function imprimir_boton_limpiar(){
+	input_busqueda = document.getElementById("input_busqueda")
+	combo_box_busqueda = document.getElementById("combo_box_busqueda")
+	boton_limpiar_busqueda = document.getElementById("boton_limpiar_busqueda")
+	//console.log(boton_limpiar_busqueda);
+	if (boton_limpiar_busqueda==null) {
+		boton_limpiar_busqueda = document.createElement("button")
+		boton_limpiar_busqueda.className = "boton_limpiar_busqueda"
+		boton_limpiar_busqueda.id = "boton_limpiar_busqueda"
+		img_limpiar_busqueda = document.createElement("img")
+		img_limpiar_busqueda.src = "images/clean_search.png"
+		img_limpiar_busqueda.alt = "images/clean_search.png"		
+		boton_limpiar_busqueda.appendChild(img_limpiar_busqueda)
+		mensaje_p = document.getElementById("mensaje_busqueda")
+		div_busqueda.insertBefore(boton_limpiar_busqueda,mensaje_p)
+		
+	}
+	boton_limpiar_busqueda.addEventListener("click",() => {
+		texto_busqueda = ""
+		input_busqueda.value = ""
+		combo_box_busqueda.value = "Director"
+		imprimir_peliculas("todas")
+		boton_limpiar_busqueda.remove()
+	})
+}
+
 function clickEnBuscar(){
-	nodo_nombre = document.getElementById("input_busqueda")
+	input_busqueda = document.getElementById("input_busqueda")
 	mensaje_p = document.getElementById("mensaje_busqueda")
-	if (nodo_nombre.value == "") {		
+	if (input_busqueda.value == "") {		
 		mensaje_p.textContent = "Ingrese un nombre por favor"		
 	}else{
-		mensaje_p.textContent = ""
-		console.log(peliculas);
-		combo_box = document.getElementById("combo_box_busqueda")
-		console.log(combo_box.value);
-		if (combo_box.value=="Director"){			
-			imprimir_peliculas("Director")
-		}else if (combo_box.value=="Titulo"){
+		texto_busqueda = input_busqueda.value
+		mensaje_p.textContent = ""		
+		combo_box_busqueda = document.getElementById("combo_box_busqueda")
+		
+		//console.log(texto_busqueda);
 
+		imprimir_boton_limpiar()
+		
+		//console.log(combo_box.value);
+		if (combo_box_busqueda.value=="Director"){	
+			filtro_busqueda = "Director"					
+			imprimir_peliculas("Director")
+		}else if (combo_box_busqueda.value=="Titulo"){
+			filtro_busqueda = "Titulo"
+			imprimir_peliculas("Titulo")	
 		}
 	}
 
@@ -148,6 +189,7 @@ function imprimir_barra_de_busqueda() {
 	input_busqueda.id = "input_busqueda"
 	input_busqueda.type="text"
 	input_busqueda.placeholder = "Nombre"
+
 	combo_box_busqueda = document.createElement("select")
 	combo_box_busqueda.className = "combo_box_busqueda"
 	combo_box_busqueda.id = "combo_box_busqueda"
@@ -173,6 +215,7 @@ function imprimir_barra_de_busqueda() {
 	contenedor_resultados = document.getElementById("contenedor_resultados")
 	principal.insertBefore(div_busqueda,contenedor_resultados)
 	div_busqueda.appendChild(input_busqueda)
+
 	combo_box_busqueda.appendChild(option_titulo)
 	combo_box_busqueda.appendChild(option_director)
 	div_busqueda.appendChild(combo_box_busqueda)
@@ -183,6 +226,14 @@ function imprimir_barra_de_busqueda() {
 	mensaje_p.id = "mensaje_busqueda"
 	barra_busqueda = document.getElementById("barra_de_busqueda")
 	barra_busqueda.appendChild(mensaje_p)
+	
+	input_busqueda.value = texto_busqueda
+	combo_box_busqueda.value = filtro_busqueda
+	if (texto_busqueda!=""){
+		imprimir_boton_limpiar()		
+	}else{
+		imprimir_peliculas("todas")
+	}
 	boton_buscar.addEventListener("click",clickEnBuscar,false)
 }
 
@@ -211,7 +262,7 @@ function imprimir_peliculas(filtro){
 			
 			titulo_div.appendChild(titulo_p);
 			miContenedor.appendChild(titulo_div);
-			
+			//console.log("entro con "+filtro);
 			if (filtro=="ultimas 10"){
 				peliculas.length<10? cant=peliculas.length : cant = 10;
 				peliculas_filtradas = peliculas.reverse()
@@ -221,9 +272,22 @@ function imprimir_peliculas(filtro){
 				titulo_div = document.getElementById("titulo_contenedor_resultados")	
 				titulo_div.textContent = "Todas las peliculas"	
 				peliculas_filtradas = peliculas.reverse()				
-			}else if (filtro=="Director"){
-				nodo_nombre = document.getElementById("input_busqueda")
-				peliculas_filtradas = peliculas.filter((pelicula) => pelicula['director']==nodo_nombre.value)
+			}else if (filtro=="Director"){				
+				input_busqueda = document.getElementById("input_busqueda")
+				peliculas_filtradas = peliculas.filter((pelicula) => pelicula['director']==input_busqueda.value)
+				if (peliculas_filtradas.length == 1 )
+					titulo_p.textContent = "Se encontro 1 pelicula";
+				else if (peliculas_filtradas.length != 0){
+					titulo_p.textContent = "Se encontraron "+peliculas_filtradas.length+" peliculas";
+				}
+				else {
+					titulo_p.textContent = "No se encontraron peliculas "
+				}
+				cant = peliculas_filtradas.length;
+			}else {
+				//filtro es titulo
+				input_busqueda = document.getElementById("input_busqueda")
+				peliculas_filtradas = peliculas.filter((pelicula) => pelicula['titulo']==input_busqueda.value)
 				if (peliculas_filtradas.length == 1 )
 					titulo_p.textContent = "Se encontro 1 pelicula";
 				else if (peliculas_filtradas.length != 0){
@@ -234,6 +298,7 @@ function imprimir_peliculas(filtro){
 				}
 				cant = peliculas_filtradas.length;
 			}
+
 			
 			for (i=0; i<cant; i++){
 				//console.log(i);
@@ -296,7 +361,7 @@ function imprimir_peliculas(filtro){
 				remove_tag_class("titular_de_contenedor");
 				remove_tag_id_childrens("contenedor_resultados");				
 				remove_tag_class("barra_de_busqueda")
-				cargarPeliculaYComentarios(id);
+				imprimirPeliculaYComentarios(id);
 				});
 			});
 		});
@@ -336,7 +401,7 @@ function imprimir_mensaje_de_login(texto){
 
   ///crear la pagina de comentarios de una pelicula seleccionada
 
-  function cargarPeliculaYComentarios(id){
+  function imprimirPeliculaYComentarios(id){
 
 	fetch("http://localhost:5000/peliculas/comentarios/"+id)
 		.then(
@@ -351,8 +416,8 @@ function imprimir_mensaje_de_login(texto){
 			  });			  
 			principal = document.getElementById("principal");
 			boton_atras_div = document.createElement("div");
-			boton_atras_div.className = "boton_atras";
-			boton_atras_div.id = "boton_atras";
+			boton_atras_div.className = "boton_atras_div";
+			boton_atras_div.id = "boton_atras_div";
 			boton_atras_img = document.createElement("img");
 			boton_atras_img.src = "images/atras.png";
 			boton_atras_img.alt="img atras";
@@ -366,15 +431,24 @@ function imprimir_mensaje_de_login(texto){
 		
 			boton_atras_div.onclick = function(){
 				//console.log("hixo click");
-				remove_tag_class("boton_atras");
-				imprimir_peliculas();
+				remove_tag_class("boton_atras_div");
+				if (user!="") {
+					imprimir_barra_de_busqueda();
+					if (texto_busqueda=="")
+						imprimir_peliculas("todas")				
+					else
+						imprimir_peliculas(filtro_busqueda)
+					}
+				else
+					imprimir_peliculas("ultimas 10")				
+				
 			}
 
 			pelicula_com = document.createElement("div");
 			pelicula_com.className = "pelicula_com";
 			imagen_com = document.createElement("img");
 			imagen_com.className = "imagen_pelicula_com";
-			imagen_com.src = pelicula_seleccionada.imagen;
+			pelicula_seleccionada.imagen==""? imagen_com.src = "images/no-image.jpg" : imagen_com.src = pelicula_seleccionada.imagen;			
 			imagen_com.alt = "imagen de la pelicula";
 			
 			peliculaDiv_com = document.createElement("div");
@@ -437,11 +511,96 @@ function imprimir_mensaje_de_login(texto){
 			// carga y muestra de los comentarios
 		
 			comentarios_contenedor = document.createElement("div");
-			comentarios_contenedor.className ="comentarios";
+			comentarios_contenedor.className ="comentarios_contenedor";
+
+			comentarios_cabecera = document.createElement("div")
+			comentarios_cabecera.className ="comentarios_cabecera";
+			comentarios_cabecera.appendChild(pelicula_comentarios_h3)
+
+			div_lista_de_comentarios = document.createElement("div")
+			div_lista_de_comentarios.className = "div_lista_de_comentarios"
+
 			miContenedor.appendChild(comentarios_contenedor);
-		
-			comentarios_contenedor.appendChild(pelicula_comentarios_h3);
-		
+			comentarios_contenedor.appendChild(comentarios_cabecera)
+			comentarios_contenedor.appendChild(div_lista_de_comentarios)
+
+			if (user!=""){
+				//console.log(user);
+				boton_agregar_comentario = document.createElement("button")
+				boton_agregar_comentario.className = "boton_agregar_comentario"
+				boton_agregar_comentario.id ="boton_agregar_comentario"				
+				boton_agregar_comentario.textContent = "+"
+				comentarios_cabecera.appendChild(boton_agregar_comentario)
+				boton_agregar_comentario.addEventListener("click", () => {
+					div_nuevo_comentario = document.createElement("div")
+					div_nuevo_comentario.className = "div_nuevo_comentario"
+					div_nuevo_comentario.id = "div_nuevo_comentario"
+					input_comentario = document.createElement("textarea")
+					input_comentario.className = "input_comentario"
+					input_comentario.id = "input_comentario"
+					input_comentario.type = "text"
+					input_comentario.rows = "5"					
+					div_botones_nuevo_comentario = document.createElement("div")
+					div_botones_nuevo_comentario.className = "div_botones_nuevo_comentario"
+					boton_cancelar = document.createElement("button")
+					boton_cancelar.textContent = "Cancelar"
+					boton_cancelar.className = "boton_cancelar"
+					boton_aceptar = document.createElement("button")
+					boton_aceptar.textContent = "Aceptar"
+					boton_aceptar.className = "boton_aceptar"
+					div_botones_nuevo_comentario.appendChild(boton_cancelar)
+					div_botones_nuevo_comentario.appendChild(boton_aceptar)
+					div_nuevo_comentario.appendChild(input_comentario)					
+					div_nuevo_comentario.appendChild(div_botones_nuevo_comentario)
+					div_lista_de_comentarios.insertAdjacentElement("afterbegin",div_nuevo_comentario)
+					input_comentario.focus()
+					boton_agregar_comentario.disabled = true
+					boton_cancelar.addEventListener("click", () => {
+						boton_agregar_comentario.disabled = false
+						div_nuevo_comentario.remove()
+					})
+
+					boton_aceptar.addEventListener("click", () => {
+						if (input_comentario.value!=""){
+							let requestOptions = {
+								method: 'POST',
+								headers:  { 'Content-Type': 'application/json' },
+								body: JSON.stringify({ comentario: input_comentario.value, idPelicula: id, idUsuario:userId })
+							};
+							fetch("http://localhost:5000/comentarios/",requestOptions)
+							.then(
+								resp => {
+									datos = resp.json()
+									return datos
+								})
+							.then( resp => {			
+								
+								idComentario = resp['id']				
+								//imprimirPeliculaYComentarios(id)
+								comentario_tag = document.createElement("article");
+								comentario_tag.className = "comentario";
+								comentario_tag.setAttribute("idComentario",idComentario);
+								comentario_p = document.createElement("p");
+								comentario_p.className = "texto_com";
+								comentario_p.textContent = input_comentario.value;
+								comentario_autor = document.createElement("h3");
+								comentario_autor.className = "autor_com";
+								comentario_autor.textContent = "Lo dijo @"+user
+								div_nuevo_comentario.remove()
+								div_lista_de_comentarios.insertAdjacentElement("afterbegin",comentario_tag);
+								comentario_tag.appendChild(comentario_p);
+								comentario_tag.appendChild(comentario_autor);
+								boton_agregar_comentario.disabled = false
+							})
+						}
+
+					})
+				})
+			}
+			
+				
+
+
 			//filtrar los comentarios:
 			
 			comentarios.forEach(element => {
@@ -453,6 +612,7 @@ function imprimir_mensaje_de_login(texto){
 				comentario_p.textContent = element.comentario;
 				comentario_autor = document.createElement("h3");
 				comentario_autor.className = "autor_com";
+				comentario_autor.id = element.id
 				//comentario_autor.textContent = "Lo dijo @"+autor_del_comentario(element['id']);
 				fetch("http://localhost:5000/comentarios/usuarios/"+element.id)
 				.then(
@@ -461,10 +621,11 @@ function imprimir_mensaje_de_login(texto){
 						return datos
 					})
 				.then( resp => {
+					comentario_autor = document.getElementById(element.id)
 					comentario_autor.textContent = "Lo dijo @"+resp['nombre']
 					})
 
-				comentarios_contenedor.appendChild(comentario_tag);
+				div_lista_de_comentarios.appendChild(comentario_tag);
 				comentario_tag.appendChild(comentario_p);
 				comentario_tag.appendChild(comentario_autor);
 			});
@@ -472,7 +633,7 @@ function imprimir_mensaje_de_login(texto){
 		});
     
 }
-imprimir_encabezado();
+imprimir_encabezado("");
 imprimir_peliculas("ultimas 10");
 imprimir_footer();
 
