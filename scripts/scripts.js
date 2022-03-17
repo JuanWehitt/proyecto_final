@@ -27,10 +27,11 @@ function clickEnIngresarSalir(){
 	if (user != "") {
 		//console.log("va a salir")
 		user = ""
+		userId = ""
 		limpiar_encabezado()
 		imprimir_encabezado("")
 		imprimir_peliculas("ultimas 10")
-		remove_tag_class("barra_de_busqueda")
+		remove_tag_class("div_barra_usuario")
 		return 0
 	}else{
 		imprimir_peliculas("ultimas 10")
@@ -67,7 +68,7 @@ function clickEnIngresarSalir(){
 				user = resp['nombre']
 				limpiar_encabezado()
 				imprimir_encabezado(user)
-				imprimir_barra_de_busqueda()
+				imprimir_barra_de_usuario()
 				imprimir_peliculas("todas")
 				
 			}else{
@@ -136,6 +137,7 @@ function imprimir_boton_limpiar(){
 		boton_limpiar_busqueda = document.createElement("button")
 		boton_limpiar_busqueda.className = "boton_limpiar_busqueda"
 		boton_limpiar_busqueda.id = "boton_limpiar_busqueda"
+		boton_limpiar_busqueda.title = "Borrar la busqueda"
 		img_limpiar_busqueda = document.createElement("img")
 		img_limpiar_busqueda.src = "images/clean_search.png"
 		img_limpiar_busqueda.alt = "images/clean_search.png"		
@@ -147,7 +149,9 @@ function imprimir_boton_limpiar(){
 	boton_limpiar_busqueda.addEventListener("click",() => {
 		texto_busqueda = ""
 		input_busqueda.value = ""
-		combo_box_busqueda.value = "Director"
+		filtro_busqueda = "Director"
+		combo_box_busqueda = document.getElementById("combo_box_busqueda")		
+		combo_box_busqueda.value = filtro_busqueda
 		imprimir_peliculas("todas")
 		boton_limpiar_busqueda.remove()
 	})
@@ -180,7 +184,11 @@ function clickEnBuscar(){
 }
 
 
-function imprimir_barra_de_busqueda() {
+function imprimir_barra_de_usuario() {
+	div_barra_usuario = document.createElement("div")
+	div_barra_usuario.className = "div_barra_usuario"
+	div_barra_usuario.id = "div_barra_usuario"
+
 	div_busqueda = document.createElement("div")
 	div_busqueda.className = "barra_de_busqueda"
 	div_busqueda.id = "barra_de_busqueda"
@@ -213,7 +221,7 @@ function imprimir_barra_de_busqueda() {
 	imagen_buscar.alt = "imagen del boton de busqueda"
 	principal = document.getElementById("principal")
 	contenedor_resultados = document.getElementById("contenedor_resultados")
-	principal.insertBefore(div_busqueda,contenedor_resultados)
+	principal.insertBefore(div_barra_usuario,contenedor_resultados)
 	div_busqueda.appendChild(input_busqueda)
 
 	combo_box_busqueda.appendChild(option_titulo)
@@ -224,17 +232,215 @@ function imprimir_barra_de_busqueda() {
 	mensaje_p = document.createElement("p")
 	mensaje_p.className = "mensaje_busqueda"
 	mensaje_p.id = "mensaje_busqueda"
-	barra_busqueda = document.getElementById("barra_de_busqueda")
-	barra_busqueda.appendChild(mensaje_p)
+	//barra_busqueda = document.getElementById("barra_de_busqueda")
+	div_busqueda.appendChild(mensaje_p)
 	
 	input_busqueda.value = texto_busqueda
+	
 	combo_box_busqueda.value = filtro_busqueda
 	if (texto_busqueda!=""){
 		imprimir_boton_limpiar()		
-	}else{
+	}/*else{
 		imprimir_peliculas("todas")
-	}
+	}*/
+	div_barra_usuario.appendChild(div_busqueda)
 	boton_buscar.addEventListener("click",clickEnBuscar,false)
+
+	boton_agregar_pelicula = document.createElement("button")
+	boton_agregar_pelicula.className = "boton_agregar_pelicula"
+	boton_agregar_pelicula.id = "boton_agregar_pelicula"
+	boton_agregar_pelicula.textContent = "+"
+	boton_agregar_pelicula.title = "Agregar película"
+	div_barra_usuario.appendChild(boton_agregar_pelicula)
+
+	boton_agregar_pelicula.addEventListener("click", () => {
+
+		div_barra_usuario.remove()
+		remove_tag_id_childrens("contenedor_resultados")	
+
+		div_nueva_pelicula = document.createElement("div")		
+		div_nueva_pelicula.className = "div_nueva_pelicula"
+		div_nueva_pelicula.id = "div_nueva_pelicula"
+		titular_nueva_pelicula = document.createElement("h3")
+		titular_nueva_pelicula.className = "titular_nueva_pelicula"
+		titular_nueva_pelicula.textContent = "Agregar una película"
+
+		div_formulario_nueva_pelicula = document.createElement("div")
+		div_formulario_nueva_pelicula.className = "div_formulario_nueva_pelicula"
+
+		label_titulo = document.createElement("label")
+		label_titulo.for = "input_titulo_nueva_pelicula"
+		label_titulo.textContent = "Título"
+		input_titulo_nueva_pelicula = document.createElement("input")
+		input_titulo_nueva_pelicula.className = "inputs_nueva_pelicula"
+		input_titulo_nueva_pelicula.name ="input_titulo_nueva_pelicula"
+		div_formulario_nueva_pelicula.appendChild(label_titulo)
+		div_formulario_nueva_pelicula.appendChild(input_titulo_nueva_pelicula)
+
+		label_director = document.createElement("label")
+		label_director.for = "select_director_nueva_pelicula"
+		label_director.textContent = "Director"
+		select_director_nueva_pelicula = document.createElement("select")
+		select_director_nueva_pelicula.className = "inputs_nueva_pelicula"
+		select_director_nueva_pelicula.name ="select_director_nueva_pelicula"
+		div_formulario_nueva_pelicula.appendChild(label_director)
+		div_formulario_nueva_pelicula.appendChild(select_director_nueva_pelicula)
+
+		label_genero = document.createElement("label")
+		label_genero.for = "select_genero_nueva_pelicula"
+		label_genero.textContent = "Género (seleccione varios con Ctrl)"
+		select_genero_nueva_pelicula = document.createElement("select")
+		select_genero_nueva_pelicula.className = "inputs_nueva_pelicula"
+		select_genero_nueva_pelicula.name ="select_genero_nueva_pelicula"
+		select_genero_nueva_pelicula.id ="select_genero_nueva_pelicula"
+		div_formulario_nueva_pelicula.appendChild(label_genero)
+		div_formulario_nueva_pelicula.appendChild(select_genero_nueva_pelicula)		
+		fetch('http://localhost:5000/generos')
+		.then( resp => {
+			//console.log(resp.status);
+			datos = resp.json();
+			return datos;
+		})
+		.then( resp => {
+			//console.log(resp.length);
+			resp.forEach(element => {
+				//console.log(element);
+				option_genero = document.createElement("option")
+				//option_genero.id = element.nombre
+				//option_director = document.createElement("option")
+				//option_genero.placeholder = "Seleccione"
+				option_genero.value = element.nombre
+				option_genero.textContent = element.nombre
+				select_genero_nueva_pelicula.multiple = "multiple"
+				select_genero_nueva_pelicula.name = "select_genero_nueva_pelicula[]"
+				select_genero_nueva_pelicula.appendChild(option_genero)
+			});
+			
+			//select_genero_nueva_pelicula.
+		})
+		fetch('http://localhost:5000/directores')
+		.then( resp => {
+			//console.log(resp.status);
+			datos = resp.json();
+			return datos;
+		})
+		.then( resp => {
+			//console.log(resp.length);
+			resp.forEach(element => {
+				//console.log(element);
+				option_director = document.createElement("option")
+				//option_genero.id = element.nombre
+				//option_director = document.createElement("option")
+				//option_director.placeholder = "Seleccione"
+				option_director.value = element.nombre
+				option_director.textContent = element.nombre
+				select_director_nueva_pelicula.appendChild(option_director)
+			});
+			
+			//select_genero_nueva_pelicula.
+		})
+
+		label_anio = document.createElement("label")
+		label_anio.for = "input_anio_nueva_pelicula"
+		label_anio.textContent = "Año"
+		input_anio_nueva_pelicula = document.createElement("input")
+		input_anio_nueva_pelicula.className = "inputs_nueva_pelicula"
+		input_anio_nueva_pelicula.name ="input_anio_nueva_pelicula"
+		div_formulario_nueva_pelicula.appendChild(label_anio)
+		div_formulario_nueva_pelicula.appendChild(input_anio_nueva_pelicula)
+
+		label_imagen = document.createElement("label")
+		label_imagen.for = "input_anio_nueva_pelicula"
+		label_imagen.textContent = "Imagen"
+		input_imagen_nueva_pelicula = document.createElement("input")
+		input_imagen_nueva_pelicula.className = "inputs_nueva_pelicula"
+		input_imagen_nueva_pelicula.name ="input_anio_nueva_pelicula"
+		input_imagen_nueva_pelicula.placeholder = "link de la imagen"
+		div_formulario_nueva_pelicula.appendChild(label_imagen)
+		div_formulario_nueva_pelicula.appendChild(input_imagen_nueva_pelicula)
+
+		label_sinopsis = document.createElement("label")
+		label_sinopsis.for = "input_anio_nueva_pelicula"
+		label_sinopsis.textContent = "Sinopsis"
+		input_sinopsis_nueva_pelicula = document.createElement("textarea")
+		input_sinopsis_nueva_pelicula.rows = "5"
+		input_sinopsis_nueva_pelicula.className = "inputs_nueva_pelicula"
+		input_sinopsis_nueva_pelicula.name ="input_anio_nueva_pelicula"
+		div_formulario_nueva_pelicula.appendChild(label_sinopsis)
+		div_formulario_nueva_pelicula.appendChild(input_sinopsis_nueva_pelicula)
+
+		div_botones_aceptar_cancelar = document.createElement("div")
+		div_botones_aceptar_cancelar.className = "div_botones_aceptar_cancelar"
+		boton_cancelar_nueva_pelicula = document.createElement("button")
+		boton_cancelar_nueva_pelicula.textContent = "Cancelar"
+		boton_aceptar_nueva_pelicula = document.createElement("button")
+		boton_aceptar_nueva_pelicula.textContent = "Aceptar"
+		div_botones_aceptar_cancelar.appendChild(boton_cancelar_nueva_pelicula)
+		div_botones_aceptar_cancelar.appendChild(boton_aceptar_nueva_pelicula)
+		div_formulario_nueva_pelicula.appendChild(div_botones_aceptar_cancelar)
+
+		principal = document.getElementById("principal")
+		footer_div = document.getElementById("footer_div")
+		principal.insertBefore(div_nueva_pelicula, footer_div)
+		div_nueva_pelicula.appendChild(titular_nueva_pelicula)
+		div_nueva_pelicula.appendChild(div_formulario_nueva_pelicula)
+
+		boton_cancelar_nueva_pelicula.addEventListener("click", () => {
+			div_nueva_pelicula.remove()
+			imprimir_barra_de_usuario()
+			//console.log(filtro_busqueda);
+			imprimir_peliculas("todas")
+		})
+		boton_aceptar_nueva_pelicula.addEventListener("click", () => {
+			lista3 = []
+			a = Array.from(select_genero_nueva_pelicula.options)
+			lista2 = a.filter(function(element){ return element.selected})
+			lista3 = lista2.map(function(element){ return element.value})
+			faltan_datos = false			
+			if (input_titulo_nueva_pelicula.value=="" || lista3.length==0 || input_anio_nueva_pelicula.value=="" ){
+				faltan_datos = true
+			}
+			let requestOptions = {
+				method: 'POST',
+				headers:  { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					titulo: input_titulo_nueva_pelicula.value,
+					genero: lista3,
+					director: select_director_nueva_pelicula.value,
+					anio: input_anio_nueva_pelicula.value,
+					imagen: input_imagen_nueva_pelicula.value,
+					sinopsis: input_sinopsis_nueva_pelicula.value,
+					idUsuario: userId,					
+				 })
+			}
+			if (!faltan_datos) {
+				fetch("http://localhost:5000/peliculas/",requestOptions)
+					.then(
+						resp => {
+							datos = resp.json()
+							return datos
+						})
+					.then( resp => {
+						//console.log(resp);
+						div_nueva_pelicula.remove()
+						imprimir_barra_de_usuario()
+						//console.log(filtro_busqueda);
+						imprimir_peliculas("todas")
+					})
+			}else{
+				mensaje_p = document.getElementById("mensaje_p")
+				if (mensaje_p==null) {
+					mensaje_p = document.createElement("p")
+					mensaje_p.id = "mensaje_p"
+				}
+				mensaje_p.textContent = " Faltan completar datos"
+				div_formulario_nueva_pelicula.insertBefore(mensaje_p,div_botones_aceptar_cancelar)
+
+			}	
+		})
+
+	})
+	//...........
 }
 
 function imprimir_peliculas(filtro){
@@ -251,27 +457,26 @@ function imprimir_peliculas(filtro){
 			return datos;
 		})
 		.then( resp => {
-			peliculas = resp				
-			miContenedor = document.getElementById("contenedor_resultados");
+			peliculas = resp					
 			remove_tag_id_childrens("contenedor_resultados")			
-
+			miContenedor = document.getElementById("contenedor_resultados")
 			titulo_div = document.createElement("div");
 			titulo_div.id = "titulo_contenedor_resultados"
 			titulo_p = document.createElement("p");
 			titulo_div.className ="titular_de_contenedor";
 			
 			titulo_div.appendChild(titulo_p);
-			miContenedor.appendChild(titulo_div);
-			//console.log("entro con "+filtro);
+			miContenedor.appendChild(titulo_div);			
+			
 			if (filtro=="ultimas 10"){
 				peliculas.length<10? cant=peliculas.length : cant = 10;
-				peliculas_filtradas = peliculas.reverse()
+				peliculas_filtradas = peliculas				
 				titulo_p.textContent = "Últimas 10 películas";
 			}else if (filtro=="todas"){
 				cant = peliculas.length;
 				titulo_div = document.getElementById("titulo_contenedor_resultados")	
 				titulo_div.textContent = "Todas las peliculas"	
-				peliculas_filtradas = peliculas.reverse()				
+				peliculas_filtradas = peliculas				
 			}else if (filtro=="Director"){				
 				input_busqueda = document.getElementById("input_busqueda")
 				peliculas_filtradas = peliculas.filter((pelicula) => pelicula['director']==input_busqueda.value)
@@ -360,7 +565,7 @@ function imprimir_peliculas(filtro){
 				//console.log("Se ha clickeado el id "+id);
 				remove_tag_class("titular_de_contenedor");
 				remove_tag_id_childrens("contenedor_resultados");				
-				remove_tag_class("barra_de_busqueda")
+				remove_tag_class("div_barra_usuario")
 				imprimirPeliculaYComentarios(id);
 				});
 			});
@@ -433,7 +638,7 @@ function imprimir_mensaje_de_login(texto){
 				//console.log("hixo click");
 				remove_tag_class("boton_atras_div");
 				if (user!="") {
-					imprimir_barra_de_busqueda();
+					imprimir_barra_de_usuario();
 					if (texto_busqueda=="")
 						imprimir_peliculas("todas")				
 					else

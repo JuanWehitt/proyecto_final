@@ -88,7 +88,7 @@ def generar_nuevo_id_comentario():
 
 
 def json_ok_pelicula(datos_pelicula):
-    if 'titulo' and 'genero' and 'director' and 'anio' and 'imagen' and 'sinopsis' and 'idUsuario' and 'comentarios' in datos_pelicula:
+    if 'titulo' and 'genero' and 'director' and 'anio' and 'imagen' and 'sinopsis' and 'idUsuario' in datos_pelicula:
         return True
     else:
         return False
@@ -97,7 +97,7 @@ def json_ok_pelicula(datos_pelicula):
 def agregar_pelicula():
     nuevo_id = generar_nuevo_id_pelicula()
     datos_pelicula = request.get_json()
-
+    # print(datos_pelicula)
     if json_ok_pelicula(datos_pelicula):
         peliculas.insert(0,{
             "id": str(nuevo_id),
@@ -108,7 +108,7 @@ def agregar_pelicula():
             "imagen": datos_pelicula['imagen'],
             "sinopsis": datos_pelicula['sinopsis'],
             "idUsuario": datos_pelicula['idUsuario'],
-            "comentarios": datos_pelicula['comentarios']
+            "comentarios": []
         })
         return jsonify({"mensaje":"La pelicula ha sido agregada con exito"}), HTTPStatus.OK
     else:

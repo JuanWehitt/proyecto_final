@@ -70,6 +70,7 @@
         align-content: center;
         justify-content: space-around;
         align-items: center;
+        margin-right: 5px;
 
         width: 11%;
         height: 38px;
@@ -83,6 +84,7 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: bold;
         font-size: 4.3vw;
+        transition-duration: 0.4s;
     }
     .bienvenida_usuario {
         width: 100%;
@@ -96,13 +98,22 @@
         border:10px;
         color: #5543ff
     }
-
-    .barra_de_busqueda{
+    .div_barra_usuario{
         display: flex;
         width: 100%;
         max-width: 1040px;
         background: linear-gradient(0turn,#00000000, #2e2e2e, #1d1d1f);
         padding: 5px;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .barra_de_busqueda{
+        display: flex;        
+        background: linear-gradient(0turn,#00000000, #2e2e2e, #1d1d1f);
+        padding: 5px;
+        flex-wrap: wrap;
     }
     .input_busqueda{
         min-width: 160px;
@@ -117,11 +128,12 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 18px;        
         margin-right: 10px;
-        
+        width: 17%;
     }
 
     .combo_box_busqueda {
-        width: 24%;
+        width: 42%;
+        min-width: 170px;
         background-color: rgb(46, 46, 46);
         outline: none;
         border-radius: 5px;
@@ -165,11 +177,20 @@
         align-self: center;
         color: white;
     }
+    .boton_agregar_pelicula {
+        align-self: flex-start;
+        font-size: 25px;
+        width: 40px;
+        margin: 5px;
+        transition-duration: 0.4s;
+    }
+    
 
     .titular_de_contenedor{
         color: white;
         width: 100%;
         max-width: 1040px;
+        margin-left: 5px;
     }
     .titular_de_contenedor > p {
         padding: 5px;
