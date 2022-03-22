@@ -14,9 +14,9 @@ data_generos = open("generos.json")
 data_comentarios = open("comentarios.json")
 data_usuarios = open("usuarios.json")
 
+peliculas = json.load(data_peliculas)
 directores =json.load(data_directores)
 generos = json.load(data_generos)
-peliculas = json.load(data_peliculas)
 comentarios = json.load(data_comentarios)
 usuarios = json.load(data_usuarios)
 
