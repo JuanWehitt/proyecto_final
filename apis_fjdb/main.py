@@ -8,17 +8,13 @@ app = Flask(__name__)
 cors = CORS(app, resources={r"/*/*/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-data_peliculas = open("peliculas.json")
-data_directores = open("directores.json")
-data_generos = open("generos.json")
-data_comentarios = open("comentarios.json")
-data_usuarios = open("usuarios.json")
-
-peliculas = json.load(data_peliculas)
-directores =json.load(data_directores)
-generos = json.load(data_generos)
-comentarios = json.load(data_comentarios)
-usuarios = json.load(data_usuarios)
+data_collections = open("collections.json")
+lista_collections = json.load(data_collections)
+directores = lista_collections['directores']
+generos = lista_collections['generos']
+comentarios = lista_collections['comentarios']
+peliculas = lista_collections['peliculas']
+usuarios = lista_collections['usuarios']
 
 @app.route("/directores/",methods=['GET'])
 def retornar_directores():

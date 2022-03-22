@@ -5,7 +5,7 @@
           "id":"59034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Piratas del caribe",
           "genero": ["Accion","Aventuras"],
-          "director": "Joachim Rønning",
+          "director": "Joachim Ronning",
           "anio": 2001,
           "imagen": "https://m.media-amazon.com/images/I/91fPdJwTMBL._SL1500_.jpg",
           "sinopsis": "El capitán Barbossa le roba el barco al pirata Jack Sparrow y secuestra a Elizabeth, amiga de Will Turner. Barbossa y su tripulación son víctimas de un conjuro que los condena a vivir eternamente y a transformarse cada noche en esqueletos vivientes.",
@@ -70,7 +70,7 @@
       {
           "id":"24034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Volver al Futuro",
-          "genero": ["Ciencia Ficción","Aventuras","Comedia"],
+          "genero": ["Ciencia Ficcion","Aventuras","Comedia"],
           "director": "Robert Zemeckis",
           "anio": 1985,
           "imagen": "https://m.media-amazon.com/images/I/71BPuv+iRbL._AC_SL1000_.jpg",
@@ -81,7 +81,7 @@
       {
           "id":"36034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Justice League",
-          "genero": ["Ciencia Ficción","Aventuras","Acción", "Super Heroes"],
+          "genero": ["Ciencia Ficcion","Aventuras","Accion", "Super Heroes"],
           "director": "Joss Whedon",
           "anio": 2017,
           "imagen": "https://m.media-amazon.com/images/I/61Q3docjd9L._AC_SL1500_.jpg",
@@ -92,7 +92,7 @@
       {
           "id":"48034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Avenger: Endgame",
-          "genero": ["Ciencia Ficción","Aventuras","Acción", "Super Heroes"],
+          "genero": ["Ciencia Ficcion","Aventuras","Accion", "Super Heroes"],
           "director": "Anthony Russo",
           "anio": 2019,
           "imagen": "https://m.media-amazon.com/images/I/91xCWjZ2IIL._AC_SL1500_.jpg",
@@ -118,7 +118,7 @@
           "director": "John McTiernan",
           "anio": 1988,
           "imagen": "https://img.betaseries.com/3TqLtQ3xp8g6LZNXY-shnhm0JzU=/400x600/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F281.jpg",
-          "sinopsis": "Un grupo terrorista se apodera de un edificio de Los Ángeles y toma a un grupo de personas como rehenes. El policía de Nueva York John McClane consigue escapar del acoso terrorista.",
+          "sinopsis": "Un grupo terrorista se apodera de un edificio de Los Angeles y toma a un grupo de personas como rehenes. El policía de Nueva York John McClane consigue escapar del acoso terrorista.",
           "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
           "comentarios": []
       },
@@ -135,8 +135,8 @@
       },
       {
           "id":"aa034fc3-ea8e-4aab-9d3d-b117ca78c442",
-          "titulo": "Batman: El caballero de la noche",
-          "genero": ["Crimen","Aventuras","Aventura","Acción", "Super Heroes","Suspenso"],
+          "titulo": "Batman: Dark Night",
+          "genero": ["Aventuras","Aventura","Accion", "Super Heroes","Suspenso"],
           "director": "Christopher Nolan",
           "anio": 2008,
           "imagen": "https://static.wikia.nocookie.net/doblaje/images/9/9c/Batman_el_Caballero_de_la_Noche.png/revision/latest?cb=20110602012240&path-prefix=es",
@@ -158,7 +158,7 @@
       {
           "id":"zz034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Star Wars: Una Nueva Esperanza",
-          "genero": ["Ciencia Ficción","Aventuras","Acción","Fantasía"],
+          "genero": ["Ciencia Ficcion","Aventuras","Acción","Fantasia"],
           "director": "George Lucas",
           "anio": 1977,
           "imagen": "https://www.tebeosfera.com/T3content/img/T3_numeros/0/1/num1_BbXC-001.jpg",
@@ -167,7 +167,7 @@
           "comentarios": []
       },
       {
-          "id":"XX034fc3-ea8e-4aab-9d3d-b117ca78c442",
+          "id":"ii034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "The Joker",
           "genero": ["Drama","Suspenso","Crimen","Thriller"],
           "director": "Todd Phillips",
@@ -178,9 +178,9 @@
           "comentarios": []
       },
       {
-          "id":"XX034fc3-ea8e-4aab-9d3d-b117ca78c442",
+          "id":"aa034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Kill Bill: Volumen 1",
-          "genero": ["Artes Marciales","Aventuras","Acción","Thriller"],
+          "genero": ["Artes Marciales","Aventuras","Accion","Thriller"],
           "director": "Quentin Tarantino",
           "anio": 2003,
           "imagen": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTDc9igRLxfn74ZHfMG61N5DEt4VA-gyfbtt4ysS4H5W1g_9LRb",
@@ -189,9 +189,9 @@
           "comentarios": []
       },
       {
-          "id":"XX034fc3-ea8e-4aab-9d3d-b117ca78c442",
-          "titulo": "El Señor de los Anillos: La Comunidad del Anillo",
-          "genero": ["Ciencia Ficción","Aventuras","Acción","Fantasía"],
+          "id":"ff034fc3-ea8e-4aab-9d3d-b117ca78c442",
+          "titulo": "El Senor de los Anillos",
+          "genero": ["Ciencia Ficcion","Aventuras","Accion","Fantasia"],
           "director": "Peter Jackson",
           "anio": 2002,
           "imagen": "https://m.media-amazon.com/images/I/71GALO65MqL._SL1448_.jpg",
@@ -200,7 +200,7 @@
           "comentarios": []
       },
       {
-          "id":"XX034fc3-ea8e-4aab-9d3d-b117ca78c442",
+          "id":"qq034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Titanic",
           "genero": ["Drama","Romance","Tragedia"],
           "director": "James Cameron",
@@ -211,9 +211,9 @@
           "comentarios": []
       },
       {
-          "id":"XX034fc3-ea8e-4aab-9d3d-b117ca78c442",
+          "id":"ff034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Lista de Schindler",
-          "genero": ["Drama","Bélicas","Históricas","Fantasía"],
+          "genero": ["Drama","Belicas","Historicas","Fantasia"],
           "director": "Steven Spielberg",
           "anio": 1994,
           "imagen": "https://m.media-amazon.com/images/I/81j3R2pbfcL._SL1017_.jpg",
@@ -349,19 +349,19 @@
               ],
   "generos":
          [
-            {"nombre":"Acción"},
+            {"nombre":"Accion"},
             {"nombre":"Aventuras"},
             {"nombre":"Ciencia Ficción"},
             {"nombre":"Comedia"},
             {"nombre":"Documental"},
             {"nombre":"Drama"},
-            {"nombre":"Fantasía"},
+            {"nombre":"Fantasia"},
             {"nombre":"Musical"},
             {"nombre":"Suspenso"},
             {"nombre":"Terror"},
             {"nombre":"Religiosas"},
             {"nombre":"Futuristas"},
-            {"nombre":"Policíacas"},
+            {"nombre":"Policiacas"},
             {"nombre":"Crimen"},
             {"nombre":"Bélicas"},
             {"nombre":"Históricas"},
