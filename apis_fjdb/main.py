@@ -43,7 +43,7 @@ def retornar_peliculas_con_portada():
     return jsonify(lista_filtrada), HTTPStatus.OK
 
 @app.route("/peliculas/", methods=['GET'])
-@cross_origin(origin="*", headers=['Conent-Type','Autorization'])
+# @cross_origin(origin="*", headers=['Conent-Type','Autorization'])
 def retornar_peliculas():
     return jsonify(peliculas), HTTPStatus.OK
 
@@ -257,4 +257,4 @@ def retornar_usuario():
         return jsonify({"mensaje": "Uno o mas campos no coinciden con la estructura, consulte la documentacion"}), HTTPStatus.BAD_REQUEST
 
 #print(generar_nuevo_id_pelicula())
-app.run()
+app.run(debug=True)

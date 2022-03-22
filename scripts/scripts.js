@@ -5,6 +5,25 @@ comentarios = []
 texto_busqueda = ""
 filtro_busqueda = "Director"
 
+let pagina = 1;
+const btnAnterior = document.getElementById('btnAnterior');
+const btnSiguiente = document.getElementById('btnSiguiente');
+
+btnSiguiente.addEventListener('click', () => {
+	if(pagina < 1000){
+		pagina += 1;
+		imprimir_peliculas();
+	}
+});
+
+btnAnterior.addEventListener('click', () => {
+	if(pagina > 1){
+		pagina -= 1;
+		imprimir_peliculas();
+	}
+});
+
+
 function imprimir_footer(){
 	footer_div = document.createElement("footer");
 	footer_div.className = "footer_div";
