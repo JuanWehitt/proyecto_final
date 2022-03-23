@@ -5,24 +5,7 @@ comentarios = []
 texto_busqueda = ""
 filtro_busqueda = "Director"
 
-let pagina = 1;
-const btnAnterior = document.getElementById('btnAnterior');
-const btnSiguiente = document.getElementById('btnSiguiente');
-
-btnSiguiente.addEventListener('click', () => {
-	if(pagina < 1000){
-		pagina += 1;
-		imprimir_peliculas();
-	}
-});
-
-btnAnterior.addEventListener('click', () => {
-	if(pagina > 1){
-		pagina -= 1;
-		imprimir_peliculas();
-	}
-});
-
+pagina = 1;
 
 function imprimir_footer(){
 	footer_div = document.createElement("footer");
@@ -525,57 +508,80 @@ function imprimir_peliculas(filtro){
 
 			
 			for (i=0; i<cant; i++){
-				//console.log(i);
-				peliculaElement = document.createElement("article");
-				peliculaElement.className ="pelicula";
-				peliculaElement.setAttribute("idPelicula",peliculas_filtradas[i].id);
-				peliculaImg = document.createElement("img");
-				peliculas_filtradas[i].imagen==""? peliculaImg.src="images/no-image.jpg" : peliculaImg.src = peliculas_filtradas[i].imagen		
-				peliculaImg.className = "imagen_pelicula";
-				peliculaImg.setAttribute("idPelicula",peliculas_filtradas[i].id);
-				peliculaDiv = document.createElement("div");
-				peliculaDiv.className = "info_pelicula";  
-				peliculaDiv.setAttribute("idPelicula",peliculas_filtradas[i].id);
-				peliculaH3_titulo = document.createElement("h3");
-				peliculaH3_titulo.className="labels_pelicula";
-				peliculaH3_titulo.textContent = "Título";
-				peliculaH3_titulo.setAttribute("idPelicula",peliculas_filtradas[i].id);
-				peliculaH2_titulo = document.createElement("h2");
-				peliculaH2_titulo.className="nombre_pelicula";
-				peliculaH2_titulo.textContent = peliculas_filtradas[i].titulo;
-				peliculaH2_titulo.setAttribute("idPelicula",peliculas_filtradas[i].id);
-				peliculaH3_director = document.createElement("h3");
-				peliculaH3_director.className="labels_pelicula";
-				peliculaH3_director.textContent = "Director";
-				peliculaH3_director.setAttribute("idPelicula",peliculas_filtradas[i].id);
-				peliculaH2_director = document.createElement("h2");
-				peliculaH2_director.className="nombre_director";
-				peliculaH2_director.textContent = peliculas_filtradas[i].director;
-				peliculaH2_director.setAttribute("idPelicula",peliculas_filtradas[i].id);
-				peliculaH3_genero = document.createElement("h3");
-				peliculaH3_genero.className="labels_pelicula";
-				peliculaH3_genero.textContent = "Genero";
-				peliculaH3_genero.setAttribute("idPelicula",peliculas_filtradas[i].id);
-				peliculaH2_genero = document.createElement("h2");
-				peliculaH2_genero.className="nombre_genero"; 
-				peliculaH2_genero.setAttribute("idPelicula",peliculas_filtradas[i].id);
+				//idea
+				//segun la variable global pagina, imprimir de a cuatro.
+				//la pelicula 1(0) es de la pagina 1 porque esta entre 0 y 4
+				//la pelicula 5(4) es de la pagina 2 porque esta entre 4 y 8
+				//
+				/*
+					ejemplo estoy en pagina=1, llamo a imprimirPeliculas(todas)
+					0 < 1 <= 4 (verdadero)
+					0 < 2 <= 4 (verdadero)
+					0 < 3 <= 4 (verdadero)
+					0 < 4 <= 4 (verdadero)
+					0 < 5 <= 4 (falso)
+					0 < 6 <= 4 (falso)
+				*/
+				//pagina = 3
+				//i = 9
+				if ((pagina-1)*4 < i+1 && i+1 <= pagina*4){
+					//imprime la pelicula
+					
+					//console.log(i);
+					peliculaElement = document.createElement("article");
+					peliculaElement.className ="pelicula";
+					peliculaElement.setAttribute("idPelicula",peliculas_filtradas[i].id);
+					peliculaImg = document.createElement("img");
+					peliculas_filtradas[i].imagen==""? peliculaImg.src="images/no-image.jpg" : peliculaImg.src = peliculas_filtradas[i].imagen		
+					peliculaImg.className = "imagen_pelicula";
+					peliculaImg.setAttribute("idPelicula",peliculas_filtradas[i].id);
+					peliculaDiv = document.createElement("div");
+					peliculaDiv.className = "info_pelicula";  
+					peliculaDiv.setAttribute("idPelicula",peliculas_filtradas[i].id);
+					peliculaH3_titulo = document.createElement("h3");
+					peliculaH3_titulo.className="labels_pelicula";
+					peliculaH3_titulo.textContent = "Título";
+					peliculaH3_titulo.setAttribute("idPelicula",peliculas_filtradas[i].id);
+					peliculaH2_titulo = document.createElement("h2");
+					peliculaH2_titulo.className="nombre_pelicula";
+					peliculaH2_titulo.textContent = peliculas_filtradas[i].titulo;
+					peliculaH2_titulo.setAttribute("idPelicula",peliculas_filtradas[i].id);
+					peliculaH3_director = document.createElement("h3");
+					peliculaH3_director.className="labels_pelicula";
+					peliculaH3_director.textContent = "Director";
+					peliculaH3_director.setAttribute("idPelicula",peliculas_filtradas[i].id);
+					peliculaH2_director = document.createElement("h2");
+					peliculaH2_director.className="nombre_director";
+					peliculaH2_director.textContent = peliculas_filtradas[i].director;
+					peliculaH2_director.setAttribute("idPelicula",peliculas_filtradas[i].id);
+					peliculaH3_genero = document.createElement("h3");
+					peliculaH3_genero.className="labels_pelicula";
+					peliculaH3_genero.textContent = "Genero";
+					peliculaH3_genero.setAttribute("idPelicula",peliculas_filtradas[i].id);
+					peliculaH2_genero = document.createElement("h2");
+					peliculaH2_genero.className="nombre_genero"; 
+					peliculaH2_genero.setAttribute("idPelicula",peliculas_filtradas[i].id);
 
-				for(e=0; e<peliculas_filtradas[i].genero.length; e++){ peliculaH2_genero.textContent += " "+peliculas_filtradas[i].genero[e]}
-				peliculaSpan = document.createElement("span");
-				peliculaSpan.className = "anio_pelicula";
-				peliculaSpan.textContent = peliculas_filtradas[i].anio; 
-				peliculaSpan.setAttribute("idPelicula",peliculas_filtradas[i].id);
+					for(e=0; e<peliculas_filtradas[i].genero.length; e++){
+						 peliculaH2_genero.textContent += " "+peliculas_filtradas[i].genero[e]
+						}
+					
+					peliculaSpan = document.createElement("span");
+					peliculaSpan.className = "anio_pelicula";
+					peliculaSpan.textContent = peliculas_filtradas[i].anio; 
+					peliculaSpan.setAttribute("idPelicula",peliculas_filtradas[i].id);
 
-				miContenedor.appendChild(peliculaElement);
-				peliculaElement.appendChild(peliculaImg);
-				peliculaElement.appendChild(peliculaDiv);
-				peliculaDiv.appendChild(peliculaH3_titulo);
-				peliculaDiv.appendChild(peliculaH2_titulo);
-				peliculaDiv.appendChild(peliculaH3_director);
-				peliculaDiv.appendChild(peliculaH2_director);
-				peliculaDiv.appendChild(peliculaH3_genero);
-				peliculaDiv.appendChild(peliculaH2_genero);
-				peliculaElement.appendChild(peliculaSpan);
+					miContenedor.appendChild(peliculaElement);
+					peliculaElement.appendChild(peliculaImg);
+					peliculaElement.appendChild(peliculaDiv);
+					peliculaDiv.appendChild(peliculaH3_titulo);
+					peliculaDiv.appendChild(peliculaH2_titulo);
+					peliculaDiv.appendChild(peliculaH3_director);
+					peliculaDiv.appendChild(peliculaH2_director);
+					peliculaDiv.appendChild(peliculaH3_genero);
+					peliculaDiv.appendChild(peliculaH2_genero);
+					peliculaElement.appendChild(peliculaSpan);
+				}
 			}			
 
 			document.querySelectorAll(".pelicula").forEach(el => {
@@ -588,6 +594,68 @@ function imprimir_peliculas(filtro){
 				imprimirPeliculaYComentarios(id);
 				});
 			});
+
+			if (cant>4){
+			
+				//si la cantidad de peliculas filtradas para imprimir son mayor a 4 imprimo los botones siguiente
+
+				btnAnterior = document.createElement("button")
+				btnSiguiente = document.createElement("button")
+				btnSiguiente.id = "btnSiguiente"
+				btnAnterior.id = "btnAnterior"
+				btnSiguiente.textContent = "Siguiente"
+				btnAnterior.textContent = "Anterior"
+
+				div_botones_sig_ant = document.createElement("div")
+
+				p_pagina = document.createElement("p")
+				p_pagina.id = "p_pagina"
+				cant_paginas = Math.floor(cant/4) + 1
+				p_pagina.textContent = pagina+"/"+cant_paginas
+
+				div_paginacion = document.createElement("div")
+				div_paginacion.className = "paginacion"
+
+				div_paginacion.appendChild(p_pagina)
+				div_botones_sig_ant.appendChild(btnAnterior)
+				div_botones_sig_ant.appendChild(btnSiguiente)
+				div_paginacion.appendChild(div_botones_sig_ant)
+				miContenedor.appendChild(div_paginacion)
+
+				btnSiguiente.addEventListener('click', () => {
+					if(pagina < cant_paginas){
+						pagina += 1;
+						p_pagina.textContent = pagina+"/"+cant_paginas
+						if (user!="") {
+							//imprimir_barra_de_usuario();
+							if (texto_busqueda=="")
+								imprimir_peliculas("todas")				
+							else
+								imprimir_peliculas(filtro_busqueda)
+							}
+						else
+							imprimir_peliculas("ultimas 10")
+						
+					}
+				});
+				
+				btnAnterior.addEventListener('click', () => {
+					if(pagina > 1){
+						pagina -= 1;
+						p_pagina.textContent = pagina+"/"+cant_paginas
+						if (user!="") {
+							//imprimir_barra_de_usuario();
+							if (texto_busqueda=="")
+								imprimir_peliculas("todas")				
+							else
+								imprimir_peliculas(filtro_busqueda)
+							}
+						else
+							imprimir_peliculas("ultimas 10")
+					}
+				});
+			}
+
 		});
 }
 
