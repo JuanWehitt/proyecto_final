@@ -4,7 +4,7 @@
       {
           "id":"59034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Piratas del caribe",
-          "genero": ["Accion","Aventuras"],
+          "genero": ["Accion","Aventura"],
           "director": "Joachim Ronning",
           "anio": 2001,
           "imagen": "https://m.media-amazon.com/images/I/91fPdJwTMBL._SL1500_.jpg",
@@ -70,7 +70,7 @@
       {
           "id":"24034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Volver al Futuro",
-          "genero": ["Ciencia Ficcion","Aventuras","Comedia"],
+          "genero": ["Ciencia Ficcion","Aventura","Comedia"],
           "director": "Robert Zemeckis",
           "anio": 1985,
           "imagen": "https://m.media-amazon.com/images/I/71BPuv+iRbL._AC_SL1000_.jpg",
@@ -81,7 +81,7 @@
       {
           "id":"36034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Justice League",
-          "genero": ["Ciencia Ficcion","Aventuras","Accion", "Super Heroes"],
+          "genero": ["Ciencia Ficcion","Aventura","Accion", "Super Heroes"],
           "director": "Joss Whedon",
           "anio": 2017,
           "imagen": "https://m.media-amazon.com/images/I/61Q3docjd9L._AC_SL1500_.jpg",
@@ -92,7 +92,7 @@
       {
           "id":"48034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Avenger: Endgame",
-          "genero": ["Ciencia Ficcion","Aventuras","Accion", "Super Heroes"],
+          "genero": ["Ciencia Ficcion","Aventura","Accion", "Super Heroes"],
           "director": "Anthony Russo",
           "anio": 2019,
           "imagen": "https://m.media-amazon.com/images/I/91xCWjZ2IIL._AC_SL1500_.jpg",
@@ -114,7 +114,7 @@
       {
           "id":"80034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Duro de Matar",
-          "genero": ["Acción","Aventura","Thriller","Policiacas"],
+          "genero": ["Accion","Aventura","Thriller","Policiacas"],
           "director": "John McTiernan",
           "anio": 1988,
           "imagen": "https://img.betaseries.com/3TqLtQ3xp8g6LZNXY-shnhm0JzU=/400x600/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F281.jpg",
@@ -123,9 +123,20 @@
           "comentarios": []
       },
       {
+          "id":"80034fc3-ea8e-4aab-9d3d-b117xx78c442",
+          "titulo": "Depredador",
+          "genero": ["Accion","Aventura","Ciencia Ficcion","Terror"],
+          "director": "John McTiernan",
+          "anio": 1987,
+          "imagen": "https://m.media-amazon.com/images/I/71RYyuL4W6L._AC_SL1000_.jpg",
+          "sinopsis": "Un grupo de mercenarios es contratado por la CIA para rescatar a unos pilotos que han sido apresados por la guerrilla en la selva centroamericana.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": []
+      },
+      {
           "id":"56034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "The Matrix",
-          "genero": ["Acción","Ciencia Ficción","Aventuras","Fantasía"],
+          "genero": ["Accion","Ciencia Ficcion","Aventura","Fantasia"],
           "director": "Hermanos Wachowski",
           "anio": 1999,
           "imagen": "https://m.media-amazon.com/images/I/813dE2pH7XL._SL1417_.jpg",
@@ -136,11 +147,22 @@
       {
           "id":"aa034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Batman: Dark Night",
-          "genero": ["Aventuras","Aventura","Accion", "Super Heroes","Suspenso"],
+          "genero": ["Aventura","Accion", "Super Heroes","Suspenso"],
           "director": "Christopher Nolan",
           "anio": 2008,
           "imagen": "https://static.wikia.nocookie.net/doblaje/images/9/9c/Batman_el_Caballero_de_la_Noche.png/revision/latest?cb=20110602012240&path-prefix=es",
           "sinopsis": "Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman mantiene a raya el crimen organizado en Gotham. Todo cambia cuando aparece el Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": []
+      },
+      {
+          "id":"aa034fc3-ea8e-4aab-9d3z-b117ca78c442",
+          "titulo": "El Origen",
+          "genero": ["Aventura","Accion", "Ciencia Ficcion","Thriller"],
+          "director": "Christopher Nolan",
+          "anio": 2010,
+          "imagen": "https://m.media-amazon.com/images/I/91bxYmAaiQL._AC_SL1500_.jpg",
+          "sinopsis": "Dom Cobb (Leonardo DiCaprio) es un ladron con una extraña habilidad para entrar a los sueños de la gente y robarle los secretos de sus subconscientes. Su habilidad lo ha convertido en un atractivo en el mundo del espionaje corporativo, pero ha tenido un gran costo en la gente que ama.",
           "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
           "comentarios": []
       },
@@ -158,7 +180,7 @@
       {
           "id":"zz034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Star Wars: Una Nueva Esperanza",
-          "genero": ["Ciencia Ficcion","Aventuras","Acción","Fantasia"],
+          "genero": ["Ciencia Ficcion","Aventura","Accion","Fantasia"],
           "director": "George Lucas",
           "anio": 1977,
           "imagen": "https://www.tebeosfera.com/T3content/img/T3_numeros/0/1/num1_BbXC-001.jpg",
@@ -180,7 +202,7 @@
       {
           "id":"aa034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Kill Bill: Volumen 1",
-          "genero": ["Artes Marciales","Aventuras","Accion","Thriller"],
+          "genero": ["Artes Marciales","Aventura","Accion","Thriller"],
           "director": "Quentin Tarantino",
           "anio": 2003,
           "imagen": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTDc9igRLxfn74ZHfMG61N5DEt4VA-gyfbtt4ysS4H5W1g_9LRb",
@@ -191,7 +213,7 @@
       {
           "id":"ff034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "El Senor de los Anillos",
-          "genero": ["Ciencia Ficcion","Aventuras","Accion","Fantasia"],
+          "genero": ["Ciencia Ficcion","Aventura","Accion","Fantasia"],
           "director": "Peter Jackson",
           "anio": 2002,
           "imagen": "https://m.media-amazon.com/images/I/71GALO65MqL._SL1448_.jpg",
@@ -211,13 +233,123 @@
           "comentarios": []
       },
       {
-          "id":"ff034fc3-ea8e-4aab-9d3d-b117ca78c442",
+          "id":"qq034fc3-ea8e-4ssb-9d3d-b117ca78c442",
+          "titulo": "Avatar",
+          "genero": ["Accion","Aventura","Ciencia Ficcion","Fantasia"],
+          "director": "James Cameron",
+          "anio": 2010,
+          "imagen": "https://m.media-amazon.com/images/I/61OUGpUfAyL._AC_SL1000_.jpg",
+          "sinopsis": "En un exuberante planeta llamado Pandora viven los Na'vi, seres que aparentan ser primitivos pero que en realidad son muy evolucionados. Debido a que el ambiente de Pandora es venenoso, los híbridos humanos/Na'vi, llamados Avatares, están relacionados con las mentes humanas, lo que les permite moverse libremente por Pandora. Jake Sully, un exinfante de marina paralítico se transforma a través de un Avatar, y se enamora de una mujer Na'vi.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": []
+      },
+      {
+          "id":"qq034fc3-ea8e-4ffb-9d3d-b117ca78c442",
+          "titulo": "Terminator 2: Juicio Final",
+          "genero": ["Accion","Aventura","Ciencia Ficcion","Fantasia"],
+          "director": "James Cameron",
+          "anio": 1991,
+          "imagen": "https://m.media-amazon.com/images/I/61bgvyrVGqL._AC_SL1039_.jpg",
+          "sinopsis": "Algunos años antes, un viajero del tiempo le reveló a la madre de John que su hijo sería el salvador de la humanidad. Cuando un nuevo androide mejorado llega del futuro para asesinar a John, un viejo modelo será enviado para protegerle.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": []
+      },
+      {
+          "id":"fx034fc3-ea8e-4aab-9d3d-b117ca78c442",
           "titulo": "Lista de Schindler",
           "genero": ["Drama","Belicas","Historicas","Fantasia"],
           "director": "Steven Spielberg",
           "anio": 1994,
           "imagen": "https://m.media-amazon.com/images/I/81j3R2pbfcL._SL1017_.jpg",
-          "sinopsis": "El empresario alemán Oskar Schindler, miembro del Partido Nazi, pone en marcha un elaborado, costoso y arriesgado plan para salvar a más de mil judíos del Holocausto.",
+          "sinopsis": "El empresario aleman Oskar Schindler, miembro del Partido Nazi, pone en marcha un elaborado, costoso y arriesgado plan para salvar a mas de mil judíos del Holocausto.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": []
+      },
+      {
+          "id":"fx034fc3-ea8e-4eeb-9d3d-b117ca78c442",
+          "titulo": "Jurassic Park",
+          "genero": ["Accion","Aventura","Ciencia Ficcion","Fantasia"],
+          "director": "Steven Spielberg",
+          "anio": 1993,
+          "imagen": "https://m.media-amazon.com/images/I/61iF3RSsLsL._AC_SL1000_.jpg",
+          "sinopsis": "El multimillonario John Hammond hace realidad su sueño de clonar dinosaurios del Jurásico y crear con ellos un parque tematico en una isla. Antes de abrir el parque al publico general, Hammond invita a una pareja de cientificos y a un matematico para que comprueben la viabilidad del proyecto.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": ["60034ff3-ea8f-4aab-9d3f-b117ca78c442","59034ff3-ea8f-4aab-9d3f-b117ca78c442","62034ff3-ea8f-4aab-9d3f-b117ca78c442"]
+      },
+      {
+          "id":"fx034fc3-ea8e-4eeb-9d3d-b203ca78c442",
+          "titulo": "Indiana Jones: Casadores del Arca Perdida",
+          "genero": ["Accion","Aventura","Ciencia Ficcion","Fantasia"],
+          "director": "Steven Spielberg",
+          "anio": 1981,
+          "imagen": "https://m.media-amazon.com/images/I/71aoIKE1XYL._AC_SL1000_.jpg",
+          "sinopsis": "Despues de una infructuosa misión en Sudamerica, el Gobierno estadounidense encarga al arqueologo Indiana Jones la búsqueda del Arca de la Alianza, una reliquia biblica que contiene los diez mandamientos y que convierte en invencible a su portador.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": []
+      },
+      {
+          "id":"fx034fc3-ea8e-4xxb-9d3d-b203ca78c442",
+          "titulo": "Ready Player One",
+          "genero": ["Accion","Aventura","Ciencia Ficcion","Suspenso"],
+          "director": "Steven Spielberg",
+          "anio": 2018,
+          "imagen": "https://m.media-amazon.com/images/I/71V1fH-X+9L._AC_SL1000_.jpg",
+          "sinopsis": "En el 2045: el adolescente Wade Watts es solo una de las millones de personas que se evaden del sombrio mundo real para sumergirse en un mundo utopico virtual donde todo es posible: OASIS. Wade participa en la búsqueda del tesoro que el creador de este mundo imaginario dejó oculto en su obra. No obstante, hay gente muy peligrosa compitiendo contra el.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": []
+      },
+      {
+          "id":"24034fc3-ea8e-4aab-9d3d-b117ca78c332",
+          "titulo": "Volver al Futuro II",
+          "genero": ["Ciencia Ficcion","Aventura","Comedia"],
+          "director": "Robert Zemeckis",
+          "anio": 1989,
+          "imagen": "https://m.media-amazon.com/images/I/71BPuv+iRbL._AC_SL1000_.jpg",
+          "sinopsis": "Doc vuelve a aparecer con una máquina del tiempo mucho más modernizada y le pide a Marty y a su novia que le acompañen al futuro. En el Hill Valley de 2015 deberán solucionar un problema con la ley que tendrá uno de los futuros hijos de Marty y Jenny.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": ["59034ff3-ea8f-4aab-9d3f-b117ca78c442","62034ff3-ea8f-4aab-9d3f-b117ca78c442"]
+      },
+      {
+          "id":"aa034fc3-ea8e-4aab-9d3z-b117ca78c102",
+          "titulo": "Interestelar",
+          "genero": ["Aventura","Drama", "Ciencia Ficcion","Misterio"],
+          "director": "Christopher Nolan",
+          "anio": 2014,
+          "imagen": "https://m.media-amazon.com/images/I/716P1xCmnPL._AC_SL1020_.jpg",
+          "sinopsis": "Un grupo de científicos y exploradores, encabezados por Cooper, se embarcan en un viaje espacial para encontrar un lugar con las condiciones necesarias para reemplazar a la Tierra y comenzar una nueva vida allí.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": []
+      },
+      {
+          "id":"xx034fc3-ea8e-4aab-9d3z-b117ca78c102",
+          "titulo": "Corazon Valiente",
+          "genero": ["Accion","Romance", "Gerra","Belicas"],
+          "director": "Mel Gibson",
+          "anio": 1995,
+          "imagen": "https://m.media-amazon.com/images/I/71B1fLQaePL._AC_SL1018_.jpg",
+          "sinopsis": "Las épicas aventuras de William Wallace, un rebelde escocés en su lucha por la independencia contra el poder de Inglaterra, en pleno medievo. Su legendario carácter y su épica historia de amor lo convirtieron en un héroe.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": []
+      },
+      {
+          "id":"hh034fc3-ea8e-4aab-9d3z-b117ca78c102",
+          "titulo": "El Secreto de Tus Ojos",
+          "genero": ["Drama","Crimen", "Romance","Thriller"],
+          "director": "Juan Jose Campanella",
+          "anio": 2009,
+          "imagen": "https://m.media-amazon.com/images/I/71oVsAFHyIL._SL1250_.jpg",
+          "sinopsis": "Benjamin Esposito es un oficial de un Juzgado de Instruccion de Buenos Aires que acaba de jubilarse. Su sueño es escribir una novela y, para ello, intentará dar solucion a un caso abierto desde hace varias décadas, del cual fue testigo y protagonista.",
+          "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
+          "comentarios": []
+      },
+      {
+          "id":"hz034fc3-ea8e-4aab-9d3z-b117ca78c102",
+          "titulo": "Forrest Gump",
+          "genero": ["Comedia","Romance","Drama"],
+          "director": "Robert Zemeckis",
+          "anio": 1994,
+          "imagen": "https://m.media-amazon.com/images/I/81J1rycHoeL._SL1500_.jpg",
+          "sinopsis": "Sentado en un banco en Savannah, Georgia, Forrest Gump espera al autobús. Mientras éste tarda en llegar, el joven cuenta su vida a las personas que se sientan a esperar con él. Aunque sufre un pequeño retraso mental, esto no le impide hacer cosas maravillosas.",
           "idUsuario":"c8c6cfd1-318c-4984-b38c-031ad76e3596",
           "comentarios": []
       }
@@ -228,10 +360,28 @@
               "id": "59034ff3-ea8f-4aab-9d3f-b117ca78c442",
               "comentario": "hola hola",
               "idUsuario" : "4968f7a4-26c4-4eee-8de2-4f90b46f944a"
+            },
+            {
+              "id": "60034ff3-ea8f-4aab-9d3f-b117ca78c442",
+              "comentario": "Muy buena peli!!",
+              "idUsuario" : "c8c6cfd1-318c-4984-b38c-031ad76e3596"
+            },
+            {
+              "id": "61034ff3-ea8f-4aab-9d3f-b117ca78c442",
+              "comentario": "me gusta mucho esta peli!!",
+              "idUsuario" : "4968f7a4-26c4-4eee-8de2-4f90b46f944a"
+            },
+            {
+              "id": "62034ff3-ea8f-4aab-9d3f-b117ca78c442",
+              "comentario": "Esta peli es la mejor!!",
+              "idUsuario" : "c8c6cfd1-318c-4984-b38c-031ad76e35xx"
             }
           ],
   "directores" :
               [
+                {"nombre":"Robert Zemeckis"},
+                {"nombre":"Juan Jose Campanella"},
+                {"nombre":"Mel Gibson"},
                 {"nombre":"Peter Jackson"},
                 {"nombre":"James Cameron"},
                 {"nombre":"Quentin Tarantino"},
@@ -247,7 +397,6 @@
                 {"nombre":"Carlos Saldanha"},
                 {"nombre":"Pete Docter"},
                 {"nombre":"John G. Avildsen"},
-                {"nombre":"Robert Zemeckis"},
                 {"nombre":"Joss Whedon"},
                 {"nombre":"Francis Ford Coppola"},
                 {"nombre":"Martin Scorsese"},
@@ -350,8 +499,8 @@
   "generos":
          [
             {"nombre":"Accion"},
-            {"nombre":"Aventuras"},
-            {"nombre":"Ciencia Ficción"},
+            {"nombre":"Aventura"},
+            {"nombre":"Ciencia Ficcion"},
             {"nombre":"Comedia"},
             {"nombre":"Documental"},
             {"nombre":"Drama"},
@@ -363,8 +512,8 @@
             {"nombre":"Futuristas"},
             {"nombre":"Policiacas"},
             {"nombre":"Crimen"},
-            {"nombre":"Bélicas"},
-            {"nombre":"Históricas"},
+            {"nombre":"Belicas"},
+            {"nombre":"Historicas"},
             {"nombre":"Deportivas"},
             {"nombre":"Western"},
             {"nombre":"Animacion"},
@@ -384,6 +533,13 @@
                 "apellido": "Admin",
                 "usuario": "admin",
                 "contrasenia": "a"
+            },
+            {
+                "id":"c8c6cfd1-318c-4984-b38c-031ad76e35xx",
+                "nombre": "Francisco",
+                "apellido": "Salazar",
+                "usuario": "fran",
+                "contrasenia": "fran123"
             },
             {
                 "id":"4968f7a4-26c4-4eee-8de2-4f90b46f944a",
