@@ -323,7 +323,7 @@
       {
           "id":"xx034fc3-ea8e-4aab-9d3z-b117ca78c102",
           "titulo": "Corazon Valiente",
-          "genero": ["Accion","Romance", "Gerra","Belicas"],
+          "genero": ["Accion","Romance","Belicas"],
           "director": "Mel Gibson",
           "anio": 1995,
           "imagen": "https://m.media-amazon.com/images/I/71B1fLQaePL._AC_SL1018_.jpg",

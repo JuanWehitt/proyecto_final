@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "64d9fef9-dfbb-4900-a645-b04b73c980b7",
+		"name": "Coleccion de APIs de Peliculas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener Peliculas Individual",
+			"item": [
+				{
+					"name": "Ontener Peliculas/Batman: Dark Night",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/Christopher Nolan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"Christopher Nolan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Obtener Peliculas/Director",
+			"item": [
+				{
+					"name": "Obtener-Peliculas-Mel Gibson",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener-Peliculas-Steven Spielberg",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/Steven Spielberg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"Steven Spielberg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener-Peliculas-Christopher Nolan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/Christopher Nolan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"Christopher Nolan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener-Peliculas-James Cameron",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/James Cameron",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"James Cameron"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Obtener Peliculas/Id",
+			"item": [
+				{
+					"name": "Obtener Peliculas/<Id>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pruebas DELETE",
+			"item": [
+				{
+					"name": "Borrar Comentario Con éxito",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-4aab-9d3f-b117ca78c442",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"comentarios",
+								"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Comentario no Encontrado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-5aab-9d3f-b117ca78c442",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"comentarios",
+								"59034ff3-ea8f-5aab-9d3f-b117ca78c442"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pruebas GET General",
+			"item": [
+				{
+					"name": "Obtener Directores Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/directores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"directores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Generos de Peliculas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/generos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Peliculas con Portada",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/peliculas_con_portada",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"peliculas_con_portada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Peliculas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pruebas POST",
+			"item": [
+				{
+					"name": "Generar Peliculas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
+		}
+	]
+}
