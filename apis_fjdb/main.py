@@ -16,7 +16,7 @@ comentarios = lista_collections['comentarios']
 peliculas = lista_collections['peliculas']
 usuarios = lista_collections['usuarios']
 
-@app.route("/directores/",methods=['GET'])
+@app.route("/directores",methods=['GET'])
 def retornar_directores():
     return jsonify(directores), HTTPStatus.OK
 
@@ -24,13 +24,17 @@ def retornar_directores():
 def retornar_generos():
     return jsonify(generos), HTTPStatus.OK
 
-@app.route("/",methods=['GET'])
-def inicio():
-    return jsonify({"mensaje":"APIS DE JFDB!!!, CONSULTE LA DOCUMENTACION"})
+@app.route("/peliculas/<id>",methods=['GET'])
+def retornar_pelicula(id):
+    lista = [x for x in peliculas if id== x["id"]]
+    if lista:
+        return jsonify(lista[0]), HTTPStatus.OK
+    else:
+        return jsonify({"mensaje": "No se encontro la pelicula a retornar, el id es incorrecto."}), HTTPStatus.NOT_FOUND
 
-@app.route("/peliculas/<director>",methods=['GET'])
-def retornar_peliculas_por_director(director):
-    lista_filtrada = [x for x in peliculas if director in x["director"]]
+@app.route("/peliculas/director/<nombre>",methods=['GET'])
+def retornar_peliculas_por_director(nombre):
+    lista_filtrada = [x for x in peliculas if nombre in x["director"]]
     if lista_filtrada:
         return jsonify(lista_filtrada), HTTPStatus.OK
     else:
@@ -42,22 +46,15 @@ def retornar_peliculas_con_portada():
     lista_filtrada = [x for x in peliculas if x["imagen"] != ""]
     return jsonify(lista_filtrada), HTTPStatus.OK
 
-@app.route("/peliculas/", methods=['GET'])
+@app.route("/peliculas",methods=['GET'])
 # @cross_origin(origin="*", headers=['Conent-Type','Autorization'])
 def retornar_peliculas():
     return jsonify(peliculas), HTTPStatus.OK
 
-@app.route("/peliculas/<id>", methods=['GET'])
-def retornar_pelicula(id):
-    lista = [x for x in peliculas if id in x['id']]
-    if lista:
-        return jsonify(lista[0]), HTTPStatus.OK
-    else:
-        return jsonify({"mensaje": "No se encontro la pelicula a retornar, el id es incorrecto."}), HTTPStatus.NOT_FOUND
 
-@app.route("/peliculas/<nombre>", methods=['GET'])
-def retornar_peliculas_por_nombre(nombre):
-    return jsonify([x for x in peliculas if nombre==x['nombre']]), HTTPStatus.OK
+# @app.route("/peliculas/director", methods=['GET'])
+# def retornar_peliculas_por_nombre(nombre):
+#     return jsonify([x for x in peliculas if nombre==x['director']]), HTTPStatus.OK
 
 
 def generar_nuevo_id_pelicula():
@@ -89,7 +86,7 @@ def json_ok_pelicula(datos_pelicula):
     else:
         return False
 
-@app.route("/peliculas/", methods=['POST'])
+@app.route("/peliculas", methods=['POST'])
 def agregar_pelicula():
     nuevo_id = generar_nuevo_id_pelicula()
     datos_pelicula = request.get_json()
@@ -124,18 +121,15 @@ def actualizar_pelicula(id):
     lista = [x for x in peliculas if x['id'] == id]
     if lista:
         datos_pelicula = request.get_json()
-        if json_ok_pelicula(datos_pelicula):
+        if 'titulo' and 'genero' and 'director' and 'anio' and 'imagen' and 'sinopsis' in datos_pelicula:
             pelicula = lista[0]
-            pelicula = {
-                "titulo": datos_pelicula['titulo'],
-                "genero": datos_pelicula['genero'],
-                "director": datos_pelicula['director'],
-                "anio": datos_pelicula['anio'],
-                "imagen": datos_pelicula['imagen'],
-                "sinopsis": datos_pelicula['sinopsis'],
-                "idUsuario": datos_pelicula['idUsuario'],
-                "comentarios": datos_pelicula['comentarios']
-            }
+            pelicula["titulo"] = datos_pelicula['titulo']
+            pelicula["genero"] = datos_pelicula['genero']
+            pelicula["director"]= datos_pelicula['director']
+            pelicula["anio"]= datos_pelicula['anio']
+            pelicula["imagen"]= datos_pelicula['imagen']
+            pelicula["sinopsis"]= datos_pelicula['sinopsis']
+
             return jsonify({"mensaje":"La pelicula ha sido modificda con exito"}), HTTPStatus.OK
         else:
             return jsonify({"mensaje": "Uno o mas campos no coinciden con la estructura"}), HTTPStatus.BAD_REQUEST
@@ -169,8 +163,8 @@ def retornar_comentario(id):
     else:
         return jsonify({"mensaje": "No se encontro el comentario, el id es incorrecto."}), HTTPStatus.NOT_FOUND
 
+# Obtiene todos los comentarios de una pelicula segun el Id de la pelicula
 @app.route("/peliculas/comentarios/<id>", methods=['GET'])
-@cross_origin(origin="*", headers=['Conent-Type','Autorization'])
 def retornar_comentarios_de_pelicula(id):
     pelicula = [x for x in peliculas if x['id'] == id]
     if pelicula :
@@ -186,12 +180,11 @@ def json_ok_comentario(datos_comentario):
     return ("comentario" and "idPelicula" and "idUsuario") in datos_comentario
 
 
-@app.route("/comentarios/", methods=['POST'])
-@cross_origin(origin="*", headers=['Conent-Type','Autorization'])
+@app.route("/comentarios", methods=['POST']) #fgfgfgfgfgfggfg
 def agregar_comentario():
     nuevo_id = generar_nuevo_id_comentario()
     datos_comentario = request.get_json()
-    if json_ok_comentario(datos_comentario) :
+    if json_ok_comentario(datos_comentario):
         comentarios.insert(0,{
             "id": str(nuevo_id),
             "comentario": datos_comentario['comentario'],
@@ -241,16 +234,19 @@ def json_ok_usuario(json):
     else:
         return False
 
-#retorna el usuario solo si el ususario y contraseña coincide
+#Prueba de Login retorna el usuario solo si el ususario y contraseña coincide
 @app.route("/usuarios", methods=['POST'])
-@cross_origin(origin="*", headers=['Conent-Type','Autorization'])
 def retornar_usuario():
     datos_usuario = request.get_json()
     #print(datos_usuario)
     if not (datos_usuario == None) and json_ok_usuario(datos_usuario):
         lista = [x for x in usuarios if ( x['usuario'] == datos_usuario['usuario'] ) and ( x['contrasenia'] == datos_usuario['contrasenia'] )]
         if lista:
-            return jsonify(lista[0]), HTTPStatus.OK
+            return jsonify({
+                "apellido": lista[0]['apellido'],
+                "id": lista[0]['id'],
+                "nombre": lista[0]['nombre']
+            }), HTTPStatus.OK
         else:
             return jsonify({"mensaje": "No se encuentra el usuario, revise los datos ingresados"}), HTTPStatus.NOT_FOUND
     else:

@@ -6,15 +6,15 @@
 	},
 	"item": [
 		{
-			"name": "Obtener Peliculas Individual",
+			"name": "Obtener Peliculas/Director",
 			"item": [
 				{
-					"name": "Ontener Peliculas/Batman: Dark Night",
+					"name": "Obtener-Peliculas-Mel Gibson",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/peliculas/Christopher Nolan",
+							"raw": "http://localhost:5000/peliculas/director/Mel Gibson",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -22,22 +22,11 @@
 							"port": "5000",
 							"path": [
 								"peliculas",
-								"Christopher Nolan"
+								"director",
+								"Mel Gibson"
 							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Obtener Peliculas/Director",
-			"item": [
-				{
-					"name": "Obtener-Peliculas-Mel Gibson",
-					"request": {
-						"method": "GET",
-						"header": []
+						},
+						"description": "Obtiene los datos de todas las películas asociadas al nombre del director en este caso Mel Gibson"
 					},
 					"response": []
 				},
@@ -47,7 +36,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/peliculas/Steven Spielberg",
+							"raw": "http://localhost:5000/peliculas/director/Steven Spielberg",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -55,9 +44,11 @@
 							"port": "5000",
 							"path": [
 								"peliculas",
+								"director",
 								"Steven Spielberg"
 							]
-						}
+						},
+						"description": "Obtiene los datos de todas las películas asociadas al nombre del director en este caso Steven Spielberg"
 					},
 					"response": []
 				},
@@ -67,7 +58,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/peliculas/Christopher Nolan",
+							"raw": "http://localhost:5000/peliculas/director/Christopher Nolan",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -75,9 +66,11 @@
 							"port": "5000",
 							"path": [
 								"peliculas",
+								"director",
 								"Christopher Nolan"
 							]
-						}
+						},
+						"description": "Obtiene los datos de todas las películas asociadas al nombre del director en este caso Christopher Nolan"
 					},
 					"response": []
 				},
@@ -87,7 +80,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/peliculas/James Cameron",
+							"raw": "http://localhost:5000/peliculas/director/James Cameron",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -95,24 +88,27 @@
 							"port": "5000",
 							"path": [
 								"peliculas",
+								"director",
 								"James Cameron"
 							]
-						}
+						},
+						"description": "Obtiene los datos de todas las películas asociadas al nombre del director en este caso James Cameron"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Pruebas para obtener datos de peliculas a partir del nombre del director"
 		},
 		{
 			"name": "Obtener Peliculas/Id",
 			"item": [
 				{
-					"name": "Obtener Peliculas/<Id>",
+					"name": "Obtener Peliculas/Id_Piratas del Caribe",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/peliculas/1",
+							"raw": "http://localhost:5000/peliculas/59034fc3-ea8e-4aab-9d3d-b117ca78c442",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -120,16 +116,39 @@
 							"port": "5000",
 							"path": [
 								"peliculas",
-								"1"
+								"59034fc3-ea8e-4aab-9d3d-b117ca78c442"
 							]
-						}
+						},
+						"description": "Se obtienen los datos de la Película Piratas del Caribe"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Peliculas/Id_The Matrix",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/56034fc3-ea8e-4aab-9d3d-b117ca78c442",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"56034fc3-ea8e-4aab-9d3d-b117ca78c442"
+							]
+						},
+						"description": "Se obtienen los datos de la Película The Matrix"
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Se obtienen las Películas asociando al Id de la Película"
 		},
 		{
-			"name": "Pruebas DELETE",
+			"name": "Borrar Comentarios/Id",
 			"item": [
 				{
 					"name": "Borrar Comentario Con éxito",
@@ -147,7 +166,8 @@
 								"comentarios",
 								"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
 							]
-						}
+						},
+						"description": "Prueba de borrado de comentario de forma exitosa."
 					},
 					"response": []
 				},
@@ -167,105 +187,175 @@
 								"comentarios",
 								"59034ff3-ea8f-5aab-9d3f-b117ca78c442"
 							]
-						}
+						},
+						"description": "Error de borrado de comentario por no ser encontrado."
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Se borran los comentarios asociando al Id del comentario"
 		},
 		{
-			"name": "Pruebas GET General",
+			"name": "Prueba Login",
 			"item": [
 				{
-					"name": "Obtener Directores Todos",
+					"name": "Verificacion de Usuario Registrado",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "            {\r\n                \"usuario\": \"admin\",\r\n                \"contrasenia\": \"a\"\r\n            }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:5000/directores",
+							"raw": "http://localhost:5000/usuarios",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"directores"
+								"usuarios"
 							]
-						}
+						},
+						"description": "Verificación de Registro de un Usuario"
 					},
 					"response": []
 				},
 				{
-					"name": "Obtener Generos de Peliculas",
+					"name": "Verificacion de Usuario Invalido",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "            {\r\n                \"usuario\": \"xxxxxx\",\r\n                \"contrasenia\": \"1\"\r\n            }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:5000/generos",
+							"raw": "http://localhost:5000/usuarios",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"generos"
+								"usuarios"
 							]
-						}
+						},
+						"description": "Prueba de acceso de un Usuario Invalido."
 					},
 					"response": []
 				},
 				{
-					"name": "Obtener Peliculas con Portada",
+					"name": "Vericacion Estructura Incorrecta",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "            {\r\n                \"usuario\": \"xxxxxx\"\r\n            }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:5000/peliculas/peliculas_con_portada",
+							"raw": "http://localhost:5000/usuarios",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"peliculas",
-								"peliculas_con_portada"
+								"usuarios"
 							]
-						}
+						},
+						"description": "Prueba de acceso, error por falta de un dato en la estructura Json."
 					},
 					"response": []
-				},
+				}
+			],
+			"description": "Prueba de Acceso o Validación de un Usuario."
+		},
+		{
+			"name": "ABM Peliculas",
+			"item": [
 				{
 					"name": "Obtener Peliculas",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/peliculas/",
+							"raw": "http://localhost:5000/peliculas",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
-								"peliculas",
-								""
+								"peliculas"
 							]
-						}
+						},
+						"description": "ABM para obtener películas."
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "Pruebas POST",
-			"item": [
+				},
 				{
-					"name": "Generar Peliculas",
+					"name": "Generar Pelicula",
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "      {\r\n          \"titulo\": \"Pelicula Nueva\",\r\n          \"genero\": [\"Accion\",\"Aventura\"],\r\n          \"director\": \"Joachim Ronning\",\r\n          \"anio\": 3000,\r\n          \"imagen\": \"\",\r\n          \"sinopsis\": \"Resumen de la Pelicula Nueva\",\r\n          \"idUsuario\":\"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\r\n          \"comentarios\": []\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:5000/peliculas/",
+							"raw": "http://localhost:5000/peliculas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas"
+							]
+						},
+						"description": "ABM para generar película."
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Pelicula",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "      {\r\n          \"titulo\": \"Pelicula Nueva V2\",\r\n          \"genero\": [\"Thriller\",\"Romance\"],\r\n          \"director\": \"Joachim Ronning\",\r\n          \"anio\": 3000,\r\n          \"imagen\": \"\",\r\n          \"sinopsis\": \"Resumen de la Pelicula Nueva V2\"\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/peliculas/7b347404-4e84-48c8-b96d-c0ce9ecb80a4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -273,17 +363,256 @@
 							"port": "5000",
 							"path": [
 								"peliculas",
-								""
+								"7b347404-4e84-48c8-b96d-c0ce9ecb80a4"
 							]
-						}
+						},
+						"description": "ABM para modificar película."
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Pelicula",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/59034fc3-ea8e-4aab-9d3d-b117ca78c442",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"59034fc3-ea8e-4aab-9d3d-b117ca78c442"
+							]
+						},
+						"description": "ABM para borrar película."
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "ABM de Películas permite realizar la Obtención de películas, también generar, modificar y borrar una película de forma rápida para realizar pruebas de las APIs"
 		},
 		{
-			"name": "New Folder",
-			"item": []
+			"name": "Casos de Testing",
+			"item": [
+				{
+					"name": "Pruebas GET",
+					"item": [
+						{
+							"name": "Obtener Directores Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/directores",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"directores"
+									]
+								},
+								"description": "Obtener todos los directores de películas."
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Generos de Peliculas",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/generos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"generos"
+									]
+								},
+								"description": "Obtener todos los géneros de películas."
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Peliculas con Portada",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/peliculas/peliculas_con_portada",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"peliculas",
+										"peliculas_con_portada"
+									]
+								},
+								"description": "Obtener todas las películas con portada en la base del Json."
+							},
+							"response": []
+						}
+					],
+					"description": "Pruebas GET para diferentes APIs."
+				},
+				{
+					"name": "Pruebas POST",
+					"item": [
+						{
+							"name": "Generar Pelicuas/Id_Pelicula Nueva",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "      {\r\n          \"titulo\": \"Pelicula Nueva\",\r\n          \"genero\": [\"Accion\",\"Aventura\"],\r\n          \"director\": \"Nuevo Director\",\r\n          \"anio\": 3000,\r\n          \"imagen\": \"\",\r\n          \"sinopsis\": \"Resumen de la Pelicula Nueva\",\r\n          \"idUsuario\":\"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\r\n          \"comentarios\": []\r\n      }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/peliculas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"peliculas"
+									]
+								},
+								"description": "Generar películas con uso de Id de película."
+							},
+							"response": []
+						},
+						{
+							"name": "Generar Comentarios",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"comentario\": \"Nuevo Comentario\",\r\n    \"idPelicula\": \"\",\r\n    \"idUsuario\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/comentarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"comentarios"
+									]
+								},
+								"description": "Generar un Nuevo Comentario."
+							},
+							"response": []
+						}
+					],
+					"description": "Pruebas POST para diferentes APIs."
+				},
+				{
+					"name": "Pruebas PUT",
+					"item": [
+						{
+							"name": "Modificar Comentario/Id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"comentario\": \"Nuevo Comentario\",\r\n    \"idPelicula\":\"\",\r\n    \"idUsuario\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-4aab-9d3f-b117ca78c442",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"comentarios",
+										"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
+									]
+								},
+								"description": "Modificar un comentario."
+							},
+							"response": []
+						}
+					],
+					"description": "Pruebas PUT para diferentes APIs."
+				},
+				{
+					"name": "Pruebas DELETE",
+					"item": [
+						{
+							"name": "Borrar Peliculas/Id_Piratas del caribe",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/peliculas/59034fc3-ea8e-4aab-9d3d-b117ca78c442",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"peliculas",
+										"59034fc3-ea8e-4aab-9d3d-b117ca78c442"
+									]
+								},
+								"description": "Borrar película asociada al id de Piratas del Caribe en este caso."
+							},
+							"response": []
+						},
+						{
+							"name": "Borrar Peliculas/Id_The Matrix",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/peliculas/56034fc3-ea8e-4aab-9d3d-b117ca78c442",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"peliculas",
+										"56034fc3-ea8e-4aab-9d3d-b117ca78c442"
+									]
+								},
+								"description": "Borrar película asociada al id de The Matrix en este caso."
+							},
+							"response": []
+						}
+					],
+					"description": "Pruebas DELETE para diferentes APIs."
+				}
+			]
 		}
 	]
 }
