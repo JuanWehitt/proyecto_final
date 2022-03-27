@@ -142,7 +142,6 @@
         outline: none;
         border-radius: 5px;
         border:3px solid black;
-    
         font-style: italic;
         color: #6b6b6b;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -197,16 +196,27 @@
         padding: 5px;
         margin:0;
     }
+    .div_botones_editar_eliminar_pelicula {
+        width: 100%;
+        text-align: right;
+    }  
+    .div_botones_editar_eliminar_pelicula  button {
+
+        margin-right: 5px;
+    }
+ 
+    .div_atras_y_botones {
+        display:flex;
+        width: 100%;
+        margin: 10px;
+    }
     .boton_atras_div{
-        padding-top: 5px;
-        display: flex;
+         display: flex;
         align-items: center;
         justify-content: flex-start;
         flex-wrap: nowrap;
         flex-direction: row;
         color: rgb(255, 255, 255);
-        width: 100%;
-        max-width: 1040px;
         cursor: pointer;
     }
     .boton_atras_div > p {
@@ -217,7 +227,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding-top: 15px;
         width: 100%;
         max-width: 1040px;
         align-items: center;
@@ -231,6 +240,7 @@
         color: white;
         background: linear-gradient(0.25turn,#000000, #818181);
         cursor: pointer;
+        transition-duration: 0.4s;
     }
     .pelicula:hover{
         box-shadow: 10px 5px 5px white;
@@ -584,5 +594,7 @@
         .paginacion button:hover {
             background: #137c32;
         }
+
+
 } /* cierre de media screen mayor a 1020px de ancho */
 

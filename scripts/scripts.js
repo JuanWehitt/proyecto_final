@@ -19,21 +19,20 @@ function imprimir_footer(){
 	//return footer_div;
 }
 
-function limpiar_encabezado(){
-	//document.querySelector(".boton_login_logout").removeEventListener("click",clickEnIngresarSalir,false)
-	remove_tag_id_childrens("encabezado")
-}
-
 function clickEnIngresarSalir(){
 	//console.log("entro en clickEnLogin");
 	if (user != "") {
 		//console.log("va a salir")
 		user = ""
 		userId = ""
-		limpiar_encabezado()
+		pagina = 1
+		texto_busqueda = ""
+		filtro_busqueda = "Director"
+		remove_childrens_tag_id("encabezado")		
 		imprimir_encabezado("")
 		imprimir_peliculas("ultimas 10")
-		remove_tag_class("div_barra_usuario")
+		remove_childrens_tag_class("div_barra_usuario")
+		
 		return 0
 	}else{
 		imprimir_peliculas("ultimas 10")
@@ -52,7 +51,7 @@ function clickEnIngresarSalir(){
 		headers:  { 'Content-Type': 'application/json' },
 		body: JSON.stringify({ usuario: usuario_input, contrasenia: contrasenia_input })
 	};
-	fetch('http://localhost:5000/usuarios', requestOptions)
+	fetch('http://localhost:5000/usuarios/', requestOptions)
 		.then( resp => {
 			//console.log(resp.status);
 			datos = resp.json();
@@ -68,7 +67,7 @@ function clickEnIngresarSalir(){
 				//console.log("login exitoso");
 				userId = resp['id']
 				user = resp['nombre']
-				limpiar_encabezado()
+				remove_childrens_tag_id("encabezado")			
 				imprimir_encabezado(user)
 				imprimir_barra_de_usuario()
 				imprimir_peliculas("todas")
@@ -175,12 +174,12 @@ function clickEnBuscar(){
 		
 		//console.log(combo_box.value);
 		if (combo_box_busqueda.value=="Director"){	
-			filtro_busqueda = "Director"					
-			imprimir_peliculas("Director")
+			filtro_busqueda = "Director"
 		}else if (combo_box_busqueda.value=="Titulo"){
 			filtro_busqueda = "Titulo"
-			imprimir_peliculas("Titulo")	
 		}
+		pagina = 1
+		imprimir_peliculas(filtro_busqueda)
 	}
 
 }
@@ -258,7 +257,7 @@ function imprimir_barra_de_usuario() {
 	boton_agregar_pelicula.addEventListener("click", () => {
 
 		div_barra_usuario.remove()
-		remove_tag_id_childrens("contenedor_resultados")	
+		remove_childrens_tag_id("contenedor_resultados")	
 
 		div_nueva_pelicula = document.createElement("div")		
 		div_nueva_pelicula.className = "div_nueva_pelicula"
@@ -297,7 +296,7 @@ function imprimir_barra_de_usuario() {
 		select_genero_nueva_pelicula.id ="select_genero_nueva_pelicula"
 		div_formulario_nueva_pelicula.appendChild(label_genero)
 		div_formulario_nueva_pelicula.appendChild(select_genero_nueva_pelicula)		
-		fetch('http://localhost:5000/generos')
+		fetch('http://localhost:5000/generos/')
 		.then( resp => {
 			//console.log(resp.status);
 			datos = resp.json();
@@ -320,26 +319,18 @@ function imprimir_barra_de_usuario() {
 			
 			//select_genero_nueva_pelicula.
 		})
-		fetch('http://localhost:5000/directores')
+		fetch('http://localhost:5000/directores/')
 		.then( resp => {
-			//console.log(resp.status);
 			datos = resp.json();
 			return datos;
 		})
 		.then( resp => {
-			//console.log(resp.length);
 			resp.forEach(element => {
-				//console.log(element);
 				option_director = document.createElement("option")
-				//option_genero.id = element.nombre
-				//option_director = document.createElement("option")
-				//option_director.placeholder = "Seleccione"
 				option_director.value = element.nombre
 				option_director.textContent = element.nombre
 				select_director_nueva_pelicula.appendChild(option_director)
 			});
-			
-			//select_genero_nueva_pelicula.
 		})
 
 		label_anio = document.createElement("label")
@@ -381,16 +372,17 @@ function imprimir_barra_de_usuario() {
 		div_botones_aceptar_cancelar.appendChild(boton_aceptar_nueva_pelicula)
 		div_formulario_nueva_pelicula.appendChild(div_botones_aceptar_cancelar)
 
-		principal = document.getElementById("principal")
+		//principal = document.getElementById("principal")
+		contenedor_resultados.appendChild(div_nueva_pelicula)
+
 		footer_div = document.getElementById("footer_div")
-		principal.insertBefore(div_nueva_pelicula, footer_div)
+		//principal.insertBefore(div_nueva_pelicula, footer_div)
 		div_nueva_pelicula.appendChild(titular_nueva_pelicula)
 		div_nueva_pelicula.appendChild(div_formulario_nueva_pelicula)
 
 		boton_cancelar_nueva_pelicula.addEventListener("click", () => {
 			div_nueva_pelicula.remove()
 			imprimir_barra_de_usuario()
-			//console.log(filtro_busqueda);
 			imprimir_peliculas("todas")
 		})
 		boton_aceptar_nueva_pelicula.addEventListener("click", () => {
@@ -442,25 +434,26 @@ function imprimir_barra_de_usuario() {
 		})
 
 	})
-	//...........
 }
 
+//imprime en pantalla las peliculas segun el filtro de entrada. 
+//Las ultimas 10 ("ultimas 10")
+//Todas las peliculas ("todas")
+//Las peliculas por "Director", filtra segun el campo de busqueda
+//Las peliculas por "Titulo", filtra segun el campo de busqueda
 function imprimir_peliculas(filtro){
-	fetch('http://localhost:5000/peliculas')
+	fetch("http://localhost:5000/peliculas/")
 		.then( resp => {
-			//console.log(resp.status);
 			if (resp.status==200) {
-				//login exitoso				
 				datos = resp.json();								
 			}else if (resp.status==404){
-				//no se pudo loguear, no se encuentra el usuario registrado.
 				datos = []
 			}
 			return datos;
 		})
 		.then( resp => {
 			peliculas = resp					
-			remove_tag_id_childrens("contenedor_resultados")			
+			remove_childrens_tag_id("contenedor_resultados")			
 			miContenedor = document.getElementById("contenedor_resultados")
 			titulo_div = document.createElement("div");
 			titulo_div.id = "titulo_contenedor_resultados"
@@ -508,22 +501,10 @@ function imprimir_peliculas(filtro){
 
 			
 			for (i=0; i<cant; i++){
-				//idea
-				//segun la variable global pagina, imprimir de a cuatro.
+				//segun la variable global pagina, imprime de a cuatro peliculas.
 				//la pelicula 1(0) es de la pagina 1 porque esta entre 0 y 4
 				//la pelicula 5(4) es de la pagina 2 porque esta entre 4 y 8
-				//
-				/*
-					ejemplo estoy en pagina=1, llamo a imprimirPeliculas(todas)
-					0 < 1 <= 4 (verdadero)
-					0 < 2 <= 4 (verdadero)
-					0 < 3 <= 4 (verdadero)
-					0 < 4 <= 4 (verdadero)
-					0 < 5 <= 4 (falso)
-					0 < 6 <= 4 (falso)
-				*/
-				//pagina = 3
-				//i = 9
+
 				if ((pagina-1)*4 < i+1 && i+1 <= pagina*4){
 					//imprime la pelicula
 					
@@ -587,18 +568,15 @@ function imprimir_peliculas(filtro){
 			document.querySelectorAll(".pelicula").forEach(el => {
 				el.addEventListener("click", e => {
 				const id = e.target.getAttribute("idPelicula");
-				//console.log("Se ha clickeado el id "+id);
-				remove_tag_class("titular_de_contenedor");
-				remove_tag_id_childrens("contenedor_resultados");				
-				remove_tag_class("div_barra_usuario")
+				remove_childrens_tag_class("titular_de_contenedor");
+				remove_childrens_tag_id("contenedor_resultados");				
+				remove_childrens_tag_class("div_barra_usuario")
 				imprimirPeliculaYComentarios(id);
 				});
 			});
 
-			if (cant>4){
-			
-				//si la cantidad de peliculas filtradas para imprimir son mayor a 4 imprimo los botones siguiente
-
+			if (cant>4){		
+				//si la cantidad de peliculas filtradas para imprimir son mayor a 4 imprimo los botones siguiente y anterior
 				btnAnterior = document.createElement("button")
 				btnSiguiente = document.createElement("button")
 				btnSiguiente.id = "btnSiguiente"
@@ -610,7 +588,7 @@ function imprimir_peliculas(filtro){
 
 				p_pagina = document.createElement("p")
 				p_pagina.id = "p_pagina"
-				cant_paginas = Math.floor(cant/4) + 1
+				cant_paginas = Math.ceil(cant/4)
 				p_pagina.textContent = pagina+"/"+cant_paginas
 
 				div_paginacion = document.createElement("div")
@@ -626,8 +604,7 @@ function imprimir_peliculas(filtro){
 					if(pagina < cant_paginas){
 						pagina += 1;
 						p_pagina.textContent = pagina+"/"+cant_paginas
-						if (user!="") {
-							//imprimir_barra_de_usuario();
+						if (user!="") {						
 							if (texto_busqueda=="")
 								imprimir_peliculas("todas")				
 							else
@@ -643,8 +620,7 @@ function imprimir_peliculas(filtro){
 					if(pagina > 1){
 						pagina -= 1;
 						p_pagina.textContent = pagina+"/"+cant_paginas
-						if (user!="") {
-							//imprimir_barra_de_usuario();
+						if (user!="") {							
 							if (texto_busqueda=="")
 								imprimir_peliculas("todas")				
 							else
@@ -659,14 +635,16 @@ function imprimir_peliculas(filtro){
 		});
 }
 
-function remove_tag_class(clase){
+//Elimina los nodos hijos del padre con una clase que ingresa en el parametro de entrada.
+function remove_childrens_tag_class(clase){
 	let elemento = document.getElementsByClassName(clase);
 	while(elemento[0]){
 		elemento[0].remove();
 	}
 }
 
-function remove_tag_id_childrens(id){
+//Elimina los nodos hijos del padre con id que ingresa en el parametro de entrada.
+function remove_childrens_tag_id(id){
   	// Eliminando todos los hijos de un elemento
 	  //console.log(id);
   	let elemento = document.getElementById(id);
@@ -675,10 +653,10 @@ function remove_tag_id_childrens(id){
   	}
 }
 
+//Imprime un texto que entra como parametro, en el encabezado
 function imprimir_mensaje_de_login(texto){
 	div_login = document.getElementById("login");
 	texto_p = document.getElementById("status_login")
-	//console.log(texto_p);
 	if(texto_p!=null){
 		texto_p.textContent = texto;
 	}else{
@@ -691,10 +669,8 @@ function imprimir_mensaje_de_login(texto){
 
 }
 
-  ///crear la pagina de comentarios de una pelicula seleccionada
-
+  ///muestra la pelicula seleccionada segu el id de entrada y los comentarios asociados.
   function imprimirPeliculaYComentarios(id){
-
 	fetch("http://localhost:5000/peliculas/comentarios/"+id)
 		.then(
 			resp => {
@@ -716,14 +692,12 @@ function imprimir_mensaje_de_login(texto){
 			boton_atras_p = document.createElement("p");
 			boton_atras_p.textContent = "Atrás";
 		
-			miContenedor = document.getElementById("contenedor_resultados")
-			principal.insertBefore(boton_atras_div,miContenedor);
+			contenedor_resultados = document.getElementById("contenedor_resultados")
 			boton_atras_div.appendChild(boton_atras_img);
 			boton_atras_div.appendChild(boton_atras_p);
 		
 			boton_atras_div.onclick = function(){
-				//console.log("hixo click");
-				remove_tag_class("boton_atras_div");
+				remove_childrens_tag_class("div_atras_y_botones");
 				if (user!="") {
 					imprimir_barra_de_usuario();
 					if (texto_busqueda=="")
@@ -778,13 +752,16 @@ function imprimir_mensaje_de_login(texto){
 			pelicula_sinopsis.appendChild(pelicula_sinopsis_p);
 			pelicula_sinopsis_p.textContent = pelicula_seleccionada.sinopsis;
 		
-			for(e=0; e<pelicula_seleccionada.genero.length; e++){ peliculaH2_com_genero.textContent += " "+pelicula_seleccionada.genero[e]}
+			for(e=0; e<pelicula_seleccionada.genero.length; e++){ peliculaH2_com_genero.textContent += pelicula_seleccionada.genero[e]+", "}
+			//console.log(peliculaH2_com_genero.textContent[peliculaH2_com_genero.textContent.length-2]);
+			cadena = peliculaH2_com_genero.textContent.slice(0,peliculaH2_com_genero.textContent.length-2);
+			peliculaH2_com_genero.textContent = cadena
 			peliculaSpan_com = document.createElement("span_com");
 			peliculaSpan_com.className = "anio_pelicula_com";
 			peliculaSpan_com.textContent = pelicula_seleccionada.anio;
 		
-			//principal.appendChild(miContenedor);
-			miContenedor.appendChild(pelicula_com);
+			//principal.appendChild(contenedor_resultados);
+			contenedor_resultados.appendChild(pelicula_com);
 			pelicula_com.appendChild(imagen_com);
 			pelicula_com.appendChild(peliculaDiv_com);
 			peliculaDiv_com.appendChild(peliculaH3_com_titulo);
@@ -794,7 +771,250 @@ function imprimir_mensaje_de_login(texto){
 			peliculaDiv_com.appendChild(peliculaH3_com_genero);
 			peliculaDiv_com.appendChild(peliculaH2_com_genero);
 			pelicula_com.appendChild(peliculaSpan_com);
-			miContenedor.appendChild(pelicula_sinopsis);
+			contenedor_resultados.appendChild(pelicula_sinopsis);
+
+			div_atras_y_botones = document.createElement("div")
+			div_atras_y_botones.className = "div_atras_y_botones"
+			
+			//principal.insertBefore(div_atras_y_botones,contenedor_resultados)
+			contenedor_resultados.insertAdjacentElement("afterbegin",div_atras_y_botones)
+			
+			div_botones_editar_eliminar_pelicula = document.createElement("div")
+			div_botones_editar_eliminar_pelicula.className = "div_botones_editar_eliminar_pelicula"
+			div_atras_y_botones.appendChild(boton_atras_div)
+			div_atras_y_botones.appendChild(div_botones_editar_eliminar_pelicula)
+			
+			//impresion de los botones de eliminar pelicula y modificar pelicula
+			// si el usuario esta logueado 
+			if (userId!="") {
+				//el usuario registrado puede editar la pelicula
+				btn_editar = document.createElement("button")				
+				div_botones_editar_eliminar_pelicula.appendChild(btn_editar)
+				btn_editar.textContent = "Editar"
+				//verifica si existen comentarios de otros usuarios en la pelicula.
+				hay_com_de_otros = false
+				for (i=0; i<comentarios.length; i++){
+					if (comentarios[i].idUsuario!=userId){
+						hay_com_de_otros = true
+					}
+				}
+				//si no ha comentarios de otros usuarios, puede eliminar la pelicula
+				if (!hay_com_de_otros){			
+					btn_eliminar = document.createElement("button")				
+					div_botones_editar_eliminar_pelicula.appendChild(btn_eliminar)
+					btn_eliminar.textContent = "Eliminar"					
+					btn_eliminar.addEventListener("click", () => {
+						//peticion al servidor para eliminar la pelicula		
+						let requestOptions = {
+							method: 'DELETE',
+							headers:  { 'Content-Type': 'application/json' },
+						}				
+						fetch("http://localhost:5000/peliculas/"+id, requestOptions)
+						.then( resp => {
+							datos = resp.json()
+						})
+						.then( resp => {
+							div_atras_y_botones.remove()
+							remove_childrens_tag_id("contenedor_resultados")
+							imprimir_barra_de_usuario();
+							pagina = 1
+							if (texto_busqueda=="")
+								imprimir_peliculas("todas")				
+							else
+								imprimir_peliculas(filtro_busqueda)						
+						})
+						
+					})
+				}
+				// puede editar si esta logueado
+				btn_editar.addEventListener("click", () => {
+					div_atras_y_botones.remove()
+					remove_childrens_tag_id("contenedor_resultados")	
+					contenedor_resultados = document.getElementById("contenedor_resultados")
+					div_pelicula = document.createElement("div")						
+					div_pelicula.className = "div_nueva_pelicula"
+					div_pelicula.id = "div_nueva_pelicula"
+					div_pelicula.style.backgroundImage = "url("+pelicula_seleccionada.imagen+")"
+					titular_pelicula = document.createElement("h3")
+					titular_pelicula.className = "titular_nueva_pelicula"
+					titular_pelicula.textContent = "Editar película"
+			
+					div_formulario_pelicula = document.createElement("div")
+					div_formulario_pelicula.className = "div_formulario_nueva_pelicula"
+			
+					label_titulo = document.createElement("label")
+					label_titulo.for = "input_titulo_nueva_pelicula"
+					label_titulo.textContent = "Título"
+					input_titulo_pelicula = document.createElement("input")
+					input_titulo_pelicula.className = "inputs_nueva_pelicula"
+					input_titulo_pelicula.name ="input_titulo_nueva_pelicula"
+					input_titulo_pelicula.value = pelicula_seleccionada.titulo
+					div_formulario_pelicula.appendChild(label_titulo)
+					div_formulario_pelicula.appendChild(input_titulo_pelicula)
+			
+					label_director = document.createElement("label")
+					label_director.for = "select_director_nueva_pelicula"
+					label_director.textContent = "Director"
+					select_director_pelicula = document.createElement("select")
+					select_director_pelicula.className = "inputs_nueva_pelicula"
+					select_director_pelicula.name ="select_director_nueva_pelicula"
+
+					div_formulario_pelicula.appendChild(label_director)
+					div_formulario_pelicula.appendChild(select_director_pelicula)
+					//solicita los directores al servidor
+					fetch('http://localhost:5000/directores/')
+					.then( resp => {
+						datos = resp.json();
+						return datos;
+					})
+					.then( resp => {
+						resp.forEach(element => {
+							option_director = document.createElement("option")
+							option_director.value = element.nombre
+							option_director.textContent = element.nombre
+							select_director_pelicula.appendChild(option_director)
+						});
+						select_director_pelicula.value = pelicula_seleccionada.director							
+					})
+			
+					label_genero = document.createElement("label")
+					label_genero.for = "select_genero_nueva_pelicula"
+					label_genero.textContent = "Género (seleccione varios con Ctrl)"
+					select_genero_pelicula = document.createElement("select")
+					select_genero_pelicula.className = "inputs_nueva_pelicula"
+					select_genero_pelicula.name ="select_genero_nueva_pelicula"
+					select_genero_pelicula.id ="select_genero_nueva_pelicula"
+					div_formulario_pelicula.appendChild(label_genero)
+					div_formulario_pelicula.appendChild(select_genero_pelicula)		
+					//obtiene los generos de la api
+					fetch('http://localhost:5000/generos/')
+					.then( resp => {						
+						datos = resp.json();
+						return datos;
+					})
+					.then( resp => {						
+						resp.forEach(element => {							
+							option_genero = document.createElement("option")							
+							option_genero.value = element.nombre
+							option_genero.textContent = element.nombre
+							select_genero_pelicula.multiple = "multiple"
+							select_genero_pelicula.name = "select_genero_nueva_pelicula[]"
+							select_genero_pelicula.appendChild(option_genero)
+							//selecciona los correspondientes a la pelicula selecionada para editar
+							pelicula_seleccionada.genero.indexOf(element.nombre)!=-1 ? option_genero.selected = true: option_genero.selected = false
+						});						
+					})
+					
+			
+					label_anio = document.createElement("label")
+					label_anio.for = "input_anio_nueva_pelicula"
+					label_anio.textContent = "Año"
+					input_anio_pelicula = document.createElement("input")
+					input_anio_pelicula.className = "inputs_nueva_pelicula"
+					input_anio_pelicula.name ="input_anio_nueva_pelicula"
+
+					input_anio_pelicula.value = pelicula_seleccionada.anio
+					div_formulario_pelicula.appendChild(label_anio)
+					div_formulario_pelicula.appendChild(input_anio_pelicula)
+			
+					label_imagen = document.createElement("label")
+					label_imagen.for = "input_anio_nueva_pelicula"
+					label_imagen.textContent = "Imagen"
+					input_imagen_pelicula = document.createElement("input")
+					input_imagen_pelicula.className = "inputs_nueva_pelicula"
+					input_imagen_pelicula.name ="input_anio_nueva_pelicula"
+					input_imagen_pelicula.value = pelicula_seleccionada.imagen
+					input_imagen_pelicula.placeholder = "link de la imagen"					
+					div_formulario_pelicula.appendChild(label_imagen)
+					div_formulario_pelicula.appendChild(input_imagen_pelicula)
+			
+					label_sinopsis = document.createElement("label")
+					label_sinopsis.for = "input_anio_nueva_pelicula"
+					label_sinopsis.textContent = "Sinopsis"
+					input_sinopsis_pelicula = document.createElement("textarea")
+					input_sinopsis_pelicula.rows = "5"
+					input_sinopsis_pelicula.className = "inputs_nueva_pelicula"
+					input_sinopsis_pelicula.name ="input_anio_nueva_pelicula"
+					input_sinopsis_pelicula.textContent = pelicula_seleccionada.sinopsis
+					div_formulario_pelicula.appendChild(label_sinopsis)
+					div_formulario_pelicula.appendChild(input_sinopsis_pelicula)
+			
+					div_botones_aceptar_cancelar = document.createElement("div")
+					div_botones_aceptar_cancelar.className = "div_botones_aceptar_cancelar"
+					boton_cancelar_pelicula = document.createElement("button")
+					boton_cancelar_pelicula.textContent = "Cancelar"
+					boton_aceptar_pelicula = document.createElement("button")
+					boton_aceptar_pelicula.textContent = "Aceptar"
+					div_botones_aceptar_cancelar.appendChild(boton_cancelar_pelicula)
+					div_botones_aceptar_cancelar.appendChild(boton_aceptar_pelicula)
+					div_formulario_pelicula.appendChild(div_botones_aceptar_cancelar)
+			
+					principal = document.getElementById("principal")
+					footer_div = document.getElementById("footer_div")
+					//principal.insertBefore(div_pelicula, footer_div)
+					contenedor_resultados.appendChild(div_pelicula)
+					div_pelicula.appendChild(titular_pelicula)
+					div_pelicula.appendChild(div_formulario_pelicula)
+			
+					boton_cancelar_pelicula.addEventListener("click", () => {
+						div_pelicula.remove()
+						imprimirPeliculaYComentarios(id)
+					})
+					boton_aceptar_pelicula.addEventListener("click", () => {
+						//verificacion de seleccion de un genero
+						lista_generos = []
+						opciones = Array.from(select_genero_pelicula.options)
+						opciones_seleccionadas = opciones.filter(function(element){ return element.selected})
+						lista_generos = opciones_seleccionadas.map(function(element){ return element.value})
+						faltan_datos = false			
+						if (input_titulo_pelicula.value=="" || lista_generos.length==0 || input_anio_pelicula.value=="" ){
+							faltan_datos = true
+						}
+						let requestOptions = {
+							method: 'PUT',
+							headers:  { 'Content-Type': 'application/json' },
+							body: JSON.stringify({
+								titulo: input_titulo_pelicula.value,
+								genero: lista_generos,
+								director: select_director_pelicula.value,
+								anio: input_anio_pelicula.value,
+								imagen: input_imagen_pelicula.value,
+								sinopsis: input_sinopsis_pelicula.value,																					
+							 })
+						}
+						if (!faltan_datos) {
+							fetch("http://localhost:5000/peliculas/"+id,requestOptions)
+								.then(
+									resp => {
+										datos = resp.json()
+										return datos
+									})
+								.then( resp => {
+									pelicula_seleccionada.titulo = input_titulo_pelicula.value
+									pelicula_seleccionada.genero = lista_generos
+									pelicula_seleccionada.director = select_director_pelicula.value
+									pelicula_seleccionada.anio = input_anio_pelicula.value
+									pelicula_seleccionada.imagen = input_imagen_pelicula.value
+									pelicula_seleccionada.sinopsis = input_sinopsis_pelicula.value
+									div_pelicula.remove()
+									imprimirPeliculaYComentarios(id)
+
+								})
+						}else{
+							mensaje_p = document.getElementById("mensaje_p")
+							if (mensaje_p==null) {
+								mensaje_p = document.createElement("p")
+								mensaje_p.id = "mensaje_p"
+							}
+							mensaje_p.textContent = " Faltan completar datos"
+							div_formulario_pelicula.insertBefore(mensaje_p,div_botones_aceptar_cancelar)
+			
+						}	
+					})
+				})//fin click editar pelicula
+				
+			}
+
 		
 			pelicula_comentarios_h3 = document.createElement("h3");
 			pelicula_comentarios_h3.className = "pelicula_comentarios_h3";
@@ -812,12 +1032,11 @@ function imprimir_mensaje_de_login(texto){
 			div_lista_de_comentarios = document.createElement("div")
 			div_lista_de_comentarios.className = "div_lista_de_comentarios"
 
-			miContenedor.appendChild(comentarios_contenedor);
+			contenedor_resultados.appendChild(comentarios_contenedor);
 			comentarios_contenedor.appendChild(comentarios_cabecera)
 			comentarios_contenedor.appendChild(div_lista_de_comentarios)
 
 			if (user!=""){
-				//console.log(user);
 				boton_agregar_comentario = document.createElement("button")
 				boton_agregar_comentario.className = "boton_agregar_comentario"
 				boton_agregar_comentario.id ="boton_agregar_comentario"				
@@ -868,7 +1087,6 @@ function imprimir_mensaje_de_login(texto){
 							.then( resp => {			
 								
 								idComentario = resp['id']				
-								//imprimirPeliculaYComentarios(id)
 								comentario_tag = document.createElement("article");
 								comentario_tag.className = "comentario";
 								comentario_tag.setAttribute("idComentario",idComentario);
@@ -905,7 +1123,7 @@ function imprimir_mensaje_de_login(texto){
 				comentario_autor = document.createElement("h3");
 				comentario_autor.className = "autor_com";
 				comentario_autor.id = element.id
-				//comentario_autor.textContent = "Lo dijo @"+autor_del_comentario(element['id']);
+
 				fetch("http://localhost:5000/comentarios/usuarios/"+element.id)
 				.then(
 					resp => {
@@ -921,7 +1139,6 @@ function imprimir_mensaje_de_login(texto){
 				comentario_tag.appendChild(comentario_p);
 				comentario_tag.appendChild(comentario_autor);
 			});
-			  //imprimir_footer();
 		});
     
 }

@@ -184,7 +184,6 @@
         transition-duration: 0.4s;
     }
     
-
     .titular_de_contenedor{
         color: white;
         width: 100%;
@@ -195,17 +194,27 @@
         padding: 5px;
         margin:0;
     }
+    .div_botones_editar_eliminar_pelicula{
+        width: 100%;
+        text-align: right;
+    }   
+    .div_botones_editar_eliminar_pelicula button{
+      
+        margin-right: 5px;
+    }
+    .div_atras_y_botones {
+        display:flex;
+        width: 100%;
+        margin: 10px;
+    }
     .boton_atras_div{
-        padding-top: 5px;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         flex-wrap: nowrap;
         flex-direction: row;
         color: rgb(255, 255, 255);
-        width: 100%;
-        max-width: 1040px;
-        cursor: pointer;
+         cursor: pointer;
         padding-left: 10px;
     }
     .boton_atras_div > p {
@@ -216,7 +225,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        padding-top: 15px;
         width: 100%;
         max-width: 1040px;
         align-items: center;
@@ -233,6 +241,7 @@
         background: linear-gradient(0.25turn,#000000, #818181);
         font-size:4vw;
         cursor: pointer;
+        transition-duration: 0.4s;
     }
     .info_pelicula{
 
@@ -481,7 +490,7 @@
         justify-content: center;
         text-align: center;
         height: 50px;
-        width: 200px;
+        width: 110px;
         background: #241744;
         color: #fff;
         border-radius: 100px;
