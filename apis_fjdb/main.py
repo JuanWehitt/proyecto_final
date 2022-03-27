@@ -8,7 +8,7 @@ app = Flask(__name__)
 cors = CORS(app, resources={r"/*/*/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-data_collections = open("collections.json")
+data_collections = open("collections.json", encoding="utf-8")
 lista_collections = json.load(data_collections)
 directores = lista_collections['directores']
 generos = lista_collections['generos']
@@ -16,7 +16,7 @@ comentarios = lista_collections['comentarios']
 peliculas = lista_collections['peliculas']
 usuarios = lista_collections['usuarios']
 
-@app.route("/directores",methods=['GET'])
+@app.route("/directores/",methods=['GET'])
 def retornar_directores():
     return jsonify(directores), HTTPStatus.OK
 
@@ -41,12 +41,12 @@ def retornar_peliculas_por_director(nombre):
         return jsonify({"mensaje":"No se encontro la pelicula con el director ingresado"}), HTTPStatus.OK
 
 
-@app.route("/peliculas/peliculas_con_portada",methods=['GET'])
+@app.route("/peliculas/peliculas_con_portada/",methods=['GET'])
 def retornar_peliculas_con_portada():
     lista_filtrada = [x for x in peliculas if x["imagen"] != ""]
     return jsonify(lista_filtrada), HTTPStatus.OK
 
-@app.route("/peliculas",methods=['GET'])
+@app.route("/peliculas/",methods=['GET'])
 # @cross_origin(origin="*", headers=['Conent-Type','Autorization'])
 def retornar_peliculas():
     return jsonify(peliculas), HTTPStatus.OK
@@ -86,7 +86,7 @@ def json_ok_pelicula(datos_pelicula):
     else:
         return False
 
-@app.route("/peliculas", methods=['POST'])
+@app.route("/peliculas/", methods=['POST'])
 def agregar_pelicula():
     nuevo_id = generar_nuevo_id_pelicula()
     datos_pelicula = request.get_json()
@@ -110,6 +110,10 @@ def agregar_pelicula():
 @app.route("/peliculas/<id>", methods=['DELETE'])
 def eliminar_pelicula(id):
     lista = [x for x in peliculas if x['id']==id]
+    lista_ids_comentarios = lista[0]["comentarios"]
+    lista_comentarios = list(filter(lambda x: x['id'] in lista_ids_comentarios,comentarios))
+    for comentario in lista_comentarios :
+        comentarios.remove(comentario)
     if lista:
         peliculas.remove(lista[0])
         return jsonify({"mensaje":"La pelicula ha sido eliminada con exito"}), HTTPStatus.OK
@@ -180,7 +184,7 @@ def json_ok_comentario(datos_comentario):
     return ("comentario" and "idPelicula" and "idUsuario") in datos_comentario
 
 
-@app.route("/comentarios", methods=['POST']) #fgfgfgfgfgfggfg
+@app.route("/comentarios/", methods=['POST']) #fgfgfgfgfgfggfg
 def agregar_comentario():
     nuevo_id = generar_nuevo_id_comentario()
     datos_comentario = request.get_json()
@@ -218,9 +222,11 @@ def actualizar_comentario(id):
 
 @app.route("/comentarios/<id>", methods=['DELETE'])
 def eliminar_comentario(id):
-    lista = [x for x in comentarios if x['id'] == id]
+    lista = [x for x in comentarios if x['id'] == id]                               #obtengo la referencia al comentario con listcomprehencion
+    pelicula = list(filter(lambda x: id in x["comentarios"], peliculas))[0]         #busco la pelicula con el comentario y guardo una referencia                                                  #me quedo con la primer pelicula encontrada
+    pelicula["comentarios"].remove(id)                                              #remuevo el comentario de la lista de comentarios en la pelicula.
     if lista:
-        comentarios.remove(lista[0])
+        comentarios.remove(lista[0])                                                #remuevo el comentario de la coleccion de comentarios.
         return jsonify({"mensaje":"El comentario ha sido eliminado con exito"}), HTTPStatus.OK
     else:
         return jsonify({"mensaje": "No se encontro el comentario a eliminar, el id es incorrecto."}), HTTPStatus.NOT_FOUND
@@ -235,7 +241,7 @@ def json_ok_usuario(json):
         return False
 
 #Prueba de Login retorna el usuario solo si el ususario y contraseña coincide
-@app.route("/usuarios", methods=['POST'])
+@app.route("/usuarios/", methods=['POST'])
 def retornar_usuario():
     datos_usuario = request.get_json()
     #print(datos_usuario)
