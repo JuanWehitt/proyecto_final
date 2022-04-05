@@ -2,5 +2,6 @@ Trabajo Final de Laboratorio de Computación II y Programación II
 
 Publicación de URL con el registro de las Pruebas de APIs para la web de Peliculas.
 
-
 https://documenter.getpostman.com/view/18291513/UVsTrNQ7
+
+En la cual mostrará el resumen documentado de postman con todos las request realizadas en Postman, en algunos casos escritos de forma generica, por ejemplo para hacer un GET de pelicula especifica aparecerá http://localhost:5000/peliculas/<id> de forma general, pero no aparecerá el <id> especifico, por lo cual es recomendable importar desde postman el archivo adjunto "Coleccion de APIs de Peliculas.postman_collection.json", ya que este tiene todos los request válidos y especificos.

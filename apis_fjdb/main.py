@@ -51,11 +51,7 @@ def retornar_peliculas_con_portada():
 def retornar_peliculas():
     return jsonify(peliculas), HTTPStatus.OK
 
-
-# @app.route("/peliculas/director", methods=['GET'])
-# def retornar_peliculas_por_nombre(nombre):
-#     return jsonify([x for x in peliculas if nombre==x['director']]), HTTPStatus.OK
-
+#Funciones de soporte para las películas
 
 def generar_nuevo_id_pelicula():
     not_id = True
@@ -77,8 +73,6 @@ def generar_nuevo_id_comentario():
         id = uuid.uuid4()
         not_id = not ( [x for x in comentarios if x['id']==id] == [] )
     return id
-
-
 
 def json_ok_pelicula(datos_pelicula):
     if 'titulo' and 'genero' and 'director' and 'anio' and 'imagen' and 'sinopsis' and 'idUsuario' in datos_pelicula:
@@ -167,7 +161,7 @@ def retornar_comentario(id):
     else:
         return jsonify({"mensaje": "No se encontro el comentario, el id es incorrecto."}), HTTPStatus.NOT_FOUND
 
-# Obtiene todos los comentarios de una pelicula segun el Id de la pelicula
+# Obtiene todos los comentarios de una pelicula según el Id de la película
 @app.route("/peliculas/comentarios/<id>", methods=['GET'])
 def retornar_comentarios_de_pelicula(id):
     pelicula = [x for x in peliculas if x['id'] == id]
@@ -184,7 +178,7 @@ def json_ok_comentario(datos_comentario):
     return ("comentario" and "idPelicula" and "idUsuario") in datos_comentario
 
 
-@app.route("/comentarios/", methods=['POST']) #fgfgfgfgfgfggfg
+@app.route("/comentarios/", methods=['POST'])
 def agregar_comentario():
     nuevo_id = generar_nuevo_id_comentario()
     datos_comentario = request.get_json()
