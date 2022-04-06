@@ -8,6 +8,11 @@
         background-color: black;
         margin: 0;
     }
+    .conexion_error {
+        text-align: center;
+        color:white;
+        width: 100%;
+    }
     .encabezado {
         display: flex;
         flex-direction: row;
@@ -26,6 +31,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
+        justify-content: right;
     }
     .input_usuario {
 
@@ -475,6 +481,8 @@
         border: solid;        
         margin: 10px;
         border-radius: 7px;
+        background-size: contain;
+        background-blend-mode: multiply;
     }
     .div_nueva_pelicula > h3 {
         padding: 5px;

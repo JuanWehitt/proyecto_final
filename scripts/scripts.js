@@ -8,15 +8,21 @@ filtro_busqueda = "Director"
 pagina = 1;
 
 function imprimir_footer(){
-	footer_div = document.createElement("footer");
-	footer_div.className = "footer_div";
-	footer_div.id = "footer_div";
-	footer_p = document.createElement("p");
-	footer_p.textContent = "Juan y Fran Web Pages - 2022";
-	footer_div.appendChild(footer_p);
-	padre = document.getElementById("principal")
-	padre.insertBefore(footer_div,null)
-	//return footer_div;
+	fetch("http://localhost:5000/")
+	.then( resp => {
+		//console.log(resp.status);
+	})
+	.then( resp => {
+		footer_div = document.createElement("footer");
+		footer_div.className = "footer_div";
+		footer_div.id = "footer_div";
+		footer_p = document.createElement("p");
+		footer_p.textContent = "Juan y Fran Web Pages - 2022";
+		footer_div.appendChild(footer_p);
+		padre = document.getElementById("principal")
+		padre.insertBefore(footer_div,null)
+		//return footer_div;
+	})
 }
 
 function clickEnIngresarSalir(){
@@ -80,53 +86,68 @@ function clickEnIngresarSalir(){
 
 }
 
-function imprimir_encabezado(nombre){ 	
-	imagen_logo = document.createElement("img")
-	imagen_logo.className = "imagen_logo"
-	imagen_logo.src = "images/logo.png"	
-	imagen_logo.alt = "imagen del logo de la pagina"
-	encabezado = document.getElementById("encabezado")
-	encabezado.appendChild(imagen_logo)
-	boton_login = document.createElement("button")
-	boton_login.className = "boton_login_logout"
-	boton_login.id = "boton_login_logout"
+function imprimir_encabezado(nombre){ 
+	fetch("http://localhost:5000/")
+	.then( resp => {
+		//console.log(resp.status);
+	})
+	.then( resp => {
+		imagen_logo = document.createElement("img")
+		imagen_logo.className = "imagen_logo"
+		imagen_logo.src = "images/logo.png"	
+		imagen_logo.alt = "imagen del logo de la pagina"
+		encabezado = document.getElementById("encabezado")
+		encabezado.appendChild(imagen_logo)
+		boton_login = document.createElement("button")
+		boton_login.className = "boton_login_logout"
+		boton_login.id = "boton_login_logout"
 
-	if(user=="") {
-		div_login = document.createElement("div")
-		div_login.className = "login"
-		div_login.id = "login"
-		input_login = document.createElement("input")
-		input_login.className = "input_usuario"
-		input_login.id = "input_usuario"
-		input_login.type="text"
-		input_login.placeholder = "usuario"
+		if(user=="") {
+			div_login = document.createElement("div")
+			div_login.className = "login"
+			div_login.id = "login"
+			input_login = document.createElement("input")
+			input_login.className = "input_usuario"
+			input_login.id = "input_usuario"
+			input_login.type="text"
+			input_login.placeholder = "usuario"
 
-		input_contrasenia = document.createElement("input")
-		input_contrasenia.className = "input_contrasenia"
-		input_contrasenia.id = "input_contrasenia"
-		input_contrasenia.type = "password"
-		input_contrasenia.placeholder = "Contraseña"
+			input_contrasenia = document.createElement("input")
+			input_contrasenia.className = "input_contrasenia"
+			input_contrasenia.id = "input_contrasenia"
+			input_contrasenia.type = "password"
+			input_contrasenia.placeholder = "Contraseña"
 
-		div_login.appendChild(input_login)
-		div_login.appendChild(input_contrasenia)
+			div_login.appendChild(input_login)
+			div_login.appendChild(input_contrasenia)
 
-		boton_login.textContent = "Ingresar"
+			boton_login.textContent = "Ingresar"
 
-		encabezado.appendChild(div_login)
-		encabezado.appendChild(boton_login)
+			encabezado.appendChild(div_login)
+			encabezado.appendChild(boton_login)
 
-		//acciones del boton ingresar/salir
-		
+			//acciones del boton ingresar/salir
+			
 
-	}else {
-		boton_login.textContent = "Salir"
-		bienvenida_p = document.createElement("p")
-		bienvenida_p.className = "bienvenida_usuario"
-		bienvenida_p.textContent = "Hola " + nombre + "!"
-		encabezado.appendChild(bienvenida_p)
-		encabezado.appendChild(boton_login)
-	}
-	document.querySelector(".boton_login_logout").addEventListener("click", clickEnIngresarSalir, false);
+		}else {
+			boton_login.textContent = "Salir"
+			bienvenida_p = document.createElement("p")
+			bienvenida_p.className = "bienvenida_usuario"
+			bienvenida_p.textContent = "Hola " + nombre + "!"
+			encabezado.appendChild(bienvenida_p)
+			encabezado.appendChild(boton_login)
+		}
+		document.querySelector(".boton_login_logout").addEventListener("click", clickEnIngresarSalir, false);
+	})
+	.catch(function(error) {
+		console.log('Hubo un problema con la petición Fetch:' + error.message);
+		error_p = document.createElement("p")
+		error_p.textContent = "ups! no hay conexion con el servidor"
+		encabezado = document.getElementById("encabezado")
+		error_p.className = "conexion_error"		
+		encabezado.appendChild(error_p)
+	  });
+	
 }
 
 function imprimir_boton_limpiar(){
