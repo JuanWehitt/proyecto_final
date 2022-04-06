@@ -6,575 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Obtener Peliculas/Director",
-			"item": [
-				{
-					"name": "Obtener-Peliculas-Steven Spielberg",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/peliculas/director/Steven Spielberg",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"peliculas",
-								"director",
-								"Steven Spielberg"
-							]
-						},
-						"description": "Obtiene los datos de todas las películas asociadas al nombre del director en este caso Steven Spielberg"
-					},
-					"response": [
-						{
-							"name": "Obtener-Peliculas-Steven Spielberg",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5000/peliculas/director/Steven Spielberg",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"peliculas",
-										"director",
-										"Steven Spielberg"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "3088"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Server",
-									"value": "Werkzeug/2.0.3 Python/3.10.2"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 27 Mar 2022 17:51:12 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"anio\": 1994,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Drama\",\n            \"Bélicas\",\n            \"Historicas\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/81j3R2pbfcL._SL1017_.jpg\",\n        \"sinopsis\": \"El empresario alemán Oskar Schindler, miembro del Partido Nazi, pone en marcha un elaborado, costoso y arriesgado plan para salvar a mas de mil judíos del Holocausto.\",\n        \"titulo\": \"Lista de Schindler\"\n    },\n    {\n        \"anio\": 1993,\n        \"comentarios\": [\n            \"60034ff3-ea8f-4aab-9d3f-b117ca78c442\",\n            \"59034ff3-ea8f-4aab-9d3f-b117ca78c442\",\n            \"62034ff3-ea8f-4aab-9d3f-b117ca78c442\"\n        ],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4eeb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61iF3RSsLsL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"El multimillonario John Hammond hace realidad su sueño de clonar dinosaurios del Jurásico y crear con ellos un parque temático en una isla. Antes de abrir el parque al público general, Hammond invita a una pareja de científicos y a un matemático para que comprueben la viabilidad del proyecto.\",\n        \"titulo\": \"Jurassic Park\"\n    },\n    {\n        \"anio\": 1981,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4eeb-9d3d-b203ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71aoIKE1XYL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"Después de una infructuosa misión en Sudamérica, el Gobierno estadounidense encarga al arqueólogo Indiana Jones la búsqueda del Arca de la Alianza, una reliquia bíblica que contiene los diez mandamientos y que convierte en invencible a su portador.\",\n        \"titulo\": \"Indiana Jones: Casadores del Arca Perdida\"\n    },\n    {\n        \"anio\": 2018,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Suspenso\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4xxb-9d3d-b203ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71V1fH-X+9L._AC_SL1000_.jpg\",\n        \"sinopsis\": \"En el 2045: el adolescente Wade Watts es solo una de las millones de personas que se evaden del sombrío mundo real para sumergirse en un mundo utópico virtual donde todo es posible: OASIS. Wade participa en la búsqueda del tesoro que el creador de este mundo imaginario dejó oculto en su obra. No obstante, hay gente muy peligrosa compitiendo contra el.\",\n        \"titulo\": \"Ready Player One\"\n    }\n]"
-						}
-					]
-				},
-				{
-					"name": "Obtener-Peliculas-Christopher Nolan",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/peliculas/director/Christopher Nolan",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"peliculas",
-								"director",
-								"Christopher Nolan"
-							]
-						},
-						"description": "Obtiene los datos de todas las películas asociadas al nombre del director en este caso Christopher Nolan"
-					},
-					"response": [
-						{
-							"name": "Obtener-Peliculas-Christopher Nolan",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5000/peliculas/director/Christopher Nolan",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"peliculas",
-										"director",
-										"Christopher Nolan"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "2167"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Server",
-									"value": "Werkzeug/2.0.3 Python/3.10.2"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 27 Mar 2022 17:57:03 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"anio\": 2008,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Acción\",\n            \"Super Heroes\",\n            \"Suspenso\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://static.wikia.nocookie.net/doblaje/images/9/9c/Batman_el_Caballero_de_la_Noche.png/revision/latest?cb=20110602012240&path-prefix=es\",\n        \"sinopsis\": \"Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman mantiene a raya el crimen organizado en Gotham. Todo cambia cuando aparece el Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos.\",\n        \"titulo\": \"Batman: Dark Night\"\n    },\n    {\n        \"anio\": 2010,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Acción\",\n            \"Ciencia Ficción\",\n            \"Thriller\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3z-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/91bxYmAaiQL._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Dom Cobb (Leonardo DiCaprio) es un ladrón con una extraña habilidad para entrar a los sueños de la gente y robarle los secretos de sus subconscientes. Su habilidad lo ha convertido en un atractivo en el mundo del espionaje corporativo, pero ha tenido un gran costo en la gente que ama.\",\n        \"titulo\": \"El Origen\"\n    },\n    {\n        \"anio\": 2014,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Drama\",\n            \"Ciencia Ficción\",\n            \"Misterio\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/716P1xCmnPL._AC_SL1020_.jpg\",\n        \"sinopsis\": \"Un grupo de científicos y exploradores, encabezados por Cooper, se embarcan en un viaje espacial para encontrar un lugar con las condiciones necesarias para reemplazar a la Tierra y comenzar una nueva vida allí.\",\n        \"titulo\": \"Interestelar\"\n    }\n]"
-						}
-					]
-				},
-				{
-					"name": "Obtener-Peliculas-James Cameron",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/peliculas/director/James Cameron",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"peliculas",
-								"director",
-								"James Cameron"
-							]
-						},
-						"description": "Obtiene los datos de todas las películas asociadas al nombre del director en este caso James Cameron"
-					},
-					"response": [
-						{
-							"name": "Obtener-Peliculas-James Cameron",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5000/peliculas/director/James Cameron",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"peliculas",
-										"director",
-										"James Cameron"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "2184"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Server",
-									"value": "Werkzeug/2.0.3 Python/3.10.2"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 27 Mar 2022 18:36:32 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"anio\": 1998,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Drama\",\n            \"Romance\",\n            \"Tragedia\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://www.tebeosfera.com/T3content/img/T3_numeros/0/1/num1_BbXC-001.jpg\",\n        \"sinopsis\": \"Jack es un joven artista que gana un pasaje para viajar a América en el Titanic, el transatlántico más grande y seguro jamás construido.\",\n        \"titulo\": \"Titanic\"\n    },\n    {\n        \"anio\": 2010,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4ssb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61OUGpUfAyL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"En un exuberante planeta llamado Pandora viven los Na'vi, seres que aparentan ser primitivos pero que en realidad son muy evolucionados. Debido a que el ambiente de Pandora es venenoso, los híbridos humanos/Na'vi, llamados Avatares, están relacionados con las mentes humanas, lo que les permite moverse libremente por Pandora. Jake Sully, un exinfante de marina paralítico se transforma a través de un Avatar, y se enamora de una mujer Na'vi.\",\n        \"titulo\": \"Avatar\"\n    },\n    {\n        \"anio\": 1991,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4ffb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61bgvyrVGqL._AC_SL1039_.jpg\",\n        \"sinopsis\": \"Algunos años antes, un viajero del tiempo le reveló a la madre de John que su hijo sería el salvador de la humanidad. Cuando un nuevo androide mejorado llega del futuro para asesinar a John, un viejo modelo será enviado para protegerle.\",\n        \"titulo\": \"Terminator 2: Juicio Final\"\n    }\n]"
-						}
-					]
-				},
-				{
-					"name": "Obtener-Peliculas-Mel Gibson",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/peliculas/director/Mel Gibson",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"peliculas",
-								"director",
-								"Mel Gibson"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Obtener-Peliculas-Mel Gibson",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5000/peliculas/director/Mel Gibson",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"peliculas",
-										"director",
-										"Mel Gibson"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "662"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Server",
-									"value": "Werkzeug/2.0.3 Python/3.10.2"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 27 Mar 2022 17:56:22 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"anio\": 1995,\n        \"comentarios\": [],\n        \"director\": \"Mel Gibson\",\n        \"genero\": [\n            \"Acción\",\n            \"Romance\",\n            \"Bélicas\"\n        ],\n        \"id\": \"xx034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71B1fLQaePL._AC_SL1018_.jpg\",\n        \"sinopsis\": \"Las épicas aventuras de William Wallace, un rebelde escocés en su lucha por la independencia contra el poder de Inglaterra, en pleno medievo. Su legendario carácter y su épica historia de amor lo convirtieron en un héroe.\",\n        \"titulo\": \"Corazon Valiente\"\n    }\n]"
-						}
-					]
-				}
-			],
-			"description": "Pruebas para obtener datos de peliculas a partir del nombre del director"
-		},
-		{
-			"name": "Obtener Peliculas/Id",
-			"item": [
-				{
-					"name": "Obtener Peliculas/Id_Piratas del Caribe",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/peliculas/59034fc3-ea8e-4aab-9d3d-b117ca78c442",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"peliculas",
-								"59034fc3-ea8e-4aab-9d3d-b117ca78c442"
-							]
-						},
-						"description": "Se obtienen los datos de la Película Piratas del Caribe"
-					},
-					"response": [
-						{
-							"name": "Obtener Peliculas/Id_Piratas del Caribe",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5000/peliculas/59034fc3-ea8e-4aab-9d3d-b117ca78c442",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"peliculas",
-										"59034fc3-ea8e-4aab-9d3d-b117ca78c442"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "681"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Server",
-									"value": "Werkzeug/2.0.3 Python/3.10.2"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 27 Mar 2022 18:36:51 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"anio\": 2001,\n    \"comentarios\": [\n        \"59034ff3-ea8f-4aab-9d3f-b117ca78c442\"\n    ],\n    \"director\": \"Joachim Rønning\",\n    \"genero\": [\n        \"Acción\",\n        \"Aventura\"\n    ],\n    \"id\": \"59034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n    \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n    \"imagen\": \"https://m.media-amazon.com/images/I/91fPdJwTMBL._SL1500_.jpg\",\n    \"sinopsis\": \"El capitán Barbossa le roba el barco al pirata Jack Sparrow y secuestra a Elizabeth, amiga de Will Turner. Barbossa y su tripulación son víctimas de un conjuro que los condena a vivir eternamente y a transformarse cada noche en esqueletos vivientes.\",\n    \"titulo\": \"Piratas del Caribe\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Obtener Peliculas/Id_The Matrix",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/peliculas/56034fc3-ea8e-4aab-9d3d-b117ca78c442",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"peliculas",
-								"56034fc3-ea8e-4aab-9d3d-b117ca78c442"
-							]
-						},
-						"description": "Se obtienen los datos de la Película The Matrix"
-					},
-					"response": [
-						{
-							"name": "Obtener Peliculas/Id_The Matrix",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5000/peliculas/56034fc3-ea8e-4aab-9d3d-b117ca78c442",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"peliculas",
-										"56034fc3-ea8e-4aab-9d3d-b117ca78c442"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "724"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Server",
-									"value": "Werkzeug/2.0.3 Python/3.10.2"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 27 Mar 2022 18:36:58 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"anio\": 1999,\n    \"comentarios\": [],\n    \"director\": \"Hermanos Wachowski\",\n    \"genero\": [\n        \"Acción\",\n        \"Ciencia Ficción\",\n        \"Aventura\",\n        \"Fantasía\"\n    ],\n    \"id\": \"56034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n    \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n    \"imagen\": \"https://m.media-amazon.com/images/I/813dE2pH7XL._SL1417_.jpg\",\n    \"sinopsis\": \"El programador informático Thomas Anderson, más conocido en el mundo de los \\\"hacker\\\" como Neo, está en el punto de mira del temible agente Smith. Otros dos piratas informáticos, Trinity y Morfeo, se ponen en contacto con Neo para ayudarlo a escapar. Matrix te posee. Sigue al conejo blanco.\",\n    \"titulo\": \"The Matrix\"\n}"
-						}
-					]
-				}
-			],
-			"description": "Se obtienen las Películas asociando al Id de la Película"
-		},
-		{
-			"name": "Borrar Comentarios/Id",
-			"item": [
-				{
-					"name": "Borrar Comentario Con éxito",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-4aab-9d3f-b117ca78c442",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"comentarios",
-								"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
-							]
-						},
-						"description": "Prueba de borrado de comentario de forma exitosa."
-					},
-					"response": [
-						{
-							"name": "Borrar Comentario Con éxito",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-4aab-9d3f-b117ca78c442",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"comentarios",
-										"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "61"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Server",
-									"value": "Werkzeug/2.0.3 Python/3.10.2"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 27 Mar 2022 18:37:08 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"mensaje\": \"El comentario ha sido eliminado con exito\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Borrar Comentario Sin Éxito",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-4aab-9d3f-b117ca78c442",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"comentarios",
-								"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
-							]
-						},
-						"description": "Error de borrado de comentario por no ser encontrado."
-					},
-					"response": [
-						{
-							"name": "Borrar Comentario Sin Éxito",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-4aab-9d3f-b117ca78c442",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"comentarios",
-										"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
-									]
-								}
-							},
-							"status": "NOT FOUND",
-							"code": 404,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "81"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Server",
-									"value": "Werkzeug/2.0.3 Python/3.10.2"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 04 Apr 2022 23:31:46 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"mensaje\": \"No se encontro el comentario a eliminar, el id es incorrecto.\"\n}"
-						}
-					]
-				}
-			],
-			"description": "Se borran los comentarios asociando al Id del comentario"
-		},
-		{
 			"name": "Prueba Login",
 			"item": [
 				{
@@ -748,92 +179,6 @@
 							"body": "{\n    \"mensaje\": \"No se encuentra el usuario, revise los datos ingresados\"\n}"
 						}
 					]
-				},
-				{
-					"name": "Vericacion Estructura Incorrecta",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "            {\r\n                \"usuario\": \"xxxxxx\"\r\n            }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:5000/usuarios/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"usuarios",
-								""
-							]
-						},
-						"description": "Prueba de acceso, error por falta de un dato en la estructura Json."
-					},
-					"response": [
-						{
-							"name": "Vericacion Estructura Incorrecta",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "            {\r\n                \"usuario\": \"xxxxxx\"\r\n            }",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:5000/usuarios/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"usuarios",
-										""
-									]
-								}
-							},
-							"status": "BAD REQUEST",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Content-Length",
-									"value": "94"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Server",
-									"value": "Werkzeug/2.0.3 Python/3.10.2"
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 27 Mar 2022 18:45:42 GMT"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"mensaje\": \"Uno o mas campos no coinciden con la estructura, consulte la documentacion\"\n}"
-						}
-					]
 				}
 			],
 			"description": "Prueba de Acceso o Validación de un Usuario."
@@ -857,7 +202,7 @@
 								"peliculas"
 							]
 						},
-						"description": "ABM para obtener películas."
+						"description": "Request para obtener películas."
 					},
 					"response": [
 						{
@@ -908,6 +253,212 @@
 					]
 				},
 				{
+					"name": "Obtener una Pelicula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/<id>",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"<id>"
+							]
+						},
+						"description": "Se obtienen los datos de una película con el indicado"
+					},
+					"response": [
+						{
+							"name": "Obtener Peliculas/Id_Piratas del Caribe",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/peliculas/59034fc3-ea8e-4aab-9d3d-b117ca78c442",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"peliculas",
+										"59034fc3-ea8e-4aab-9d3d-b117ca78c442"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "681"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.3 Python/3.10.2"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Mar 2022 18:36:51 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"anio\": 2001,\n    \"comentarios\": [\n        \"59034ff3-ea8f-4aab-9d3f-b117ca78c442\"\n    ],\n    \"director\": \"Joachim Rønning\",\n    \"genero\": [\n        \"Acción\",\n        \"Aventura\"\n    ],\n    \"id\": \"59034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n    \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n    \"imagen\": \"https://m.media-amazon.com/images/I/91fPdJwTMBL._SL1500_.jpg\",\n    \"sinopsis\": \"El capitán Barbossa le roba el barco al pirata Jack Sparrow y secuestra a Elizabeth, amiga de Will Turner. Barbossa y su tripulación son víctimas de un conjuro que los condena a vivir eternamente y a transformarse cada noche en esqueletos vivientes.\",\n    \"titulo\": \"Piratas del Caribe\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Obtener Peliculas del Director",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/director/<nombre>",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"director",
+								"<nombre>"
+							]
+						},
+						"description": "Obtiene los datos de todas las películas asociadas al nombre del director"
+					},
+					"response": [
+						{
+							"name": "Obtener-Peliculas-Steven Spielberg",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/peliculas/director/Steven Spielberg",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"peliculas",
+										"director",
+										"Steven Spielberg"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3088"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.3 Python/3.10.2"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Mar 2022 17:51:12 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"anio\": 1994,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Drama\",\n            \"Bélicas\",\n            \"Historicas\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/81j3R2pbfcL._SL1017_.jpg\",\n        \"sinopsis\": \"El empresario alemán Oskar Schindler, miembro del Partido Nazi, pone en marcha un elaborado, costoso y arriesgado plan para salvar a mas de mil judíos del Holocausto.\",\n        \"titulo\": \"Lista de Schindler\"\n    },\n    {\n        \"anio\": 1993,\n        \"comentarios\": [\n            \"60034ff3-ea8f-4aab-9d3f-b117ca78c442\",\n            \"59034ff3-ea8f-4aab-9d3f-b117ca78c442\",\n            \"62034ff3-ea8f-4aab-9d3f-b117ca78c442\"\n        ],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4eeb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61iF3RSsLsL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"El multimillonario John Hammond hace realidad su sueño de clonar dinosaurios del Jurásico y crear con ellos un parque temático en una isla. Antes de abrir el parque al público general, Hammond invita a una pareja de científicos y a un matemático para que comprueben la viabilidad del proyecto.\",\n        \"titulo\": \"Jurassic Park\"\n    },\n    {\n        \"anio\": 1981,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4eeb-9d3d-b203ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71aoIKE1XYL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"Después de una infructuosa misión en Sudamérica, el Gobierno estadounidense encarga al arqueólogo Indiana Jones la búsqueda del Arca de la Alianza, una reliquia bíblica que contiene los diez mandamientos y que convierte en invencible a su portador.\",\n        \"titulo\": \"Indiana Jones: Casadores del Arca Perdida\"\n    },\n    {\n        \"anio\": 2018,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Suspenso\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4xxb-9d3d-b203ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71V1fH-X+9L._AC_SL1000_.jpg\",\n        \"sinopsis\": \"En el 2045: el adolescente Wade Watts es solo una de las millones de personas que se evaden del sombrío mundo real para sumergirse en un mundo utópico virtual donde todo es posible: OASIS. Wade participa en la búsqueda del tesoro que el creador de este mundo imaginario dejó oculto en su obra. No obstante, hay gente muy peligrosa compitiendo contra el.\",\n        \"titulo\": \"Ready Player One\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Obtener Peliculas con Portada",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/peliculas/peliculas_con_portada",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"peliculas",
+								"peliculas_con_portada"
+							]
+						},
+						"description": "Obtener todas las películas con portada en la base de datos del archivo Json."
+					},
+					"response": [
+						{
+							"name": "Obtener Peliculas con Portada",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/peliculas/peliculas_con_portada",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"peliculas",
+										"peliculas_con_portada"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23421"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.3 Python/3.10.2"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 31 Mar 2022 22:28:40 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"anio\": 2001,\n        \"comentarios\": [\n            \"59034ff3-ea8f-4aab-9d3f-b117ca78c442\"\n        ],\n        \"director\": \"Joachim Rønning\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\"\n        ],\n        \"id\": \"59034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/91fPdJwTMBL._SL1500_.jpg\",\n        \"sinopsis\": \"El capitán Barbossa le roba el barco al pirata Jack Sparrow y secuestra a Elizabeth, amiga de Will Turner. Barbossa y su tripulación son víctimas de un conjuro que los condena a vivir eternamente y a transformarse cada noche en esqueletos vivientes.\",\n        \"titulo\": \"Piratas del Caribe\"\n    },\n    {\n        \"anio\": 2010,\n        \"comentarios\": [],\n        \"director\": \"David Fincher\",\n        \"genero\": [\n            \"Drama\",\n            \"Biográfica\"\n        ],\n        \"id\": \"bae48403-dd6c-48a9-8e05-ce42698151c8\",\n        \"idUsuario\": \"4968f7a4-26c4-4eee-8de2-4f90b46f944a\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/51-kSEvgImL.jpg\",\n        \"sinopsis\": \"La historia de los jóvenes fundadores de la popular red social Facebook, especialmente de su creador más conocido, Mark Zuckerberg. Su leyenda reza: 'No se hacen 500 millones de amigos sin hacer unos cuantos enemigos'\",\n        \"titulo\": \"The social Network\"\n    },\n    {\n        \"anio\": 2021,\n        \"comentarios\": [],\n        \"director\": \"Jon Watts\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Fantasía\"\n        ],\n        \"id\": \"91b1be72-6c01-44a2-93dc-423682f91598\",\n        \"idUsuario\": \"4968f7a4-26c4-4eee-8de2-4f90b46f944a\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61hEhSSRbtL._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Tras descubrirse la identidad secreta de Peter Parker como Spider-Man, la vida del joven se vuelve una locura. Peter decide pedirle ayuda al Doctor Extraño para recuperar su vida. Pero algo sale mal y provoca una fractura en el multiverso.\",\n        \"titulo\": \"Spider-Man: Sin camino a casa\"\n    },\n    {\n        \"anio\": 2014,\n        \"comentarios\": [],\n        \"director\": \"Carlos Saldanha\",\n        \"genero\": [\n            \"Animación\",\n            \"Aventura\",\n            \"Comedia\"\n        ],\n        \"id\": \"cb53d5c0-ae11-4458-af04-cca9373d51b1\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/91JOXD13PSL._SL1500_.jpg\",\n        \"sinopsis\": \"Blu, Perla y sus tres hijos son unas perfectas 'aves de ciudad' que viven tranquilamente en su casa de las afueras de Río de Janeiro. Sin embargo, Perla cree que los niños deberían aprender cómo viven las auténticas aves en el Amazonas. Por eso, toda la familia se aventura a viajar a la selva. Mientras Blu intenta encajar con los nuevos vecinos del Amazonas, le preocupa la posibilidad de que Perla y los chicos no quieran regresar a Río.\",\n        \"titulo\": \"Rio 2\"\n    },\n    {\n        \"anio\": 2009,\n        \"comentarios\": [],\n        \"director\": \"Pete Docter\",\n        \"genero\": [\n            \"Animación\",\n            \"Aventura\",\n            \"Comedia\"\n        ],\n        \"id\": \"6bac6d97-3db5-4d12-9fee-d2e859f21231\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://images-na.ssl-images-amazon.com/images/I/51grK19PuUL._SX380_BO1,204,203,200_.jpg\",\n        \"sinopsis\": \"La trama relata las aventuras de un viudo de edad avanzada llamado Carl Fredricksen y de un niño escultista cuyo nombre es Russell, quienes viajan a Cataratas del Paraíso, en Venezuela, en el interior de una casa flotante suspendida con globos rellenos de helio.\",\n        \"titulo\": \"Up\"\n    },\n    {\n        \"anio\": 1976,\n        \"comentarios\": [],\n        \"director\": \"John G. Avildsen\",\n        \"genero\": [\n            \"Drama\",\n            \"Deportivas\"\n        ],\n        \"id\": \"12034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71Psrg2JjWL._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Rocky Balboa es un boxeador de veintiocho años de cuarta categoría que vive en un pequeño apartamento al sureste de Filadelfia, Pensilvania. Su carrera en el ring no parece que vaya a durar mucho tiempo. Se gana la vida como cobrador recaudando deudas para un usurero llamado Tony Gazzo, pero Gazzo no cree que Rocky tenga la suficiente malicia para dar una paliza a un moroso cuando sea necesario. Rocky aún se entrena de vez en cuando para no perder la forma, y el que fuera su entrenador, un excampeón de los pesos gallos en la década de los años 1920, Mickey Goldmill, cree que Rocky podría llegar a lo más alto, pero sólo si tuviera la voluntad suficiente y se dedicara en cuerpo y alma al boxeo.\",\n        \"titulo\": \"Roky Balboa\"\n    },\n    {\n        \"anio\": 1985,\n        \"comentarios\": [],\n        \"director\": \"Robert Zemeckis\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Comedia\"\n        ],\n        \"id\": \"24034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71BPuv+iRbL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"El adolescente Marty McFly es amigo de Doc, un científico que ha construido una máquina del tiempo. Cuando los dos prueban el artefacto, un error fortuito hace que Marty llegue a 1955, año en el que sus padres iban al instituto y todavía no se habían conocido.\",\n        \"titulo\": \"Volver al Futuro\"\n    },\n    {\n        \"anio\": 2017,\n        \"comentarios\": [],\n        \"director\": \"Joss Whedon\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Acción\",\n            \"Super Heroes\"\n        ],\n        \"id\": \"36034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61Q3docjd9L._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Liga de la Justicia continúa con los acontecimientos de Batman v Superman: Dawn of Justice, y cuenta cómo Bruce Wayne recluta un equipo de metahumanos para salvar al planeta de la amenaza catastrófica representada por Steppenwolf y su ejército de parademonios.\",\n        \"titulo\": \"Justice League\"\n    },\n    {\n        \"anio\": 2019,\n        \"comentarios\": [],\n        \"director\": \"Anthony Russo\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Acción\",\n            \"Super Heroes\"\n        ],\n        \"id\": \"48034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/91xCWjZ2IIL._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Después de los eventos devastadores de (Avengers: Infinity War), el universo está en ruinas debido a las acciones de Thanos, el Titán Loco. Con la ayuda de los aliados que quedaron, los Vengadores deberán reunirse una vez más para intentar detenerlo y restaurar el orden en el universo de una vez por todas.\",\n        \"titulo\": \"Avenger: Endgame\"\n    },\n    {\n        \"anio\": 1972,\n        \"comentarios\": [],\n        \"director\": \"Francis Ford Coppola\",\n        \"genero\": [\n            \"Drama\",\n            \"Crimen\",\n            \"Mafia\",\n            \"Policiacas\"\n        ],\n        \"id\": \"60034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61R9yWUlbbS._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Don Vito Corleone es el respetado y temido jefe de una de las cinco familias de la mafia de Nueva York en los años 40. El hombre tiene cuatro hijos: Connie, Sonny, Fredo y Michael, que no quiere saber nada de los negocios sucios de su padre.\",\n        \"titulo\": \"El Padrino\"\n    },\n    {\n        \"anio\": 1988,\n        \"comentarios\": [],\n        \"director\": \"John McTiernan\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Thriller\",\n            \"Policiacas\"\n        ],\n        \"id\": \"80034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://img.betaseries.com/3TqLtQ3xp8g6LZNXY-shnhm0JzU=/400x600/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F281.jpg\",\n        \"sinopsis\": \"Un grupo terrorista se apodera de un edificio de Los Angeles y toma a un grupo de personas como rehenes. El policía de Nueva York John McClane consigue escapar del acoso terrorista.\",\n        \"titulo\": \"Duro de Matar\"\n    },\n    {\n        \"anio\": 1987,\n        \"comentarios\": [],\n        \"director\": \"John McTiernan\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Terror\"\n        ],\n        \"id\": \"80034fc3-ea8e-4aab-9d3d-b117xx78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71RYyuL4W6L._AC_SL1000_.jpg\",\n        \"sinopsis\": \"Un grupo de mercenarios es contratado por la CIA para rescatar a unos pilotos que han sido apresados por la guerrilla en la selva centroamericana.\",\n        \"titulo\": \"Depredador\"\n    },\n    {\n        \"anio\": 1999,\n        \"comentarios\": [],\n        \"director\": \"Hermanos Wachowski\",\n        \"genero\": [\n            \"Acción\",\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Fantasía\"\n        ],\n        \"id\": \"56034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/813dE2pH7XL._SL1417_.jpg\",\n        \"sinopsis\": \"El programador informático Thomas Anderson, más conocido en el mundo de los \\\"hacker\\\" como Neo, está en el punto de mira del temible agente Smith. Otros dos piratas informáticos, Trinity y Morfeo, se ponen en contacto con Neo para ayudarlo a escapar. Matrix te posee. Sigue al conejo blanco.\",\n        \"titulo\": \"The Matrix\"\n    },\n    {\n        \"anio\": 2008,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Acción\",\n            \"Super Heroes\",\n            \"Suspenso\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://static.wikia.nocookie.net/doblaje/images/9/9c/Batman_el_Caballero_de_la_Noche.png/revision/latest?cb=20110602012240&path-prefix=es\",\n        \"sinopsis\": \"Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman mantiene a raya el crimen organizado en Gotham. Todo cambia cuando aparece el Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos.\",\n        \"titulo\": \"Batman: Dark Night\"\n    },\n    {\n        \"anio\": 2010,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Acción\",\n            \"Ciencia Ficción\",\n            \"Thriller\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3z-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/91bxYmAaiQL._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Dom Cobb (Leonardo DiCaprio) es un ladrón con una extraña habilidad para entrar a los sueños de la gente y robarle los secretos de sus subconscientes. Su habilidad lo ha convertido en un atractivo en el mundo del espionaje corporativo, pero ha tenido un gran costo en la gente que ama.\",\n        \"titulo\": \"El Origen\"\n    },\n    {\n        \"anio\": 1995,\n        \"comentarios\": [],\n        \"director\": \"Frank Darabont\",\n        \"genero\": [\n            \"Drama\",\n            \"Misterio\",\n            \"Carcelario\",\n            \"Policiacas\"\n        ],\n        \"id\": \"bx034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://comiqueros.cl/wp-content/uploads/2020/12/suenos-de-fuga-1.jpg\",\n        \"sinopsis\": \"Andrew Dufresne es un hombre inocente que es acusado del asesinato de su mujer. Tras ser condenado a cadena perpetua, es enviado a la cárcel de Shawshank, en Maine.\",\n        \"titulo\": \"Sueños de Fuga\"\n    },\n    {\n        \"anio\": 1977,\n        \"comentarios\": [],\n        \"director\": \"George Lucas\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Acción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"zz034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://www.tebeosfera.com/T3content/img/T3_numeros/0/1/num1_BbXC-001.jpg\",\n        \"sinopsis\": \"La nave en la que viaja la princesa Leia es capturada por las tropas imperiales al mando del temible Darth Vader. Antes de ser atrapada, Leia consigue introducir un mensaje en su robot R2-D2, quien acompañado de su inseparable C-3PO logran escapar.\",\n        \"titulo\": \"Star Wars: Una Nueva Esperanza\"\n    },\n    {\n        \"anio\": 2019,\n        \"comentarios\": [],\n        \"director\": \"Todd Phillips\",\n        \"genero\": [\n            \"Drama\",\n            \"Suspenso\",\n            \"Crimen\",\n            \"Thriller\"\n        ],\n        \"id\": \"ii034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/818Hdm+e7YL._SL1500_.jpg\",\n        \"sinopsis\": \"Arthur Fleck adora hacer reír a la gente, pero su carrera como comediante es un fracaso. El repudio social, la marginación y una serie de trágicos acontecimientos lo conducen por el sendero de la locura y, finalmente, cae en el mundo del crimen.\",\n        \"titulo\": \"The Joker\"\n    },\n    {\n        \"anio\": 2003,\n        \"comentarios\": [],\n        \"director\": \"Quentin Tarantino\",\n        \"genero\": [\n            \"Artes Marciales\",\n            \"Aventura\",\n            \"Acción\",\n            \"Thriller\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTDc9igRLxfn74ZHfMG61N5DEt4VA-gyfbtt4ysS4H5W1g_9LRb\",\n        \"sinopsis\": \"Mamba Negra es una asesina que, el día de su boda, es atacada por los miembros de la banda de su jefe, Bill. Sin embargo consigue sobrevivir, aunque queda en coma. Cinco años después despierta, con un deseo de venganza.\",\n        \"titulo\": \"Kill Bill: Volumen 1\"\n    },\n    {\n        \"anio\": 2002,\n        \"comentarios\": [],\n        \"director\": \"Peter Jackson\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Acción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"ff034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71GALO65MqL._SL1448_.jpg\",\n        \"sinopsis\": \"En la Tierra Media, el Señor Oscuro Sauron forjó los Grandes Anillos del Poder y creó uno con el poder de esclavizar a toda la Tierra Media. Frodo Bolsón es un hobbit al que su tío Bilbo hace portador del poderoso Anillo Único con la misión de destruirlo.\",\n        \"titulo\": \"El Señor de los Anillos\"\n    },\n    {\n        \"anio\": 1998,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Drama\",\n            \"Romance\",\n            \"Tragedia\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://www.tebeosfera.com/T3content/img/T3_numeros/0/1/num1_BbXC-001.jpg\",\n        \"sinopsis\": \"Jack es un joven artista que gana un pasaje para viajar a América en el Titanic, el transatlántico más grande y seguro jamás construido.\",\n        \"titulo\": \"Titanic\"\n    },\n    {\n        \"anio\": 2010,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4ssb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61OUGpUfAyL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"En un exuberante planeta llamado Pandora viven los Na'vi, seres que aparentan ser primitivos pero que en realidad son muy evolucionados. Debido a que el ambiente de Pandora es venenoso, los híbridos humanos/Na'vi, llamados Avatares, están relacionados con las mentes humanas, lo que les permite moverse libremente por Pandora. Jake Sully, un exinfante de marina paralítico se transforma a través de un Avatar, y se enamora de una mujer Na'vi.\",\n        \"titulo\": \"Avatar\"\n    },\n    {\n        \"anio\": 1991,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4ffb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61bgvyrVGqL._AC_SL1039_.jpg\",\n        \"sinopsis\": \"Algunos años antes, un viajero del tiempo le reveló a la madre de John que su hijo sería el salvador de la humanidad. Cuando un nuevo androide mejorado llega del futuro para asesinar a John, un viejo modelo será enviado para protegerle.\",\n        \"titulo\": \"Terminator 2: Juicio Final\"\n    },\n    {\n        \"anio\": 1994,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Drama\",\n            \"Bélicas\",\n            \"Historicas\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/81j3R2pbfcL._SL1017_.jpg\",\n        \"sinopsis\": \"El empresario alemán Oskar Schindler, miembro del Partido Nazi, pone en marcha un elaborado, costoso y arriesgado plan para salvar a mas de mil judíos del Holocausto.\",\n        \"titulo\": \"Lista de Schindler\"\n    },\n    {\n        \"anio\": 1993,\n        \"comentarios\": [\n            \"60034ff3-ea8f-4aab-9d3f-b117ca78c442\",\n            \"59034ff3-ea8f-4aab-9d3f-b117ca78c442\",\n            \"62034ff3-ea8f-4aab-9d3f-b117ca78c442\"\n        ],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4eeb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61iF3RSsLsL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"El multimillonario John Hammond hace realidad su sueño de clonar dinosaurios del Jurásico y crear con ellos un parque temático en una isla. Antes de abrir el parque al público general, Hammond invita a una pareja de científicos y a un matemático para que comprueben la viabilidad del proyecto.\",\n        \"titulo\": \"Jurassic Park\"\n    },\n    {\n        \"anio\": 1981,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4eeb-9d3d-b203ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71aoIKE1XYL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"Después de una infructuosa misión en Sudamérica, el Gobierno estadounidense encarga al arqueólogo Indiana Jones la búsqueda del Arca de la Alianza, una reliquia bíblica que contiene los diez mandamientos y que convierte en invencible a su portador.\",\n        \"titulo\": \"Indiana Jones: Casadores del Arca Perdida\"\n    },\n    {\n        \"anio\": 2018,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Suspenso\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4xxb-9d3d-b203ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71V1fH-X+9L._AC_SL1000_.jpg\",\n        \"sinopsis\": \"En el 2045: el adolescente Wade Watts es solo una de las millones de personas que se evaden del sombrío mundo real para sumergirse en un mundo utópico virtual donde todo es posible: OASIS. Wade participa en la búsqueda del tesoro que el creador de este mundo imaginario dejó oculto en su obra. No obstante, hay gente muy peligrosa compitiendo contra el.\",\n        \"titulo\": \"Ready Player One\"\n    },\n    {\n        \"anio\": 1989,\n        \"comentarios\": [\n            \"59034ff3-ea8f-4aab-9d3f-b117ca78c442\",\n            \"62034ff3-ea8f-4aab-9d3f-b117ca78c442\"\n        ],\n        \"director\": \"Robert Zemeckis\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Comedia\"\n        ],\n        \"id\": \"24034fc3-ea8e-4aab-9d3d-b117ca78c332\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71BPuv+iRbL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"Doc vuelve a aparecer con una máquina del tiempo mucho más modernizada y le pide a Marty y a su novia que le acompañen al futuro. En el Hill Valley de 2015 deberán solucionar un problema con la ley que tendrá uno de los futuros hijos de Marty y Jenny.\",\n        \"titulo\": \"Volver al Futuro II\"\n    },\n    {\n        \"anio\": 2014,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Drama\",\n            \"Ciencia Ficción\",\n            \"Misterio\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/716P1xCmnPL._AC_SL1020_.jpg\",\n        \"sinopsis\": \"Un grupo de científicos y exploradores, encabezados por Cooper, se embarcan en un viaje espacial para encontrar un lugar con las condiciones necesarias para reemplazar a la Tierra y comenzar una nueva vida allí.\",\n        \"titulo\": \"Interestelar\"\n    },\n    {\n        \"anio\": 1995,\n        \"comentarios\": [],\n        \"director\": \"Mel Gibson\",\n        \"genero\": [\n            \"Acción\",\n            \"Romance\",\n            \"Bélicas\"\n        ],\n        \"id\": \"xx034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71B1fLQaePL._AC_SL1018_.jpg\",\n        \"sinopsis\": \"Las épicas aventuras de William Wallace, un rebelde escocés en su lucha por la independencia contra el poder de Inglaterra, en pleno medievo. Su legendario carácter y su épica historia de amor lo convirtieron en un héroe.\",\n        \"titulo\": \"Corazon Valiente\"\n    },\n    {\n        \"anio\": 2009,\n        \"comentarios\": [],\n        \"director\": \"Juan José Campanella\",\n        \"genero\": [\n            \"Drama\",\n            \"Crimen\",\n            \"Romance\",\n            \"Thriller\"\n        ],\n        \"id\": \"hh034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71oVsAFHyIL._SL1250_.jpg\",\n        \"sinopsis\": \"Benjamín Esposito es un oficial de un Juzgado de Instrucción de Buenos Aires que acaba de jubilarse. Su sueño es escribir una novela y, para ello, intentará dar solución a un caso abierto desde hace varias décadas, del cual fue testigo y protagonista.\",\n        \"titulo\": \"El Secreto de Tus Ojos\"\n    },\n    {\n        \"anio\": 1994,\n        \"comentarios\": [],\n        \"director\": \"Robert Zemeckis\",\n        \"genero\": [\n            \"Comedia\",\n            \"Romance\",\n            \"Drama\"\n        ],\n        \"id\": \"hz034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/81J1rycHoeL._SL1500_.jpg\",\n        \"sinopsis\": \"Sentado en un banco en Savannah, Georgia, Forrest Gump espera al autobús. Mientras éste tarda en llegar, el joven cuenta su vida a las personas que se sientan a esperar con él. Aunque sufre un pequeño retraso mental, esto no le impide hacer cosas maravillosas.\",\n        \"titulo\": \"Forrest Gump\"\n    }\n]"
+						}
+					]
+				},
+				{
 					"name": "Generar Pelicula",
 					"request": {
 						"method": "POST",
@@ -933,7 +484,7 @@
 								""
 							]
 						},
-						"description": "ABM para generar película."
+						"description": "Request para generar película."
 					},
 					"response": [
 						{
@@ -1008,7 +559,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/peliculas/7b347404-4e84-48c8-b96d-c0ce9ecb80a4",
+							"raw": "http://localhost:5000/peliculas/<id>",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1016,10 +567,10 @@
 							"port": "5000",
 							"path": [
 								"peliculas",
-								"7b347404-4e84-48c8-b96d-c0ce9ecb80a4"
+								"<id>"
 							]
 						},
-						"description": "ABM para modificar película."
+						"description": "Request para modificar película."
 					},
 					"response": [
 						{
@@ -1085,7 +636,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/peliculas/59034fc3-ea8e-4aab-9d3d-b117ca78c442",
+							"raw": "http://localhost:5000/peliculas/<id>",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1093,10 +644,10 @@
 							"port": "5000",
 							"path": [
 								"peliculas",
-								"59034fc3-ea8e-4aab-9d3d-b117ca78c442"
+								"<id>"
 							]
 						},
-						"description": "ABM para borrar película."
+						"description": "Request para borrar película."
 					},
 					"response": [
 						{
@@ -1148,7 +699,7 @@
 					]
 				}
 			],
-			"description": "ABM de Películas permite realizar la Obtención de películas, también generar, modificar y borrar una película de forma rápida para realizar pruebas de las APIs"
+			"description": "ABM de Películas permite realizar la Obtención de películas, también generar, modificar y borrar una película."
 		},
 		{
 			"name": "ABM Comentarios",
@@ -1168,7 +719,8 @@
 							"path": [
 								"comentarios"
 							]
-						}
+						},
+						"description": "Request para Obtener Comentarios"
 					},
 					"response": [
 						{
@@ -1224,7 +776,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/peliculas/comentarios/59034fc3-ea8e-4aab-9d3d-b117ca78c442",
+							"raw": "http://localhost:5000/peliculas/comentarios/<id>",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1233,9 +785,10 @@
 							"path": [
 								"peliculas",
 								"comentarios",
-								"59034fc3-ea8e-4aab-9d3d-b117ca78c442"
+								"<id>"
 							]
-						}
+						},
+						"description": "Request para Obtener un Comentario"
 					},
 					"response": [
 						{
@@ -1294,7 +847,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"comentario\": \"Nuevo Comentario para la Película PIratas del Caribe\",\r\n    \"idPelicula\": \"59034fc3-ea8e-4aab-9d3d-b117ca78c442\",\r\n    \"idUsuario\": \"\"\r\n}",
+							"raw": "{\r\n    \"comentario\": \"Nuevo Comentario para la Película PIratas del Caribe\",\r\n    \"idPelicula\": \"59034fc3-ea8e-4aab-9d3d-b117ca78c442\",\r\n    \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1312,7 +865,8 @@
 								"comentarios",
 								""
 							]
-						}
+						},
+						"description": "Request Generar Comentario"
 					},
 					"response": [
 						{
@@ -1379,7 +933,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"comentario\": \"Nuevo Comentario\",\r\n    \"idPelicula\":\"\",\r\n    \"idUsuario\": \"\"\r\n}",
+							"raw": "{\r\n    \"comentario\": \"Nuevo Comentario\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1387,7 +941,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/comentarios/60034ff3-ea8f-4aab-9d3f-b117ca78c442",
+							"raw": "http://localhost:5000/comentarios/<id>",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1395,9 +949,10 @@
 							"port": "5000",
 							"path": [
 								"comentarios",
-								"60034ff3-ea8f-4aab-9d3f-b117ca78c442"
+								"<id>"
 							]
-						}
+						},
+						"description": "Request para nodificar comentario"
 					},
 					"response": [
 						{
@@ -1463,7 +1018,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/comentarios/61034ff3-ea8f-4aab-9d3f-b117ca78c442",
+							"raw": "http://localhost:5000/comentarios/<id>",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1471,9 +1026,10 @@
 							"port": "5000",
 							"path": [
 								"comentarios",
-								"61034ff3-ea8f-4aab-9d3f-b117ca78c442"
+								"<id>"
 							]
-						}
+						},
+						"description": "Request para borrar un comentario"
 					},
 					"response": [
 						{
@@ -1524,7 +1080,8 @@
 						}
 					]
 				}
-			]
+			],
+			"description": "ABM de Comentarios permite realizar la Obtención de comentarios, también generar, modificar y borrar un comentario."
 		},
 		{
 			"name": "Casos de Testing",
@@ -1533,148 +1090,12 @@
 					"name": "Pruebas GET",
 					"item": [
 						{
-							"name": "Obtener Directores Todos",
+							"name": "Obtener Peliculas/Id_The Matrix",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/directores/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"directores",
-										""
-									]
-								},
-								"description": "Obtener todos los directores de películas."
-							},
-							"response": [
-								{
-									"name": "Obtener Directores Todos",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "http://localhost:5000/directores/",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "5000",
-											"path": [
-												"directores",
-												""
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Content-Length",
-											"value": "4836"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Server",
-											"value": "Werkzeug/2.0.3 Python/3.10.2"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 31 Mar 2022 22:28:20 GMT"
-										}
-									],
-									"cookie": [],
-									"body": "[\n    {\n        \"nombre\": \"Robert Zemeckis\"\n    },\n    {\n        \"nombre\": \"Juan Jose Campanella\"\n    },\n    {\n        \"nombre\": \"Mel Gibson\"\n    },\n    {\n        \"nombre\": \"Peter Jackson\"\n    },\n    {\n        \"nombre\": \"James Cameron\"\n    },\n    {\n        \"nombre\": \"Quentin Tarantino\"\n    },\n    {\n        \"nombre\": \"Todd Phillips\"\n    },\n    {\n        \"nombre\": \"George Lucas\"\n    },\n    {\n        \"nombre\": \"Frank Darabont\"\n    },\n    {\n        \"nombre\": \"Christopher Nolan\"\n    },\n    {\n        \"nombre\": \"Hermanos Wachowski\"\n    },\n    {\n        \"nombre\": \"John McTiernan\"\n    },\n    {\n        \"nombre\": \"Joachim Rønning\"\n    },\n    {\n        \"nombre\": \"Jon Watts\"\n    },\n    {\n        \"nombre\": \"David Fincher\"\n    },\n    {\n        \"nombre\": \"Carlos Saldanha\"\n    },\n    {\n        \"nombre\": \"Pete Docter\"\n    },\n    {\n        \"nombre\": \"John G. Avildsen\"\n    },\n    {\n        \"nombre\": \"Joss Whedon\"\n    },\n    {\n        \"nombre\": \"Francis Ford Coppola\"\n    },\n    {\n        \"nombre\": \"Martin Scorsese\"\n    },\n    {\n        \"nombre\": \"Anthony Russo\"\n    },\n    {\n        \"nombre\": \"Billy Wilder\"\n    },\n    {\n        \"nombre\": \"Steven Spielberg\"\n    },\n    {\n        \"nombre\": \"Ingmar Bergman\"\n    },\n    {\n        \"nombre\": \"Federico Fellini\"\n    },\n    {\n        \"nombre\": \"Roman Polanski\"\n    },\n    {\n        \"nombre\": \"Michael Haneke\"\n    },\n    {\n        \"nombre\": \"Alfred Hitchcock\"\n    },\n    {\n        \"nombre\": \"Paolo Sorrentino\"\n    },\n    {\n        \"nombre\": \"David Lynch\"\n    },\n    {\n        \"nombre\": \"Terry Gilliam\"\n    },\n    {\n        \"nombre\": \"Stanley Kubrick\"\n    },\n    {\n        \"nombre\": \"Fritz Lang\"\n    },\n    {\n        \"nombre\": \"F.W. Murnau\"\n    },\n    {\n        \"nombre\": \"Robert Wiene\"\n    },\n    {\n        \"nombre\": \"Sergei M. Eisenstein\"\n    },\n    {\n        \"nombre\": \"Hayao Miyazaki\"\n    },\n    {\n        \"nombre\": \"Isao Takahata\"\n    },\n    {\n        \"nombre\": \"Woody Allen\"\n    },\n    {\n        \"nombre\": \"Los hermanos Coen\"\n    },\n    {\n        \"nombre\": \"Howard Hawks\"\n    },\n    {\n        \"nombre\": \"Akira Kurosawa\"\n    },\n    {\n        \"nombre\": \"Joseph Mankiewicz\"\n    },\n    {\n        \"nombre\": \"George Cuckor\"\n    },\n    {\n        \"nombre\": \"John Ford\"\n    },\n    {\n        \"nombre\": \"Orson Welles\"\n    },\n    {\n        \"nombre\": \"Darren Aronofsky\"\n    },\n    {\n        \"nombre\": \"Jean-Luc Godard\"\n    },\n    {\n        \"nombre\": \"Wes Anderson\"\n    },\n    {\n        \"nombre\": \"Milos Forman\"\n    },\n    {\n        \"nombre\": \"Mel Gibson\"\n    },\n    {\n        \"nombre\": \"Sam Peckinpah\"\n    },\n    {\n        \"nombre\": \"Sergio Leone\"\n    },\n    {\n        \"nombre\": \"William Wyler\"\n    },\n    {\n        \"nombre\": \"Charles Chaplin\"\n    },\n    {\n        \"nombre\": \"James Cameron\"\n    },\n    {\n        \"nombre\": \"Jean Cocteau\"\n    },\n    {\n        \"nombre\": \"Terrence Malick\"\n    },\n    {\n        \"nombre\": \"Andrei Tarkovsky\"\n    },\n    {\n        \"nombre\": \"Vittorio De Sica\"\n    },\n    {\n        \"nombre\": \"Buster Keaton\"\n    },\n    {\n        \"nombre\": \"Clint Eastwood\"\n    },\n    {\n        \"nombre\": \"François Truffaut\"\n    },\n    {\n        \"nombre\": \"John Huston\"\n    },\n    {\n        \"nombre\": \"Elia Kazan\"\n    },\n    {\n        \"nombre\": \"Fred Zinnemann\"\n    },\n    {\n        \"nombre\": \"John Lasseter\"\n    },\n    {\n        \"nombre\": \"Frank Capra\"\n    },\n    {\n        \"nombre\": \"Brian de Palma\"\n    },\n    {\n        \"nombre\": \"Ridley Scott\"\n    },\n    {\n        \"nombre\": \"David Lean\"\n    },\n    {\n        \"nombre\": \"Ernst Lubistch\"\n    },\n    {\n        \"nombre\": \"Luis Buñuel\"\n    },\n    {\n        \"nombre\": \"Luis García Berlanga\"\n    },\n    {\n        \"nombre\": \"Werner Herzog\"\n    },\n    {\n        \"nombre\": \"Lars von Trier\"\n    },\n    {\n        \"nombre\": \"Tim Burton\"\n    },\n    {\n        \"nombre\": \"Peter Jackson\"\n    },\n    {\n        \"nombre\": \"Alegrando González Iñárritu\"\n    },\n    {\n        \"nombre\": \"Pedro Almodóvar\"\n    },\n    {\n        \"nombre\": \"Victor Fleming\"\n    },\n    {\n        \"nombre\": \"Michael Curtiz\"\n    },\n    {\n        \"nombre\": \"Giuseppe Tornatore\"\n    },\n    {\n        \"nombre\": \"D.W. Griffith\"\n    },\n    {\n        \"nombre\": \"Carl Theodor Dreyer\"\n    },\n    {\n        \"nombre\": \"Masaki Kobayashi\"\n    },\n    {\n        \"nombre\": \"George Méliès\"\n    },\n    {\n        \"nombre\": \"Segundo de Chomón\"\n    },\n    {\n        \"nombre\": \"Paul Verhoeven\"\n    },\n    {\n        \"nombre\": \"Roberto Rossellini\"\n    },\n    {\n        \"nombre\": \"Bela Tarr\"\n    },\n    {\n        \"nombre\": \"Oliver Stone\"\n    },\n    {\n        \"nombre\": \"Robert Zemeckis\"\n    },\n    {\n        \"nombre\": \"David Cronenberg\"\n    },\n    {\n        \"nombre\": \"Thomas Vinterberg\"\n    },\n    {\n        \"nombre\": \"Kathryn Bigelow\"\n    },\n    {\n        \"nombre\": \"Robert Altman\"\n    },\n    {\n        \"nombre\": \"Peter Weir\"\n    },\n    {\n        \"nombre\": \"Paul Thomas Anderson\"\n    },\n    {\n        \"nombre\": \"Jean Jacques Anaud\"\n    },\n    {\n        \"nombre\": \"Alfonso Cuarón\"\n    },\n    {\n        \"nombre\": \"Juan José Campanella\"\n    },\n    {\n        \"nombre\": \"Peter Greenaway\"\n    },\n    {\n        \"nombre\": \"Arturo Ripstein\"\n    },\n    {\n        \"nombre\": \"Wong Kar-Wai\"\n    },\n    {\n        \"nombre\": \"Richard Donner\"\n    },\n    {\n        \"nombre\": \"Sofia Coppola\"\n    },\n    {\n        \"nombre\": \"Alejandro Amenábar\"\n    },\n    {\n        \"nombre\": \"Makoto Shinkai\"\n    },\n    {\n        \"nombre\": \"Ang Lee\"\n    },\n    {\n        \"nombre\": \"Jim Sheridan\"\n    },\n    {\n        \"nombre\": \"Danny Boyle\"\n    },\n    {\n        \"nombre\": \"M. Night Shyamalan\"\n    },\n    {\n        \"nombre\": \"Sam Mendes\"\n    },\n    {\n        \"nombre\": \"George A. Romero\"\n    }\n]"
-								}
-							]
-						},
-						{
-							"name": "Obtener Generos de Peliculas",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5000/generos/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "5000",
-									"path": [
-										"generos",
-										""
-									]
-								},
-								"description": "Obtener todos los géneros de películas."
-							},
-							"response": [
-								{
-									"name": "Obtener Generos de Peliculas",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "http://localhost:5000/generos/",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "5000",
-											"path": [
-												"generos",
-												""
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Content-Length",
-											"value": "951"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Server",
-											"value": "Werkzeug/2.0.3 Python/3.10.2"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 31 Mar 2022 22:28:31 GMT"
-										}
-									],
-									"cookie": [],
-									"body": "[\n    {\n        \"nombre\": \"Acción\"\n    },\n    {\n        \"nombre\": \"Aventura\"\n    },\n    {\n        \"nombre\": \"Ciencia Ficción\"\n    },\n    {\n        \"nombre\": \"Comedia\"\n    },\n    {\n        \"nombre\": \"Documental\"\n    },\n    {\n        \"nombre\": \"Drama\"\n    },\n    {\n        \"nombre\": \"Fantasía\"\n    },\n    {\n        \"nombre\": \"Musical\"\n    },\n    {\n        \"nombre\": \"Suspenso\"\n    },\n    {\n        \"nombre\": \"Terror\"\n    },\n    {\n        \"nombre\": \"Religiosas\"\n    },\n    {\n        \"nombre\": \"Futuristas\"\n    },\n    {\n        \"nombre\": \"Policiacas\"\n    },\n    {\n        \"nombre\": \"Crimen\"\n    },\n    {\n        \"nombre\": \"Bélicas\"\n    },\n    {\n        \"nombre\": \"Historicas\"\n    },\n    {\n        \"nombre\": \"Deportivas\"\n    },\n    {\n        \"nombre\": \"Western\"\n    },\n    {\n        \"nombre\": \"Animación\"\n    },\n    {\n        \"nombre\": \"Biográfica\"\n    },\n    {\n        \"nombre\": \"Super Heroes\"\n    },\n    {\n        \"nombre\": \"Mafia\"\n    },\n    {\n        \"nombre\": \"Thriller\"\n    },\n    {\n        \"nombre\": \"Misterio\"\n    },\n    {\n        \"nombre\": \"Romance\"\n    },\n    {\n        \"nombre\": \"Tragedia\"\n    }\n]"
-								}
-							]
-						},
-						{
-							"name": "Obtener Peliculas con Portada",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:5000/peliculas/peliculas_con_portada",
+									"raw": "http://localhost:5000/peliculas/56034fc3-ea8e-4aab-9d3d-b117ca78c442",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1682,19 +1103,19 @@
 									"port": "5000",
 									"path": [
 										"peliculas",
-										"peliculas_con_portada"
+										"56034fc3-ea8e-4aab-9d3d-b117ca78c442"
 									]
 								},
-								"description": "Obtener todas las películas con portada en la base del Json."
+								"description": "Se obtienen los datos de la Película The Matrix"
 							},
 							"response": [
 								{
-									"name": "Obtener Peliculas con Portada",
+									"name": "Obtener Peliculas/Id_The Matrix",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:5000/peliculas/peliculas_con_portada",
+											"raw": "http://localhost:5000/peliculas/56034fc3-ea8e-4aab-9d3d-b117ca78c442",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -1702,7 +1123,7 @@
 											"port": "5000",
 											"path": [
 												"peliculas",
-												"peliculas_con_portada"
+												"56034fc3-ea8e-4aab-9d3d-b117ca78c442"
 											]
 										}
 									},
@@ -1716,7 +1137,7 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "23421"
+											"value": "724"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -1728,11 +1149,151 @@
 										},
 										{
 											"key": "Date",
-											"value": "Thu, 31 Mar 2022 22:28:40 GMT"
+											"value": "Sun, 27 Mar 2022 18:36:58 GMT"
 										}
 									],
 									"cookie": [],
-									"body": "[\n    {\n        \"anio\": 2001,\n        \"comentarios\": [\n            \"59034ff3-ea8f-4aab-9d3f-b117ca78c442\"\n        ],\n        \"director\": \"Joachim Rønning\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\"\n        ],\n        \"id\": \"59034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/91fPdJwTMBL._SL1500_.jpg\",\n        \"sinopsis\": \"El capitán Barbossa le roba el barco al pirata Jack Sparrow y secuestra a Elizabeth, amiga de Will Turner. Barbossa y su tripulación son víctimas de un conjuro que los condena a vivir eternamente y a transformarse cada noche en esqueletos vivientes.\",\n        \"titulo\": \"Piratas del Caribe\"\n    },\n    {\n        \"anio\": 2010,\n        \"comentarios\": [],\n        \"director\": \"David Fincher\",\n        \"genero\": [\n            \"Drama\",\n            \"Biográfica\"\n        ],\n        \"id\": \"bae48403-dd6c-48a9-8e05-ce42698151c8\",\n        \"idUsuario\": \"4968f7a4-26c4-4eee-8de2-4f90b46f944a\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/51-kSEvgImL.jpg\",\n        \"sinopsis\": \"La historia de los jóvenes fundadores de la popular red social Facebook, especialmente de su creador más conocido, Mark Zuckerberg. Su leyenda reza: 'No se hacen 500 millones de amigos sin hacer unos cuantos enemigos'\",\n        \"titulo\": \"The social Network\"\n    },\n    {\n        \"anio\": 2021,\n        \"comentarios\": [],\n        \"director\": \"Jon Watts\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Fantasía\"\n        ],\n        \"id\": \"91b1be72-6c01-44a2-93dc-423682f91598\",\n        \"idUsuario\": \"4968f7a4-26c4-4eee-8de2-4f90b46f944a\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61hEhSSRbtL._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Tras descubrirse la identidad secreta de Peter Parker como Spider-Man, la vida del joven se vuelve una locura. Peter decide pedirle ayuda al Doctor Extraño para recuperar su vida. Pero algo sale mal y provoca una fractura en el multiverso.\",\n        \"titulo\": \"Spider-Man: Sin camino a casa\"\n    },\n    {\n        \"anio\": 2014,\n        \"comentarios\": [],\n        \"director\": \"Carlos Saldanha\",\n        \"genero\": [\n            \"Animación\",\n            \"Aventura\",\n            \"Comedia\"\n        ],\n        \"id\": \"cb53d5c0-ae11-4458-af04-cca9373d51b1\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/91JOXD13PSL._SL1500_.jpg\",\n        \"sinopsis\": \"Blu, Perla y sus tres hijos son unas perfectas 'aves de ciudad' que viven tranquilamente en su casa de las afueras de Río de Janeiro. Sin embargo, Perla cree que los niños deberían aprender cómo viven las auténticas aves en el Amazonas. Por eso, toda la familia se aventura a viajar a la selva. Mientras Blu intenta encajar con los nuevos vecinos del Amazonas, le preocupa la posibilidad de que Perla y los chicos no quieran regresar a Río.\",\n        \"titulo\": \"Rio 2\"\n    },\n    {\n        \"anio\": 2009,\n        \"comentarios\": [],\n        \"director\": \"Pete Docter\",\n        \"genero\": [\n            \"Animación\",\n            \"Aventura\",\n            \"Comedia\"\n        ],\n        \"id\": \"6bac6d97-3db5-4d12-9fee-d2e859f21231\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://images-na.ssl-images-amazon.com/images/I/51grK19PuUL._SX380_BO1,204,203,200_.jpg\",\n        \"sinopsis\": \"La trama relata las aventuras de un viudo de edad avanzada llamado Carl Fredricksen y de un niño escultista cuyo nombre es Russell, quienes viajan a Cataratas del Paraíso, en Venezuela, en el interior de una casa flotante suspendida con globos rellenos de helio.\",\n        \"titulo\": \"Up\"\n    },\n    {\n        \"anio\": 1976,\n        \"comentarios\": [],\n        \"director\": \"John G. Avildsen\",\n        \"genero\": [\n            \"Drama\",\n            \"Deportivas\"\n        ],\n        \"id\": \"12034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71Psrg2JjWL._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Rocky Balboa es un boxeador de veintiocho años de cuarta categoría que vive en un pequeño apartamento al sureste de Filadelfia, Pensilvania. Su carrera en el ring no parece que vaya a durar mucho tiempo. Se gana la vida como cobrador recaudando deudas para un usurero llamado Tony Gazzo, pero Gazzo no cree que Rocky tenga la suficiente malicia para dar una paliza a un moroso cuando sea necesario. Rocky aún se entrena de vez en cuando para no perder la forma, y el que fuera su entrenador, un excampeón de los pesos gallos en la década de los años 1920, Mickey Goldmill, cree que Rocky podría llegar a lo más alto, pero sólo si tuviera la voluntad suficiente y se dedicara en cuerpo y alma al boxeo.\",\n        \"titulo\": \"Roky Balboa\"\n    },\n    {\n        \"anio\": 1985,\n        \"comentarios\": [],\n        \"director\": \"Robert Zemeckis\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Comedia\"\n        ],\n        \"id\": \"24034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71BPuv+iRbL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"El adolescente Marty McFly es amigo de Doc, un científico que ha construido una máquina del tiempo. Cuando los dos prueban el artefacto, un error fortuito hace que Marty llegue a 1955, año en el que sus padres iban al instituto y todavía no se habían conocido.\",\n        \"titulo\": \"Volver al Futuro\"\n    },\n    {\n        \"anio\": 2017,\n        \"comentarios\": [],\n        \"director\": \"Joss Whedon\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Acción\",\n            \"Super Heroes\"\n        ],\n        \"id\": \"36034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61Q3docjd9L._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Liga de la Justicia continúa con los acontecimientos de Batman v Superman: Dawn of Justice, y cuenta cómo Bruce Wayne recluta un equipo de metahumanos para salvar al planeta de la amenaza catastrófica representada por Steppenwolf y su ejército de parademonios.\",\n        \"titulo\": \"Justice League\"\n    },\n    {\n        \"anio\": 2019,\n        \"comentarios\": [],\n        \"director\": \"Anthony Russo\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Acción\",\n            \"Super Heroes\"\n        ],\n        \"id\": \"48034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/91xCWjZ2IIL._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Después de los eventos devastadores de (Avengers: Infinity War), el universo está en ruinas debido a las acciones de Thanos, el Titán Loco. Con la ayuda de los aliados que quedaron, los Vengadores deberán reunirse una vez más para intentar detenerlo y restaurar el orden en el universo de una vez por todas.\",\n        \"titulo\": \"Avenger: Endgame\"\n    },\n    {\n        \"anio\": 1972,\n        \"comentarios\": [],\n        \"director\": \"Francis Ford Coppola\",\n        \"genero\": [\n            \"Drama\",\n            \"Crimen\",\n            \"Mafia\",\n            \"Policiacas\"\n        ],\n        \"id\": \"60034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61R9yWUlbbS._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Don Vito Corleone es el respetado y temido jefe de una de las cinco familias de la mafia de Nueva York en los años 40. El hombre tiene cuatro hijos: Connie, Sonny, Fredo y Michael, que no quiere saber nada de los negocios sucios de su padre.\",\n        \"titulo\": \"El Padrino\"\n    },\n    {\n        \"anio\": 1988,\n        \"comentarios\": [],\n        \"director\": \"John McTiernan\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Thriller\",\n            \"Policiacas\"\n        ],\n        \"id\": \"80034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://img.betaseries.com/3TqLtQ3xp8g6LZNXY-shnhm0JzU=/400x600/smart/https%3A%2F%2Fpictures.betaseries.com%2Ffilms%2Faffiches%2Foriginal%2F281.jpg\",\n        \"sinopsis\": \"Un grupo terrorista se apodera de un edificio de Los Angeles y toma a un grupo de personas como rehenes. El policía de Nueva York John McClane consigue escapar del acoso terrorista.\",\n        \"titulo\": \"Duro de Matar\"\n    },\n    {\n        \"anio\": 1987,\n        \"comentarios\": [],\n        \"director\": \"John McTiernan\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Terror\"\n        ],\n        \"id\": \"80034fc3-ea8e-4aab-9d3d-b117xx78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71RYyuL4W6L._AC_SL1000_.jpg\",\n        \"sinopsis\": \"Un grupo de mercenarios es contratado por la CIA para rescatar a unos pilotos que han sido apresados por la guerrilla en la selva centroamericana.\",\n        \"titulo\": \"Depredador\"\n    },\n    {\n        \"anio\": 1999,\n        \"comentarios\": [],\n        \"director\": \"Hermanos Wachowski\",\n        \"genero\": [\n            \"Acción\",\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Fantasía\"\n        ],\n        \"id\": \"56034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/813dE2pH7XL._SL1417_.jpg\",\n        \"sinopsis\": \"El programador informático Thomas Anderson, más conocido en el mundo de los \\\"hacker\\\" como Neo, está en el punto de mira del temible agente Smith. Otros dos piratas informáticos, Trinity y Morfeo, se ponen en contacto con Neo para ayudarlo a escapar. Matrix te posee. Sigue al conejo blanco.\",\n        \"titulo\": \"The Matrix\"\n    },\n    {\n        \"anio\": 2008,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Acción\",\n            \"Super Heroes\",\n            \"Suspenso\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://static.wikia.nocookie.net/doblaje/images/9/9c/Batman_el_Caballero_de_la_Noche.png/revision/latest?cb=20110602012240&path-prefix=es\",\n        \"sinopsis\": \"Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman mantiene a raya el crimen organizado en Gotham. Todo cambia cuando aparece el Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos.\",\n        \"titulo\": \"Batman: Dark Night\"\n    },\n    {\n        \"anio\": 2010,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Acción\",\n            \"Ciencia Ficción\",\n            \"Thriller\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3z-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/91bxYmAaiQL._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Dom Cobb (Leonardo DiCaprio) es un ladrón con una extraña habilidad para entrar a los sueños de la gente y robarle los secretos de sus subconscientes. Su habilidad lo ha convertido en un atractivo en el mundo del espionaje corporativo, pero ha tenido un gran costo en la gente que ama.\",\n        \"titulo\": \"El Origen\"\n    },\n    {\n        \"anio\": 1995,\n        \"comentarios\": [],\n        \"director\": \"Frank Darabont\",\n        \"genero\": [\n            \"Drama\",\n            \"Misterio\",\n            \"Carcelario\",\n            \"Policiacas\"\n        ],\n        \"id\": \"bx034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://comiqueros.cl/wp-content/uploads/2020/12/suenos-de-fuga-1.jpg\",\n        \"sinopsis\": \"Andrew Dufresne es un hombre inocente que es acusado del asesinato de su mujer. Tras ser condenado a cadena perpetua, es enviado a la cárcel de Shawshank, en Maine.\",\n        \"titulo\": \"Sueños de Fuga\"\n    },\n    {\n        \"anio\": 1977,\n        \"comentarios\": [],\n        \"director\": \"George Lucas\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Acción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"zz034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://www.tebeosfera.com/T3content/img/T3_numeros/0/1/num1_BbXC-001.jpg\",\n        \"sinopsis\": \"La nave en la que viaja la princesa Leia es capturada por las tropas imperiales al mando del temible Darth Vader. Antes de ser atrapada, Leia consigue introducir un mensaje en su robot R2-D2, quien acompañado de su inseparable C-3PO logran escapar.\",\n        \"titulo\": \"Star Wars: Una Nueva Esperanza\"\n    },\n    {\n        \"anio\": 2019,\n        \"comentarios\": [],\n        \"director\": \"Todd Phillips\",\n        \"genero\": [\n            \"Drama\",\n            \"Suspenso\",\n            \"Crimen\",\n            \"Thriller\"\n        ],\n        \"id\": \"ii034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/818Hdm+e7YL._SL1500_.jpg\",\n        \"sinopsis\": \"Arthur Fleck adora hacer reír a la gente, pero su carrera como comediante es un fracaso. El repudio social, la marginación y una serie de trágicos acontecimientos lo conducen por el sendero de la locura y, finalmente, cae en el mundo del crimen.\",\n        \"titulo\": \"The Joker\"\n    },\n    {\n        \"anio\": 2003,\n        \"comentarios\": [],\n        \"director\": \"Quentin Tarantino\",\n        \"genero\": [\n            \"Artes Marciales\",\n            \"Aventura\",\n            \"Acción\",\n            \"Thriller\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTDc9igRLxfn74ZHfMG61N5DEt4VA-gyfbtt4ysS4H5W1g_9LRb\",\n        \"sinopsis\": \"Mamba Negra es una asesina que, el día de su boda, es atacada por los miembros de la banda de su jefe, Bill. Sin embargo consigue sobrevivir, aunque queda en coma. Cinco años después despierta, con un deseo de venganza.\",\n        \"titulo\": \"Kill Bill: Volumen 1\"\n    },\n    {\n        \"anio\": 2002,\n        \"comentarios\": [],\n        \"director\": \"Peter Jackson\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Acción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"ff034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71GALO65MqL._SL1448_.jpg\",\n        \"sinopsis\": \"En la Tierra Media, el Señor Oscuro Sauron forjó los Grandes Anillos del Poder y creó uno con el poder de esclavizar a toda la Tierra Media. Frodo Bolsón es un hobbit al que su tío Bilbo hace portador del poderoso Anillo Único con la misión de destruirlo.\",\n        \"titulo\": \"El Señor de los Anillos\"\n    },\n    {\n        \"anio\": 1998,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Drama\",\n            \"Romance\",\n            \"Tragedia\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://www.tebeosfera.com/T3content/img/T3_numeros/0/1/num1_BbXC-001.jpg\",\n        \"sinopsis\": \"Jack es un joven artista que gana un pasaje para viajar a América en el Titanic, el transatlántico más grande y seguro jamás construido.\",\n        \"titulo\": \"Titanic\"\n    },\n    {\n        \"anio\": 2010,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4ssb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61OUGpUfAyL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"En un exuberante planeta llamado Pandora viven los Na'vi, seres que aparentan ser primitivos pero que en realidad son muy evolucionados. Debido a que el ambiente de Pandora es venenoso, los híbridos humanos/Na'vi, llamados Avatares, están relacionados con las mentes humanas, lo que les permite moverse libremente por Pandora. Jake Sully, un exinfante de marina paralítico se transforma a través de un Avatar, y se enamora de una mujer Na'vi.\",\n        \"titulo\": \"Avatar\"\n    },\n    {\n        \"anio\": 1991,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4ffb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61bgvyrVGqL._AC_SL1039_.jpg\",\n        \"sinopsis\": \"Algunos años antes, un viajero del tiempo le reveló a la madre de John que su hijo sería el salvador de la humanidad. Cuando un nuevo androide mejorado llega del futuro para asesinar a John, un viejo modelo será enviado para protegerle.\",\n        \"titulo\": \"Terminator 2: Juicio Final\"\n    },\n    {\n        \"anio\": 1994,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Drama\",\n            \"Bélicas\",\n            \"Historicas\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/81j3R2pbfcL._SL1017_.jpg\",\n        \"sinopsis\": \"El empresario alemán Oskar Schindler, miembro del Partido Nazi, pone en marcha un elaborado, costoso y arriesgado plan para salvar a mas de mil judíos del Holocausto.\",\n        \"titulo\": \"Lista de Schindler\"\n    },\n    {\n        \"anio\": 1993,\n        \"comentarios\": [\n            \"60034ff3-ea8f-4aab-9d3f-b117ca78c442\",\n            \"59034ff3-ea8f-4aab-9d3f-b117ca78c442\",\n            \"62034ff3-ea8f-4aab-9d3f-b117ca78c442\"\n        ],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4eeb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61iF3RSsLsL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"El multimillonario John Hammond hace realidad su sueño de clonar dinosaurios del Jurásico y crear con ellos un parque temático en una isla. Antes de abrir el parque al público general, Hammond invita a una pareja de científicos y a un matemático para que comprueben la viabilidad del proyecto.\",\n        \"titulo\": \"Jurassic Park\"\n    },\n    {\n        \"anio\": 1981,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4eeb-9d3d-b203ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71aoIKE1XYL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"Después de una infructuosa misión en Sudamérica, el Gobierno estadounidense encarga al arqueólogo Indiana Jones la búsqueda del Arca de la Alianza, una reliquia bíblica que contiene los diez mandamientos y que convierte en invencible a su portador.\",\n        \"titulo\": \"Indiana Jones: Casadores del Arca Perdida\"\n    },\n    {\n        \"anio\": 2018,\n        \"comentarios\": [],\n        \"director\": \"Steven Spielberg\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Suspenso\"\n        ],\n        \"id\": \"fx034fc3-ea8e-4xxb-9d3d-b203ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71V1fH-X+9L._AC_SL1000_.jpg\",\n        \"sinopsis\": \"En el 2045: el adolescente Wade Watts es solo una de las millones de personas que se evaden del sombrío mundo real para sumergirse en un mundo utópico virtual donde todo es posible: OASIS. Wade participa en la búsqueda del tesoro que el creador de este mundo imaginario dejó oculto en su obra. No obstante, hay gente muy peligrosa compitiendo contra el.\",\n        \"titulo\": \"Ready Player One\"\n    },\n    {\n        \"anio\": 1989,\n        \"comentarios\": [\n            \"59034ff3-ea8f-4aab-9d3f-b117ca78c442\",\n            \"62034ff3-ea8f-4aab-9d3f-b117ca78c442\"\n        ],\n        \"director\": \"Robert Zemeckis\",\n        \"genero\": [\n            \"Ciencia Ficción\",\n            \"Aventura\",\n            \"Comedia\"\n        ],\n        \"id\": \"24034fc3-ea8e-4aab-9d3d-b117ca78c332\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71BPuv+iRbL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"Doc vuelve a aparecer con una máquina del tiempo mucho más modernizada y le pide a Marty y a su novia que le acompañen al futuro. En el Hill Valley de 2015 deberán solucionar un problema con la ley que tendrá uno de los futuros hijos de Marty y Jenny.\",\n        \"titulo\": \"Volver al Futuro II\"\n    },\n    {\n        \"anio\": 2014,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Drama\",\n            \"Ciencia Ficción\",\n            \"Misterio\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/716P1xCmnPL._AC_SL1020_.jpg\",\n        \"sinopsis\": \"Un grupo de científicos y exploradores, encabezados por Cooper, se embarcan en un viaje espacial para encontrar un lugar con las condiciones necesarias para reemplazar a la Tierra y comenzar una nueva vida allí.\",\n        \"titulo\": \"Interestelar\"\n    },\n    {\n        \"anio\": 1995,\n        \"comentarios\": [],\n        \"director\": \"Mel Gibson\",\n        \"genero\": [\n            \"Acción\",\n            \"Romance\",\n            \"Bélicas\"\n        ],\n        \"id\": \"xx034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71B1fLQaePL._AC_SL1018_.jpg\",\n        \"sinopsis\": \"Las épicas aventuras de William Wallace, un rebelde escocés en su lucha por la independencia contra el poder de Inglaterra, en pleno medievo. Su legendario carácter y su épica historia de amor lo convirtieron en un héroe.\",\n        \"titulo\": \"Corazon Valiente\"\n    },\n    {\n        \"anio\": 2009,\n        \"comentarios\": [],\n        \"director\": \"Juan José Campanella\",\n        \"genero\": [\n            \"Drama\",\n            \"Crimen\",\n            \"Romance\",\n            \"Thriller\"\n        ],\n        \"id\": \"hh034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/71oVsAFHyIL._SL1250_.jpg\",\n        \"sinopsis\": \"Benjamín Esposito es un oficial de un Juzgado de Instrucción de Buenos Aires que acaba de jubilarse. Su sueño es escribir una novela y, para ello, intentará dar solución a un caso abierto desde hace varias décadas, del cual fue testigo y protagonista.\",\n        \"titulo\": \"El Secreto de Tus Ojos\"\n    },\n    {\n        \"anio\": 1994,\n        \"comentarios\": [],\n        \"director\": \"Robert Zemeckis\",\n        \"genero\": [\n            \"Comedia\",\n            \"Romance\",\n            \"Drama\"\n        ],\n        \"id\": \"hz034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/81J1rycHoeL._SL1500_.jpg\",\n        \"sinopsis\": \"Sentado en un banco en Savannah, Georgia, Forrest Gump espera al autobús. Mientras éste tarda en llegar, el joven cuenta su vida a las personas que se sientan a esperar con él. Aunque sufre un pequeño retraso mental, esto no le impide hacer cosas maravillosas.\",\n        \"titulo\": \"Forrest Gump\"\n    }\n]"
+									"body": "{\n    \"anio\": 1999,\n    \"comentarios\": [],\n    \"director\": \"Hermanos Wachowski\",\n    \"genero\": [\n        \"Acción\",\n        \"Ciencia Ficción\",\n        \"Aventura\",\n        \"Fantasía\"\n    ],\n    \"id\": \"56034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n    \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n    \"imagen\": \"https://m.media-amazon.com/images/I/813dE2pH7XL._SL1417_.jpg\",\n    \"sinopsis\": \"El programador informático Thomas Anderson, más conocido en el mundo de los \\\"hacker\\\" como Neo, está en el punto de mira del temible agente Smith. Otros dos piratas informáticos, Trinity y Morfeo, se ponen en contacto con Neo para ayudarlo a escapar. Matrix te posee. Sigue al conejo blanco.\",\n    \"titulo\": \"The Matrix\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Obtener-Peliculas-Christopher Nolan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/peliculas/director/Christopher Nolan",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"peliculas",
+										"director",
+										"Christopher Nolan"
+									]
+								},
+								"description": "Obtiene los datos de todas las películas asociadas al nombre del director en este caso Christopher Nolan"
+							},
+							"response": [
+								{
+									"name": "Obtener-Peliculas-Christopher Nolan",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/peliculas/director/Christopher Nolan",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"peliculas",
+												"director",
+												"Christopher Nolan"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2167"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Server",
+											"value": "Werkzeug/2.0.3 Python/3.10.2"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 27 Mar 2022 17:57:03 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"anio\": 2008,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Acción\",\n            \"Super Heroes\",\n            \"Suspenso\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://static.wikia.nocookie.net/doblaje/images/9/9c/Batman_el_Caballero_de_la_Noche.png/revision/latest?cb=20110602012240&path-prefix=es\",\n        \"sinopsis\": \"Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman mantiene a raya el crimen organizado en Gotham. Todo cambia cuando aparece el Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos.\",\n        \"titulo\": \"Batman: Dark Night\"\n    },\n    {\n        \"anio\": 2010,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Acción\",\n            \"Ciencia Ficción\",\n            \"Thriller\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3z-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/91bxYmAaiQL._AC_SL1500_.jpg\",\n        \"sinopsis\": \"Dom Cobb (Leonardo DiCaprio) es un ladrón con una extraña habilidad para entrar a los sueños de la gente y robarle los secretos de sus subconscientes. Su habilidad lo ha convertido en un atractivo en el mundo del espionaje corporativo, pero ha tenido un gran costo en la gente que ama.\",\n        \"titulo\": \"El Origen\"\n    },\n    {\n        \"anio\": 2014,\n        \"comentarios\": [],\n        \"director\": \"Christopher Nolan\",\n        \"genero\": [\n            \"Aventura\",\n            \"Drama\",\n            \"Ciencia Ficción\",\n            \"Misterio\"\n        ],\n        \"id\": \"aa034fc3-ea8e-4aab-9d3z-b117ca78c102\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/716P1xCmnPL._AC_SL1020_.jpg\",\n        \"sinopsis\": \"Un grupo de científicos y exploradores, encabezados por Cooper, se embarcan en un viaje espacial para encontrar un lugar con las condiciones necesarias para reemplazar a la Tierra y comenzar una nueva vida allí.\",\n        \"titulo\": \"Interestelar\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Obtener-Peliculas-James Cameron",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/peliculas/director/James Cameron",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"peliculas",
+										"director",
+										"James Cameron"
+									]
+								},
+								"description": "Obtiene los datos de todas las películas asociadas al nombre del director en este caso James Cameron"
+							},
+							"response": [
+								{
+									"name": "Obtener-Peliculas-James Cameron",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/peliculas/director/James Cameron",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"peliculas",
+												"director",
+												"James Cameron"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2184"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Server",
+											"value": "Werkzeug/2.0.3 Python/3.10.2"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 27 Mar 2022 18:36:32 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"anio\": 1998,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Drama\",\n            \"Romance\",\n            \"Tragedia\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4aab-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://www.tebeosfera.com/T3content/img/T3_numeros/0/1/num1_BbXC-001.jpg\",\n        \"sinopsis\": \"Jack es un joven artista que gana un pasaje para viajar a América en el Titanic, el transatlántico más grande y seguro jamás construido.\",\n        \"titulo\": \"Titanic\"\n    },\n    {\n        \"anio\": 2010,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4ssb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61OUGpUfAyL._AC_SL1000_.jpg\",\n        \"sinopsis\": \"En un exuberante planeta llamado Pandora viven los Na'vi, seres que aparentan ser primitivos pero que en realidad son muy evolucionados. Debido a que el ambiente de Pandora es venenoso, los híbridos humanos/Na'vi, llamados Avatares, están relacionados con las mentes humanas, lo que les permite moverse libremente por Pandora. Jake Sully, un exinfante de marina paralítico se transforma a través de un Avatar, y se enamora de una mujer Na'vi.\",\n        \"titulo\": \"Avatar\"\n    },\n    {\n        \"anio\": 1991,\n        \"comentarios\": [],\n        \"director\": \"James Cameron\",\n        \"genero\": [\n            \"Acción\",\n            \"Aventura\",\n            \"Ciencia Ficción\",\n            \"Fantasía\"\n        ],\n        \"id\": \"qq034fc3-ea8e-4ffb-9d3d-b117ca78c442\",\n        \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\",\n        \"imagen\": \"https://m.media-amazon.com/images/I/61bgvyrVGqL._AC_SL1039_.jpg\",\n        \"sinopsis\": \"Algunos años antes, un viajero del tiempo le reveló a la madre de John que su hijo sería el salvador de la humanidad. Cuando un nuevo androide mejorado llega del futuro para asesinar a John, un viejo modelo será enviado para protegerle.\",\n        \"titulo\": \"Terminator 2: Juicio Final\"\n    }\n]"
 								}
 							]
 						}
@@ -1829,13 +1390,13 @@
 							]
 						},
 						{
-							"name": "Generar Comentarios",
+							"name": "Generar Comentario",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"comentario\": \"Nuevo Comentario para la Película PIratas del Caribe\",\r\n    \"idPelicula\": \"59034fc3-ea8e-4aab-9d3d-b117ca78c442\",\r\n    \"idUsuario\": \"\"\r\n}",
+									"raw": "{\r\n    \"comentario\": \"Nuevo Comentario para la Película PIratas del Caribe\",\r\n    \"idPelicula\": \"59034fc3-ea8e-4aab-9d3d-b117ca78c442\",\r\n    \"idUsuario\": \"c8c6cfd1-318c-4984-b38c-031ad76e3596\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1913,6 +1474,92 @@
 									"body": "{\n    \"mensaje\": \"El id de la pelicula no se encuentra\"\n}"
 								}
 							]
+						},
+						{
+							"name": "Vericacion Estructura Incorrecta",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "            {\r\n                \"usuario\": \"xxxxxx\"\r\n            }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/usuarios/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"usuarios",
+										""
+									]
+								},
+								"description": "Prueba de acceso, error por falta de un dato en la estructura Json."
+							},
+							"response": [
+								{
+									"name": "Vericacion Estructura Incorrecta",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "            {\r\n                \"usuario\": \"xxxxxx\"\r\n            }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:5000/usuarios/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"usuarios",
+												""
+											]
+										}
+									},
+									"status": "BAD REQUEST",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "94"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Server",
+											"value": "Werkzeug/2.0.3 Python/3.10.2"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 27 Mar 2022 18:45:42 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"mensaje\": \"Uno o mas campos no coinciden con la estructura, consulte la documentacion\"\n}"
+								}
+							]
 						}
 					],
 					"description": "Pruebas POST para diferentes APIs."
@@ -1935,7 +1582,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5000/comentarios/59034fc3-ea8e-4aab-9d3d-b117ca78c442",
+									"raw": "http://localhost:5000/comentarios/<id>",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1943,7 +1590,7 @@
 									"port": "5000",
 									"path": [
 										"comentarios",
-										"59034fc3-ea8e-4aab-9d3d-b117ca78c442"
+										"<id>"
 									]
 								},
 								"description": "Modificar un comentario."
@@ -2147,9 +1794,282 @@
 									"body": "{\n    \"mensaje\": \"La pelicula ha sido eliminada con exito\"\n}"
 								}
 							]
+						},
+						{
+							"name": "Borrar Comentario Con éxito",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-4aab-9d3f-b117ca78c442",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"comentarios",
+										"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
+									]
+								},
+								"description": "Prueba de borrado de comentario de forma exitosa."
+							},
+							"response": [
+								{
+									"name": "Borrar Comentario Con éxito",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-4aab-9d3f-b117ca78c442",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"comentarios",
+												"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "61"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Server",
+											"value": "Werkzeug/2.0.3 Python/3.10.2"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 27 Mar 2022 18:37:08 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"mensaje\": \"El comentario ha sido eliminado con exito\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Borrar Comentario Sin Éxito",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-4aab-9d3f-b117ca78c442",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"comentarios",
+										"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
+									]
+								},
+								"description": "Error de borrado de comentario por no ser encontrado."
+							},
+							"response": [
+								{
+									"name": "Borrar Comentario Sin Éxito",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/comentarios/59034ff3-ea8f-4aab-9d3f-b117ca78c442",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"comentarios",
+												"59034ff3-ea8f-4aab-9d3f-b117ca78c442"
+											]
+										}
+									},
+									"status": "NOT FOUND",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "81"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Server",
+											"value": "Werkzeug/2.0.3 Python/3.10.2"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 04 Apr 2022 23:31:46 GMT"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"mensaje\": \"No se encontro el comentario a eliminar, el id es incorrecto.\"\n}"
+								}
+							]
 						}
 					],
 					"description": "Pruebas DELETE para diferentes APIs."
+				}
+			],
+			"description": "Casos variados de pruebas especificas para diferentes Request de películas y comentarios principalmente."
+		},
+		{
+			"name": "Obtener Generos de Peliculas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/generos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"generos",
+						""
+					]
+				},
+				"description": "Obtener todos los géneros de películas."
+			},
+			"response": [
+				{
+					"name": "Obtener Generos de Peliculas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/generos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"generos",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "951"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.10.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Mar 2022 22:28:31 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"nombre\": \"Acción\"\n    },\n    {\n        \"nombre\": \"Aventura\"\n    },\n    {\n        \"nombre\": \"Ciencia Ficción\"\n    },\n    {\n        \"nombre\": \"Comedia\"\n    },\n    {\n        \"nombre\": \"Documental\"\n    },\n    {\n        \"nombre\": \"Drama\"\n    },\n    {\n        \"nombre\": \"Fantasía\"\n    },\n    {\n        \"nombre\": \"Musical\"\n    },\n    {\n        \"nombre\": \"Suspenso\"\n    },\n    {\n        \"nombre\": \"Terror\"\n    },\n    {\n        \"nombre\": \"Religiosas\"\n    },\n    {\n        \"nombre\": \"Futuristas\"\n    },\n    {\n        \"nombre\": \"Policiacas\"\n    },\n    {\n        \"nombre\": \"Crimen\"\n    },\n    {\n        \"nombre\": \"Bélicas\"\n    },\n    {\n        \"nombre\": \"Historicas\"\n    },\n    {\n        \"nombre\": \"Deportivas\"\n    },\n    {\n        \"nombre\": \"Western\"\n    },\n    {\n        \"nombre\": \"Animación\"\n    },\n    {\n        \"nombre\": \"Biográfica\"\n    },\n    {\n        \"nombre\": \"Super Heroes\"\n    },\n    {\n        \"nombre\": \"Mafia\"\n    },\n    {\n        \"nombre\": \"Thriller\"\n    },\n    {\n        \"nombre\": \"Misterio\"\n    },\n    {\n        \"nombre\": \"Romance\"\n    },\n    {\n        \"nombre\": \"Tragedia\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener Directores Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/directores/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"directores",
+						""
+					]
+				},
+				"description": "Obtener todos los directores de películas."
+			},
+			"response": [
+				{
+					"name": "Obtener Directores Todos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/directores/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"directores",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4836"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.3 Python/3.10.2"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 31 Mar 2022 22:28:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"nombre\": \"Robert Zemeckis\"\n    },\n    {\n        \"nombre\": \"Juan Jose Campanella\"\n    },\n    {\n        \"nombre\": \"Mel Gibson\"\n    },\n    {\n        \"nombre\": \"Peter Jackson\"\n    },\n    {\n        \"nombre\": \"James Cameron\"\n    },\n    {\n        \"nombre\": \"Quentin Tarantino\"\n    },\n    {\n        \"nombre\": \"Todd Phillips\"\n    },\n    {\n        \"nombre\": \"George Lucas\"\n    },\n    {\n        \"nombre\": \"Frank Darabont\"\n    },\n    {\n        \"nombre\": \"Christopher Nolan\"\n    },\n    {\n        \"nombre\": \"Hermanos Wachowski\"\n    },\n    {\n        \"nombre\": \"John McTiernan\"\n    },\n    {\n        \"nombre\": \"Joachim Rønning\"\n    },\n    {\n        \"nombre\": \"Jon Watts\"\n    },\n    {\n        \"nombre\": \"David Fincher\"\n    },\n    {\n        \"nombre\": \"Carlos Saldanha\"\n    },\n    {\n        \"nombre\": \"Pete Docter\"\n    },\n    {\n        \"nombre\": \"John G. Avildsen\"\n    },\n    {\n        \"nombre\": \"Joss Whedon\"\n    },\n    {\n        \"nombre\": \"Francis Ford Coppola\"\n    },\n    {\n        \"nombre\": \"Martin Scorsese\"\n    },\n    {\n        \"nombre\": \"Anthony Russo\"\n    },\n    {\n        \"nombre\": \"Billy Wilder\"\n    },\n    {\n        \"nombre\": \"Steven Spielberg\"\n    },\n    {\n        \"nombre\": \"Ingmar Bergman\"\n    },\n    {\n        \"nombre\": \"Federico Fellini\"\n    },\n    {\n        \"nombre\": \"Roman Polanski\"\n    },\n    {\n        \"nombre\": \"Michael Haneke\"\n    },\n    {\n        \"nombre\": \"Alfred Hitchcock\"\n    },\n    {\n        \"nombre\": \"Paolo Sorrentino\"\n    },\n    {\n        \"nombre\": \"David Lynch\"\n    },\n    {\n        \"nombre\": \"Terry Gilliam\"\n    },\n    {\n        \"nombre\": \"Stanley Kubrick\"\n    },\n    {\n        \"nombre\": \"Fritz Lang\"\n    },\n    {\n        \"nombre\": \"F.W. Murnau\"\n    },\n    {\n        \"nombre\": \"Robert Wiene\"\n    },\n    {\n        \"nombre\": \"Sergei M. Eisenstein\"\n    },\n    {\n        \"nombre\": \"Hayao Miyazaki\"\n    },\n    {\n        \"nombre\": \"Isao Takahata\"\n    },\n    {\n        \"nombre\": \"Woody Allen\"\n    },\n    {\n        \"nombre\": \"Los hermanos Coen\"\n    },\n    {\n        \"nombre\": \"Howard Hawks\"\n    },\n    {\n        \"nombre\": \"Akira Kurosawa\"\n    },\n    {\n        \"nombre\": \"Joseph Mankiewicz\"\n    },\n    {\n        \"nombre\": \"George Cuckor\"\n    },\n    {\n        \"nombre\": \"John Ford\"\n    },\n    {\n        \"nombre\": \"Orson Welles\"\n    },\n    {\n        \"nombre\": \"Darren Aronofsky\"\n    },\n    {\n        \"nombre\": \"Jean-Luc Godard\"\n    },\n    {\n        \"nombre\": \"Wes Anderson\"\n    },\n    {\n        \"nombre\": \"Milos Forman\"\n    },\n    {\n        \"nombre\": \"Mel Gibson\"\n    },\n    {\n        \"nombre\": \"Sam Peckinpah\"\n    },\n    {\n        \"nombre\": \"Sergio Leone\"\n    },\n    {\n        \"nombre\": \"William Wyler\"\n    },\n    {\n        \"nombre\": \"Charles Chaplin\"\n    },\n    {\n        \"nombre\": \"James Cameron\"\n    },\n    {\n        \"nombre\": \"Jean Cocteau\"\n    },\n    {\n        \"nombre\": \"Terrence Malick\"\n    },\n    {\n        \"nombre\": \"Andrei Tarkovsky\"\n    },\n    {\n        \"nombre\": \"Vittorio De Sica\"\n    },\n    {\n        \"nombre\": \"Buster Keaton\"\n    },\n    {\n        \"nombre\": \"Clint Eastwood\"\n    },\n    {\n        \"nombre\": \"François Truffaut\"\n    },\n    {\n        \"nombre\": \"John Huston\"\n    },\n    {\n        \"nombre\": \"Elia Kazan\"\n    },\n    {\n        \"nombre\": \"Fred Zinnemann\"\n    },\n    {\n        \"nombre\": \"John Lasseter\"\n    },\n    {\n        \"nombre\": \"Frank Capra\"\n    },\n    {\n        \"nombre\": \"Brian de Palma\"\n    },\n    {\n        \"nombre\": \"Ridley Scott\"\n    },\n    {\n        \"nombre\": \"David Lean\"\n    },\n    {\n        \"nombre\": \"Ernst Lubistch\"\n    },\n    {\n        \"nombre\": \"Luis Buñuel\"\n    },\n    {\n        \"nombre\": \"Luis García Berlanga\"\n    },\n    {\n        \"nombre\": \"Werner Herzog\"\n    },\n    {\n        \"nombre\": \"Lars von Trier\"\n    },\n    {\n        \"nombre\": \"Tim Burton\"\n    },\n    {\n        \"nombre\": \"Peter Jackson\"\n    },\n    {\n        \"nombre\": \"Alegrando González Iñárritu\"\n    },\n    {\n        \"nombre\": \"Pedro Almodóvar\"\n    },\n    {\n        \"nombre\": \"Victor Fleming\"\n    },\n    {\n        \"nombre\": \"Michael Curtiz\"\n    },\n    {\n        \"nombre\": \"Giuseppe Tornatore\"\n    },\n    {\n        \"nombre\": \"D.W. Griffith\"\n    },\n    {\n        \"nombre\": \"Carl Theodor Dreyer\"\n    },\n    {\n        \"nombre\": \"Masaki Kobayashi\"\n    },\n    {\n        \"nombre\": \"George Méliès\"\n    },\n    {\n        \"nombre\": \"Segundo de Chomón\"\n    },\n    {\n        \"nombre\": \"Paul Verhoeven\"\n    },\n    {\n        \"nombre\": \"Roberto Rossellini\"\n    },\n    {\n        \"nombre\": \"Bela Tarr\"\n    },\n    {\n        \"nombre\": \"Oliver Stone\"\n    },\n    {\n        \"nombre\": \"Robert Zemeckis\"\n    },\n    {\n        \"nombre\": \"David Cronenberg\"\n    },\n    {\n        \"nombre\": \"Thomas Vinterberg\"\n    },\n    {\n        \"nombre\": \"Kathryn Bigelow\"\n    },\n    {\n        \"nombre\": \"Robert Altman\"\n    },\n    {\n        \"nombre\": \"Peter Weir\"\n    },\n    {\n        \"nombre\": \"Paul Thomas Anderson\"\n    },\n    {\n        \"nombre\": \"Jean Jacques Anaud\"\n    },\n    {\n        \"nombre\": \"Alfonso Cuarón\"\n    },\n    {\n        \"nombre\": \"Juan José Campanella\"\n    },\n    {\n        \"nombre\": \"Peter Greenaway\"\n    },\n    {\n        \"nombre\": \"Arturo Ripstein\"\n    },\n    {\n        \"nombre\": \"Wong Kar-Wai\"\n    },\n    {\n        \"nombre\": \"Richard Donner\"\n    },\n    {\n        \"nombre\": \"Sofia Coppola\"\n    },\n    {\n        \"nombre\": \"Alejandro Amenábar\"\n    },\n    {\n        \"nombre\": \"Makoto Shinkai\"\n    },\n    {\n        \"nombre\": \"Ang Lee\"\n    },\n    {\n        \"nombre\": \"Jim Sheridan\"\n    },\n    {\n        \"nombre\": \"Danny Boyle\"\n    },\n    {\n        \"nombre\": \"M. Night Shyamalan\"\n    },\n    {\n        \"nombre\": \"Sam Mendes\"\n    },\n    {\n        \"nombre\": \"George A. Romero\"\n    }\n]"
 				}
 			]
 		}
