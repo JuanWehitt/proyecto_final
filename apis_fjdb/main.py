@@ -183,31 +183,33 @@ def agregar_comentario():
     nuevo_id = generar_nuevo_id_comentario()
     datos_comentario = request.get_json()
     if json_ok_comentario(datos_comentario):
-        comentarios.insert(0,{
-            "id": str(nuevo_id),
-            "comentario": datos_comentario['comentario'],
-            "idUsuario": datos_comentario['idUsuario']
-        })
+
+        usuario_l = [x for x in usuarios if x['id'] == datos_comentario['idUsuario']]
         pelicula_l = [x for x in peliculas if x['id']==datos_comentario['idPelicula']]
-        if pelicula_l:
+
+
+        if pelicula_l and usuario_l:
+            comentarios.insert(0, {
+                "id": str(nuevo_id),
+                "comentario": datos_comentario['comentario'],
+                "idUsuario": datos_comentario['idUsuario']
+            })
             pelicula = pelicula_l[0]
             pelicula['comentarios'].insert(0,str(nuevo_id))
         else:
-            return jsonify({"mensaje": "El id de la pelicula no se encuentra"}), HTTPStatus.NOT_FOUND
+            return jsonify({"mensaje": "El id de la pelicula o del usuario es incorrecto"}), HTTPStatus.NOT_FOUND
         return jsonify({"mensaje": "El comentario ha sido agregado con exito","id":str(nuevo_id)}), HTTPStatus.OK
     else :
         return jsonify({"mensaje": "Uno o mas campos no coinciden con la estructura"}), HTTPStatus.BAD_REQUEST
 
 @app.route("/comentarios/<id>", methods=['PUT'])
 def actualizar_comentario(id):
-    lista: list = [x for x in comentarios if x['id'] == id]
+    lista = [x for x in comentarios if x['id'] == id]
     if lista:
         datos_comentario = request.get_json()
-        if json_ok_pelicula(datos_comentario):
+        if "comentario" in datos_comentario :
             comentario = lista[0]
-            comentario = {
-                "comentario": datos_comentario['comentario'],
-            }
+            comentario["comentario"] = datos_comentario['comentario']
             return jsonify({"mensaje":"El comentario ha sido modificdo con exito"}), HTTPStatus.OK
         else:
             return jsonify({"mensaje": "Uno o mas campos no coinciden con la estructura"}), HTTPStatus.BAD_REQUEST
